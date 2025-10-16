@@ -27,9 +27,9 @@ Welcome everyone. Today I want to share my experience integrating AI into my R d
 
 ## Who Am I? {.smaller}
 
-- R Developer & Data Analytics Consultant
-- Running a solo analytics practice
-- Building Shiny applications, dashboards, and data pipelines
+- R Developer & Data Science, Analytics & AI Consultant
+- Running a *mostly* solo analytics practice
+- Building Shiny applications, interactive dashboards, and data automation pipelines
 - Previously: 60-70% coding, 30-40% business strategy
 - Now: A different balance (we'll get to that)
 
