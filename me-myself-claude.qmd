@@ -1,0 +1,764 @@
+---
+title: "Me, Myself & Claude"
+subtitle: "AI-Assisted Development in R"
+author: "Jasmine Daly"
+format:
+  revealjs:
+    theme: simple
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+    code-line-numbers: false
+    highlight-style: github
+---
+
+## Introduction {.center}
+
+**AI-Assisted Development in R**
+
+A journey of staying in your lane while scaling your impact
+
+::: {.notes}
+Welcome everyone. Today I want to share my experience integrating AI into my R development workflow - not as a replacement for expertise, but as a strategic multiplier.
+:::
+
+---
+
+## Who Am I? {.smaller}
+
+- R Developer & Data Analytics Consultant
+- Running a solo analytics practice
+- Building Shiny applications, dashboards, and data pipelines
+- Previously: 60-70% coding, 30-40% business strategy
+- Now: A different balance (we'll get to that)
+
+::: {.notes}
+Context is important. I'm not at a large organization with unlimited resources. I'm managing both the technical and business sides of my practice.
+:::
+
+---
+
+# Part 1: Strategic Thinking Unlocked
+
+## The Mental Bandwidth Shift
+
+---
+
+## The Old Time Allocation
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Before AI assistance
+time_breakdown_before <- data.frame(
+  activity = c("Coding & Development", "Business Strategy", "Admin"),
+  percentage = c(60, 30, 10)
+)
+
+# Where my energy went:
+# - Writing boilerplate code
+# - Debugging syntax errors
+# - Googling Stack Overflow for the 100th time
+# - Context switching between tasks
+```
+
+**Result:** Always feeling behind on the business side
+
+---
+
+## The New Time Allocation
+
+```{r}
+#| echo: true
+#| eval: false
+
+# With AI assistance
+time_breakdown_after <- data.frame(
+  activity = c("Coding & Development", "Business Strategy", "Admin"),
+  percentage = c(50, 40, 10)
+)
+
+# Gained 10-20% mental bandwidth back
+# Where it goes now:
+# - Contract negotiations
+# - Proposal development
+# - Financial planning
+# - Content creation (blog posts, LinkedIn)
+# - Business development
+```
+
+**Result:** More strategic, more sustainable
+
+---
+
+## What Mental Bandwidth Buys You
+
+::: {.incremental}
+- **Better Proposals:** More comprehensive, covering hosting solutions and long-term maintenance
+- **Financial Clarity:** Time to understand cash flow, pricing strategy, and profitability
+- **Relationship Building:** Networking, content creation, community engagement
+- **Creative Space:** Room to think about what *could* be built, not just what *must* be built
+:::
+
+---
+
+## Example 1: The {shinyfa} Package {.smaller}
+
+**An Awakening of Creativity**
+
+::: columns
+::: {.column width="50%"}
+**The Challenge:**
+
+- Large Shiny apps are hard to navigate
+- New team members struggle with onboarding
+- Difficult to understand reactive dependencies
+- No systematic way to analyze file relationships
+
+**The Old Me:**
+
+"That would be nice someday... but I have client work."
+:::
+
+::: {.column width="50%"}
+**With Claude:**
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Fully developed with Claude Code
+library(shinyfa)
+
+# Analyze Shiny app structure
+files <- list.files("app/", pattern = "\\.R$",
+                    full.names = TRUE)
+
+analysis <- data.frame()
+for (file in files) {
+  result <- analyze_shiny_reactivity(file)
+  analysis <- bind_rows(analysis, result)
+}
+
+# Catalogs: render functions, reactive functions,
+# inputs, and file relationships
+```
+
+**Result:** Built in weeks, not months
+:::
+:::
+
+::: {.notes}
+This wasn't just about building a package. It was proof that I could contribute back to the community without sacrificing my business. SHINYFA helps developers understand large Shiny codebases by extracting and organizing information about reactivity patterns.
+:::
+
+---
+
+## The Creative Multiplier
+
+AI assistance doesn't just save time on what you were already doing.
+
+**It unlocks what you weren't doing at all:**
+
+- Open source contributions (like shinyfa)
+- Writing better tests and documentation
+- Building developer tools that solve real problems
+- Package development with proper structure
+- Community engagement and knowledge sharing
+
+::: {.fragment}
+**SHINYFA solves a problem I experienced repeatedly:** onboarding developers to complex Shiny apps. Without AI assistance, this package would still be "someday" on my wishlist.
+:::
+
+::: {.fragment}
+*Side note: ChatGPT is great for hex sticker design and branding ideas!*
+:::
+
+---
+
+# Part 2: Saying Yes to Bigger Problems
+
+## Scaling Strategy
+
+---
+
+## The Growth Question
+
+Before AI assistance, my filter for new projects was:
+
+> "Can I build this in a reasonable timeframe with my current skillset?"
+
+**This meant saying NO to:**
+
+- Projects requiring unfamiliar technologies
+- Complex infrastructure solutions
+- Multi-platform integration challenges
+- Cutting-edge deployment strategies
+
+---
+
+## The New Filter
+
+With AI assistance, the question became:
+
+> "Is this problem interesting and valuable enough to solve?"
+
+**Now I can say YES to:**
+
+- Pipeline development and automation
+- Data engineering workflows
+- Complex hosting solutions
+- Technologies outside my comfort zone but within my skillset
+
+---
+
+## Example 2: The Economic Development Dashboard {.smaller}
+
+**The Challenge:**
+
+- Nonprofit client needed a public-facing dashboard
+- Resource-strapped IT department
+- Limited technical capacity for hosting
+- Budget constraints
+- High availability requirements
+
+::: {.fragment}
+**The Old Response:**
+
+"You'll need to find someone with DevOps expertise. This is outside my wheelhouse."
+:::
+
+---
+
+## The Solution: Hybrid Hosting {.smaller}
+
+**Claude suggested using Cloudflare Workers as a reverse proxy**
+
+```javascript
+// Load balancing between Connect Cloud and ShinyApps.io
+addEventListener('fetch', event => {
+  event.respondWith(handleRequest(event.request))
+})
+
+async function handleRequest(request) {
+  const upstreamConnect = 'https://connect-cloud-instance.com'
+  const upstreamShinyApps = 'https://app.shinyapps.io/dashboard'
+
+  // Health check logic
+  const connectHealthy = await checkHealth(upstreamConnect)
+
+  // Route traffic based on availability
+  const targetUrl = connectHealthy ? upstreamConnect : upstreamShinyApps
+
+  return fetch(targetUrl, {
+    method: request.method,
+    headers: request.headers
+  })
+}
+```
+
+---
+
+## Why This Matters
+
+::: {.incremental}
+1. **I would have said NO to this project**
+2. JavaScript for Cloudflare Workers was outside my expertise
+3. Claude generated the necessary infrastructure code
+4. I maintained the R/Shiny dashboard (my expertise)
+5. Client got a comprehensive, managed solution
+6. I grew my service offerings
+:::
+
+::: {.fragment}
+**The principle:** Stay in your lane for the core value, but extend your reach for the solution architecture.
+:::
+
+---
+
+## Comprehensive Proposals
+
+Clients now get proposals that include:
+
+::: columns
+::: {.column width="50%"}
+**Technical Delivery:**
+
+- Dashboard development
+- Data pipeline architecture
+- Testing and QA
+:::
+
+::: {.column width="50%"}
+**Managed Services:**
+
+- Hosting solutions
+- Load balancing
+- Backup strategies
+- Monitoring and alerts
+:::
+:::
+
+<br>
+
+This positions me as a **strategic partner**, not just a contractor.
+
+---
+
+# Part 3: Building Intuition Through Volume
+
+## Learning Acceleration
+
+---
+
+## The Traditional Learning Curve
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Learning new R patterns traditionally:
+# 1. Read documentation (30 minutes)
+# 2. Try implementation (1 hour)
+# 3. Hit error (5 minutes of frustration)
+# 4. Google/Stack Overflow (20 minutes)
+# 5. Try again (30 minutes)
+# 6. Success! (Maybe)
+#
+# Total time: 2.5+ hours for one pattern
+
+learning_rate_traditional <- "Slow but deliberate"
+```
+
+---
+
+## The High-Volume Approach
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Learning with AI assistance:
+# 1. Ask Claude for implementation (2 minutes)
+# 2. Review generated code (5 minutes)
+# 3. Test it (5 minutes)
+# 4. Encounter error (immediate)
+# 5. Understand WHY it failed (learning moment)
+# 6. Adjust and iterate (10 minutes)
+#
+# Total time: 22 minutes
+# But you've seen 3-4 different approaches
+
+learning_rate_ai_assisted <- "Fast iteration builds intuition"
+```
+
+---
+
+## Practical Use Cases {.smaller}
+
+**1. Generating Fake Data**
+
+```{r}
+#| echo: true
+#| eval: false
+
+# "Claude, generate realistic university course enrollment data"
+set.seed(123)
+courses <- data.frame(
+  course_id = paste0("COURSE", 1:50),
+  department = sample(c("Math", "CS", "Biology", "English", "History"), 50, replace = TRUE),
+  enrollment = sample(15:150, 50, replace = TRUE),
+  semester = sample(c("Fall 2024", "Spring 2025"), 50, replace = TRUE),
+  instructor_rating = round(runif(50, 2.5, 5.0), 1)
+)
+
+# This would have taken me 20+ minutes
+# Claude did it in 30 seconds
+# I learned about realistic data generation patterns
+```
+
+---
+
+## Practical Use Cases {.smaller}
+
+**2. Project Scaffolding**
+
+```{r}
+#| echo: true
+#| eval: false
+
+# "Claude, create a basic Shiny app structure with modules"
+
+# app.R
+library(shiny)
+source("modules/data_module.R")
+source("modules/plot_module.R")
+
+ui <- fluidPage(
+  titlePanel("Dashboard"),
+  dataModuleUI("data"),
+  plotModuleUI("plot")
+)
+
+server <- function(input, output, session) {
+  data <- dataModuleServer("data")
+  plotModuleServer("plot", data)
+}
+
+shinyApp(ui, server)
+
+# The "getting started" friction is eliminated
+```
+
+---
+
+## Learning from AI Errors
+
+**Claude makes mistakes. This is actually valuable.**
+
+::: {.incremental}
+- **Hallucinated packages:** Forces you to verify what exists
+- **Wrong function arguments:** Makes you read documentation
+- **Mixing tidyverse/base R:** Teaches you to spot inconsistencies
+- **Over-engineering:** Shows you what NOT to do
+:::
+
+::: {.fragment}
+**The pattern recognition you build from fixing AI errors is faster than traditional trial-and-error.**
+:::
+
+---
+
+## The Failing Fast Advantage
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Traditional development:
+attempts <- 1
+learning <- "slow and careful"
+
+# AI-assisted development:
+attempts <- 10
+learning <- "rapid pattern recognition"
+
+# You encounter and solve more problems in less time
+# Each failure teaches you something about:
+# - What works in R
+# - What's idiomatic
+# - What's maintainable
+# - What's efficient
+```
+
+---
+
+## The 80% Problem: AI Limitations {.smaller}
+
+**Not everything AI generates is production-ready.**
+
+::: columns
+::: {.column width="50%"}
+**Where AI Excels:**
+
+- Boilerplate code
+- Standard patterns
+- Initial structure
+- Quick prototypes
+- Documentation drafts
+:::
+
+::: {.column width="50%"}
+**Where AI Falls Short:**
+
+- Data cleaning scripts (≈80% okay)
+- Edge case handling
+- Domain-specific logic
+- Performance optimization
+- Security considerations
+:::
+:::
+
+<br>
+
+::: {.fragment}
+**The term:** "AI Slop" - code that *technically works* but isn't quite right.
+:::
+
+---
+
+## Over-Abstraction Warning
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Claude's suggestion (over-abstracted):
+create_advanced_pipeline <- function(data, config, transformations, validators,
+                                      error_handlers, logging_strategy, ...) {
+  # 200 lines of abstraction
+}
+
+# What I actually need (maintainable):
+clean_data <- function(data) {
+  data |>
+    filter(!is.na(key_column)) |>
+    mutate(date = as.Date(date))
+}
+
+# Keep it simple. Keep it readable. Keep it maintainable.
+```
+
+---
+
+# Part 4: The Human in the Loop
+
+## Maintaining Technical Leadership
+
+---
+
+## Establishing Your AI Values
+
+Before integrating AI into your workflow, ask yourself:
+
+::: {.incremental}
+1. **What code can I maintain 6 months from now?**
+2. **Where do I need to maintain expertise?**
+3. **What represents my core value proposition?**
+4. **What should I always understand deeply?**
+:::
+
+::: {.fragment}
+**These become your guardrails.**
+:::
+
+---
+
+## Defining the Relationship
+
+**Claude is not your boss. Claude is your colleague.**
+
+::: columns
+::: {.column width="50%"}
+**Claude as Colleague:**
+
+- Suggests approaches
+- Generates initial drafts
+- Handles boilerplate
+- Explores alternatives
+- Speeds up research
+:::
+
+::: {.column width="50%"}
+**You as Leader:**
+
+- Make architectural decisions
+- Review and refine code
+- Ensure maintainability
+- Apply domain expertise
+- Own the final product
+:::
+:::
+
+---
+
+## The Dumpster Fire Prevention Rule
+
+**If you can't explain the code, you don't own it.**
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Bad: AI-generated code you don't understand
+result <- complex_ai_function(data, params = list(
+  algorithm = "advanced_ml_technique",
+  hyperparameters = list(alpha = 0.05, beta = 0.9, gamma = 2.5),
+  cross_validation = TRUE,
+  ensemble_method = "stacking"
+))
+
+# Good: Code you understand and can maintain
+result <- data |>
+  filter(status == "active") |>
+  group_by(category) |>
+  summarize(total = sum(value))
+
+# If you can't debug it, don't ship it.
+```
+
+---
+
+## Example: Quarto Over JavaScript {.smaller}
+
+**The Scenario:**
+
+- Client wants an interactive dashboard
+- AI suggests a JavaScript framework (React, Vue, etc.)
+- Impressive demo, cutting-edge tech
+
+**The Problem:**
+
+- I'm an R developer, not a JavaScript expert
+- Client needs updates and maintenance
+- In 6 months, can I confidently modify this code?
+
+---
+
+## Staying in Your Lane
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Instead of AI-generated JavaScript:
+# ❌ Complex build process
+# ❌ Node dependencies
+# ❌ Framework-specific patterns I don't deeply understand
+
+# I chose Quarto:
+# ✅ Markdown-based (familiar)
+# ✅ R code chunks (my expertise)
+# ✅ Easy to maintain
+# ✅ Client can understand the structure
+
+library(ggplot2)
+library(dplyr)
+
+# This is my wheelhouse
+# I can modify this at 2am if needed
+# The client can read this
+```
+
+---
+
+## Hand on the Wheel
+
+**Key Principle:** AI accelerates; you steer.
+
+::: {.incremental}
+- **Let AI generate** the boilerplate, the repetitive code, the initial structure
+- **You maintain** the architecture, the business logic, the critical decisions
+- **Review everything** like you're mentoring an intern
+- **Refactor freely** to match your style and standards
+- **Test thoroughly** because AI doesn't understand your edge cases
+:::
+
+---
+
+## When to Override AI
+
+You should override or ignore AI suggestions when:
+
+1. The solution is over-engineered for your needs
+2. It uses technologies outside your maintenance capacity
+3. It introduces dependencies you don't want to manage
+4. You can't explain it to your client
+5. It feels like "magic" instead of logic
+
+**Your expertise is your compass.**
+
+---
+
+# Conclusion
+
+## Bringing It All Together
+
+---
+
+## The Four Pillars
+
+::: columns
+::: {.column width="50%"}
+**1. Mental Bandwidth**
+
+- 10-20% time back
+- Strategic focus
+- Creative projects
+
+**2. Bigger Problems**
+
+- Say yes to growth
+- Expand service offerings
+- Comprehensive solutions
+:::
+
+::: {.column width="50%"}
+**3. Accelerated Learning**
+
+- High-volume iteration
+- Pattern recognition
+- Fail fast, learn faster
+
+**4. Human Leadership**
+
+- Establish AI values
+- Maintain expertise
+- Own the final product
+:::
+:::
+
+---
+
+## The Core Philosophy
+
+**AI doesn't replace expertise.**
+
+**It amplifies it.**
+
+<br>
+
+::: {.incremental}
+- You remain the architect
+- You maintain the standards
+- You own the relationships
+- You deliver the value
+:::
+
+---
+
+## Your AI Values Exercise
+
+Before your next AI-assisted project, write down:
+
+1. **What I will always do myself:**
+2. **What AI can help me with:**
+3. **What I need to understand deeply:**
+4. **What I'm comfortable delegating:**
+
+**This clarity prevents the dumpster fire.**
+
+---
+
+## Final Thoughts {.center}
+
+> "When AI frees up your mental bandwidth,
+> you don't get lazy—you get strategic."
+
+<br>
+
+**Stay in your lane.**
+
+**Keep your hand on the wheel.**
+
+**Build with confidence.**
+
+---
+
+## Thank You {.center}
+
+**Questions?**
+
+<br>
+
+Contact: [your-email@example.com]
+
+GitHub: [your-github-profile]
+
+Blog: [your-blog-url]
+
+::: {.notes}
+Thank you all for your time. I'm happy to take questions about AI-assisted development, R workflows, or anything else we've covered today.
+:::
