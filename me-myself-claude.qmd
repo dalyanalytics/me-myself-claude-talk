@@ -1,23 +1,25 @@
 ---
 title: "Me, Myself & Claude"
-subtitle: "AI-Assisted Development in R"
-author: "Jasmine Daly"
+subtitle: "How I Leverage AI-Assisted Development to Scale My Solo R-based Data Science Consultancy"
+author: "Jasmine Daly<br>Principal Consultant & Founder<br>Daly Analytics"
+date: "Wednesday, November 12, 2025"
 format:
   revealjs:
-    theme: simple
+    theme: [simple, theme/daly-analytics.scss]
     transition: slide
     slide-number: true
     chalkboard: true
     preview-links: auto
     code-line-numbers: false
     highlight-style: github
+    logo: images/sunset.png
 ---
 
 ## Introduction {.center}
 
 **AI-Assisted Development in R**
 
-A journey of staying in your lane while scaling your impact
+A journey of staying in your lane while scaling your impact!!
 
 ::: {.notes}
 Welcome everyone. Today I want to share my experience integrating AI into my R development workflow - not as a replacement for expertise, but as a strategic multiplier.
@@ -749,15 +751,17 @@ Before your next AI-assisted project, write down:
 
 ## Thank You {.center}
 
+![](images/horizontal-logo.png){width=60% fig-align="center"}
+
 **Questions?**
 
 <br>
 
-Contact: [your-email@example.com]
+Contact: [jasmine@dalyanalytics.com]
 
-GitHub: [your-github-profile]
+GitHub: [@jasdumas]
 
-Blog: [your-blog-url]
+Website: [dalyanalytics.com]
 
 ::: {.notes}
 Thank you all for your time. I'm happy to take questions about AI-assisted development, R workflows, or anything else we've covered today.

@@ -61,6 +61,46 @@ This is a **perfect example** of the "Human in the Loop" principle from the talk
 ## Files
 - `me-myself-claude.qmd` - Main presentation file
 - `CLAUDE.md` - This memory file for future sessions
+- `theme/daly-analytics.scss` - Custom Reveal.js theme with Daly Analytics brand colors
+- `images/` - Directory for presentation images (with README guide)
+- `.github/workflows/render-quarto.yml.disabled` - GitHub Action (currently disabled)
+
+---
+
+## Change Log: Claude vs. Human Edits
+
+### Session 1: Initial Setup (2025-10-16)
+
+**Claude Generated:**
+- ✅ Initial presentation structure (all 4 parts, all slides)
+- ✅ Created custom theme file (`theme/daly-analytics.scss`) with Daly Analytics brand colors:
+  - Purple (#AD92B1), Pink (#D68A93), Orange (#F9B397), Blue (#6A94C9), etc.
+  - Frank Ruhl Libre typography
+  - Warm beige background (#E8DCC8)
+  - Pink headers as requested
+- ✅ Created images directory with comprehensive README for adding images
+- ✅ Updated `.gitignore` to exclude rendered outputs (*.html, *_files/)
+- ✅ Created GitHub Action workflow for auto-rendering (later disabled per request)
+- ✅ Added theme reference to YAML: `theme: [simple, theme/daly-analytics.scss]`
+- ✅ Structured author field with `<br>` tags for multi-line display
+- ✅ Corrected shinyfa package content after being directed to actual documentation
+
+**Jasmine Edited:**
+- 📝 Updated subtitle to "How I Leverage AI-Assisted Development to Scale My Solo R-based Data Science Consultancy"
+- 📝 Set specific date: "Wednesday, November 12, 2025"
+- 📝 Changed company name from "Daly Analytics LLC" to "Daly Analytics"
+- 📝 Updated role to "Principal Consultant & Founder"
+- 📝 Added enthusiasm: "scaling your impact!!!"
+- 📝 Updated contact information (email: jasmine@dalyanalytics.com, GitHub: @jasdumas, Website: dalyanalytics.com)
+- 📝 Requested pink headers (Claude implemented)
+- 📝 Requested warm-beige background (Claude implemented)
+- 📝 Requested GitHub Action be disabled (Claude implemented)
+
+**Key Collaboration Pattern:**
+- Jasmine provides strategic direction and brand details
+- Claude implements technical solutions and generates content
+- Jasmine reviews and refines with domain expertise
+- Claude maintains this change log for future reference
 
 ---
 

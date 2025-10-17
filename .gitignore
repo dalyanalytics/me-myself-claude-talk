@@ -54,5 +54,8 @@ rsconnect/
 *_files/
 /.quarto/
 
+# But DO track images directory
+!images/
+
 # System files
 .DS_Store

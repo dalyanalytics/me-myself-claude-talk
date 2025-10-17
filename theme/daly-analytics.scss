@@ -1,0 +1,501 @@
+/*-- scss:defaults --*/
+
+// Daly Analytics brand color palette
+$purple: #AD92B1;
+$pink: #D68A93;
+$orange: #F9B397;
+$magenta: #B07891;
+$blue: #6A94C9;
+$lightblue: #AECBED;
+$dark: #404041;
+$foreground: #151515;
+$bright-white: #FFFFFF;
+
+// Canva template inspired neutrals
+$cream: #F5F1E8;
+$warm-beige: #faf4f3;
+$soft-gray: #6B6B6B;
+
+// Base colors - warm beige background
+$body-bg: $warm-beige;
+$body-color: $foreground;
+$link-color: $blue;
+$link-color-hover: $orange;
+
+// Headings - Frank Ruhl Libre for brand consistency
+$presentation-heading-color: $dark;
+$presentation-heading-font: "Frank Ruhl Libre", Georgia, serif;
+$presentation-heading-font-weight: 700;
+$presentation-heading-letter-spacing: normal;
+$presentation-heading-text-transform: none;
+
+// Main font
+$presentation-font-size-root: 40px;
+$presentation-font: "Frank Ruhl Libre", Georgia, serif;
+
+// Code blocks
+$code-block-bg: #f8f8f8;
+$code-block-border-color: $blue;
+
+// Slide background
+$backgroundColor: $warm-beige;
+
+/*-- scss:rules --*/
+
+.reveal {
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+// Headings with more refined spacing
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.8em;
+}
+
+.reveal h1 {
+  color: $pink;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.02em;
+}
+
+.reveal h2 {
+  color: $pink;
+  border-bottom: 3px solid $orange;
+  padding-bottom: 0.4em;
+  margin-bottom: 1em;
+}
+
+.reveal h3 {
+  color: $pink;
+  font-size: 1.4em;
+}
+
+.reveal h4 {
+  color: $magenta;
+  font-size: 1.1em;
+}
+
+// Title slide - centered, minimal aesthetic
+.reveal .title-slide {
+  text-align: center;
+  
+  h1.title {
+    font-size: 3.2em;
+    margin-bottom: 0.3em;
+    color: $pink;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+  }
+  
+  p.subtitle {
+    font-size: 1.3em;
+    color: $magenta;
+    font-weight: 300;
+    margin-bottom: 2em;
+    font-style: italic;
+  }
+  
+  p.author {
+    font-size: 1.1em;
+    color: $dark;
+    font-weight: 400;
+    margin-top: 2.5em;
+  }
+  
+  p.date {
+    font-size: 0.9em;
+    color: $soft-gray;
+    font-weight: 300;
+    margin-top: 0.5em;
+  }
+  
+  // Remove border from title slide headings
+  h1, h2 {
+    border-bottom: none;
+    text-shadow: none;
+  }
+}
+
+// Section divider slides with minimal aesthetic
+.reveal .section-divider {
+  text-align: center;
+  
+  h2 {
+    font-size: 2.5em;
+    border-bottom: none;
+    color: $pink;
+    margin-bottom: 0.3em;
+  }
+  
+  p {
+    font-size: 1.2em;
+    color: $purple;
+    font-weight: 300;
+  }
+}
+
+// Accent elements
+.reveal strong {
+  color: $magenta;
+  font-weight: 700;
+}
+
+.reveal em {
+  color: $purple;
+  font-style: italic;
+}
+
+// Links with subtle underline effect
+.reveal a {
+  color: $blue;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(106, 148, 201, 0.3);
+  transition: all 0.3s ease;
+  padding-bottom: 2px;
+
+  &:hover {
+    color: $orange;
+    border-bottom: 2px solid $orange;
+    text-shadow: 0px 0px 8px rgba(249, 179, 151, 0.5);
+  }
+}
+
+// Code blocks with refined styling
+.reveal pre {
+  background: $code-block-bg;
+  border-left: 4px solid $blue;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 1em;
+  margin: 1.5em 0;
+  
+  code {
+    background: transparent;
+    font-size: 0.75em;
+    line-height: 1.5;
+  }
+}
+
+.reveal code {
+  background: rgba(106, 148, 201, 0.08);
+  color: $dark;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+// Slide numbers with rounded corners
+.reveal .slide-number {
+  background-color: $magenta;
+  color: $bright-white;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.7em;
+}
+
+// Enhanced progress bar
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.05);
+  height: 4px;
+
+  span {
+    background: linear-gradient(90deg,
+      $purple 0%,
+      $pink 33%,
+      $orange 66%,
+      $blue 100%);
+    transition: width 0.8s cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  }
+}
+
+// Lists with refined spacing
+.reveal ul,
+.reveal ol {
+  margin: 1em 0;
+  
+  li {
+    margin-bottom: 0.6em;
+    line-height: 1.6;
+
+    &::marker {
+      color: $pink;
+      font-weight: 700;
+    }
+  }
+}
+
+// Nested lists
+.reveal ul ul,
+.reveal ol ol,
+.reveal ul ol,
+.reveal ol ul {
+  margin-top: 0.5em;
+  font-size: 0.95em;
+  
+  li::marker {
+    color: $orange;
+  }
+}
+
+// Blockquotes with minimal aesthetic
+.reveal blockquote {
+  background: rgba(214, 138, 147, 0.08);
+  border-left: 5px solid $pink;
+  padding: 1.2em 1.8em;
+  margin: 1.5em 0;
+  font-style: italic;
+  color: $dark;
+  box-shadow: none;
+  border-radius: 4px;
+  
+  p {
+    margin: 0;
+    line-height: 1.6;
+  }
+  
+  &::before {
+    content: '"';
+    font-size: 3em;
+    color: $pink;
+    opacity: 0.3;
+    position: absolute;
+    margin-left: -0.5em;
+    margin-top: -0.3em;
+  }
+}
+
+// Fragment highlighting
+.reveal .fragment.highlight-current-blue.current-fragment {
+  color: $blue;
+}
+
+.reveal .fragment.highlight-orange {
+  color: $orange;
+}
+
+.reveal .fragment.highlight-pink {
+  color: $pink;
+}
+
+// Smooth fade-in for fragments
+.reveal .fragment {
+  opacity: 0.4;
+  transition: opacity 0.5s ease;
+  
+  &.visible {
+    opacity: 1;
+  }
+}
+
+// Center class for title slides
+.reveal .center {
+  text-align: center;
+
+  h1, h2 {
+    border-bottom: none;
+  }
+}
+
+// Special slide backgrounds
+.reveal .slide-background.has-dark-background {
+  h1, h2, h3, h4 {
+    color: $bright-white;
+  }
+  
+  .slide-number {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: $bright-white;
+  }
+}
+
+// Cream background variant (from Canva template)
+.reveal .has-cream-background {
+  background-color: $cream !important;
+}
+
+// Tables with refined styling
+.reveal table {
+  border-collapse: collapse;
+  margin: 1.5em auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+
+  th {
+    background: linear-gradient(135deg, $blue 0%, $lightblue 100%);
+    color: $bright-white;
+    font-weight: 700;
+    padding: 0.7em 1.2em;
+    text-align: left;
+  }
+
+  td {
+    border-bottom: 1px solid rgba(106, 148, 201, 0.15);
+    padding: 0.7em 1.2em;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  tr:hover {
+    background: rgba(249, 179, 151, 0.06);
+  }
+}
+
+// Image styling with subtle shadows
+.reveal img {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// Columns for side-by-side content
+.reveal .columns {
+  display: flex;
+  gap: 2em;
+  align-items: flex-start;
+  margin: 1em 0;
+}
+
+.reveal .column {
+  flex: 1;
+  
+  &.column-30 {
+    flex: 0 0 30%;
+  }
+  
+  &.column-40 {
+    flex: 0 0 40%;
+  }
+  
+  &.column-60 {
+    flex: 0 0 60%;
+  }
+  
+  &.column-70 {
+    flex: 0 0 70%;
+  }
+}
+
+// Numbered steps (from Canva template layout)
+.reveal .steps {
+  counter-reset: step-counter;
+  
+  .step {
+    counter-increment: step-counter;
+    position: relative;
+    padding-left: 3em;
+    margin-bottom: 1.5em;
+    
+    &::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: linear-gradient(135deg, $pink 0%, $orange 100%);
+      color: $bright-white;
+      width: 2em;
+      height: 2em;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.2em;
+    }
+    
+    h3 {
+      margin-top: 0;
+      color: $pink;
+    }
+  }
+}
+
+// Alternative step style with pink emphasis
+.reveal .steps-pink {
+  counter-reset: step-counter;
+  
+  .step {
+    counter-increment: step-counter;
+    position: relative;
+    padding-left: 3em;
+    margin-bottom: 1.5em;
+    
+    &::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: $pink;
+      color: $bright-white;
+      width: 2em;
+      height: 2em;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.2em;
+      box-shadow: 0 2px 6px rgba(214, 138, 147, 0.3);
+    }
+    
+    h3 {
+      margin-top: 0;
+      color: $pink;
+    }
+  }
+}
+
+// Callout boxes
+.reveal .callout {
+  background: rgba(214, 138, 147, 0.1);
+  border-left: 4px solid $pink;
+  padding: 1em 1.5em;
+  margin: 1em 0;
+  border-radius: 4px;
+  
+  &.callout-warning {
+    background: rgba(249, 179, 151, 0.1);
+    border-left-color: $orange;
+  }
+  
+  &.callout-info {
+    background: rgba(106, 148, 201, 0.1);
+    border-left-color: $blue;
+  }
+  
+  &.callout-note {
+    background: rgba(173, 146, 177, 0.1);
+    border-left-color: $purple;
+  }
+}
+
+// Footer styling
+.reveal .footer {
+  font-size: 0.6em;
+  color: $soft-gray;
+  font-weight: 300;
+}
+
+// Controls with brand colors
+.reveal .controls {
+  color: $pink;
+  
+  button:hover {
+    color: $orange;
+  }
+}
