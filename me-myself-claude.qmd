@@ -22,7 +22,7 @@ format:
 A journey of staying in your lane while scaling your impact!!
 
 ::: {.notes}
-Welcome everyone. Today I want to share my experience integrating AI into my R development workflow - not as a replacement for expertise, but as a strategic multiplier.
+Hello everyone! Today I want to share my experience integrating AI into my R development workflow - not as a replacement for expertise, but as a strategic force multiplier.
 :::
 
 ---
@@ -30,18 +30,27 @@ Welcome everyone. Today I want to share my experience integrating AI into my R d
 ## Who Am I? {.smaller}
 
 - R Developer & Data Science, Analytics & AI Consultant
+- Maintainer of {shinyLP}, {ttbbeer}, {avilistr}^, {shinyfa}^
 - Running a *mostly* solo analytics practice
 - Building Shiny applications, interactive dashboards, and data automation pipelines
-- Previously: 60-70% coding, 30-40% business strategy
-- Now: A different balance (we'll get to that)
+- Previously: 85% client development, 15% business development
+- Now: 70% client development, 25% business development, 5% Community Contributions 
 
 ::: {.notes}
-Context is important. I'm not at a large organization with unlimited resources. I'm managing both the technical and business sides of my practice.
+To level-set everyone and provide some context: I'm a mom of 2 young kids with limited time resources. I'm also an active Volunteer in my community.
+
+I'm managing both the technical (writing code) and business sides (doing discovery/sales calls) of my practice. I just recently onboarded a subcontractor this Summer that provides adhoc shiny development support, which has been wonderful in delegating tasks to them. 
 :::
 
 ---
 
-# Part 1: Strategic Thinking Unlocked
+### 🔑 Moving Beyond 'Vibe Coding' to 'Vibe Engineering'
+
+- words matter
+- deploying code for wider use requires thoughtful implementation
+
+
+# Part 1: Strategic Thinking Unlocked for Greater Community Contributions
 
 ## The Mental Bandwidth Shift
 
@@ -67,6 +76,10 @@ time_breakdown_before <- data.frame(
 ```
 
 **Result:** Always feeling behind on the business side
+
+::: {.notes}
+This time last year, November 2024, i was laser focused on client delivery, which was an estimated 85% of my time writing code. And I loved spending all my time in R, fighting bugs, researching solutions on stackoverflow and forums and straightup delivering value for my client. Emphasis on the singular client at one time, which totally enables you to fully entrench yourself in their code base and systems. As a new consultant that makes sense, but that math starts to break when you remove your "dev hat" and put on your "bizdev hat" and you need to start taking proactive steps to growing and scaling your business. When you are solo you need to be extra cautious about where to spend your time.
+:::
 
 ---
 
@@ -158,6 +171,11 @@ This wasn't just about building a package. It was proof that I could contribute 
 
 ---
 
+## Example 2: The {avilistr} Package {.smaller}
+
+
+---
+
 ## The Creative Multiplier
 
 AI assistance doesn't just save time on what you were already doing.
@@ -171,16 +189,21 @@ AI assistance doesn't just save time on what you were already doing.
 - Community engagement and knowledge sharing
 
 ::: {.fragment}
-**SHINYFA solves a problem I experienced repeatedly:** onboarding developers to complex Shiny apps. Without AI assistance, this package would still be "someday" on my wishlist.
+**{shinyfa} solves a problem I experienced repeatedly:** onboarding developers to complex Shiny apps. Without AI assistance, this package would still be "someday" on my wishlist.
 :::
 
 ::: {.fragment}
 *Side note: ChatGPT is great for hex sticker design and branding ideas!*
 :::
 
+::: {.notes}
+{ttbbeer} my first package was released July 2016 and 
+{shinyLP} my second package was first released on September 2016. The next CRAN package i released was {avilistr} in June 2025. That's 8 years 9 months (September 16, 2016 – June 17, 2025)
+:::
+
 ---
 
-# Part 2: Saying Yes to Bigger Problems
+# Part 2: Saying Yes to Bigger & Funner Problems
 
 ## Scaling Strategy
 
@@ -190,14 +213,13 @@ AI assistance doesn't just save time on what you were already doing.
 
 Before AI assistance, my filter for new projects was:
 
-> "Can I build this in a reasonable timeframe with my current skillset?"
+> "Can I build this in a reasonable timeframe with my current skillset given my existing client workload?"
 
 **This meant saying NO to:**
 
-- Projects requiring unfamiliar technologies
-- Complex infrastructure solutions
-- Multi-platform integration challenges
-- Cutting-edge deployment strategies
+- Projects requiring unfamiliar R packages 
+- Learning new techniques to support the project
+- Interesting client opportunities
 
 ---
 
@@ -216,7 +238,7 @@ With AI assistance, the question became:
 
 ---
 
-## Example 2: The Economic Development Dashboard {.smaller}
+## Example 3: The Economic Development Dashboard {.smaller}
 
 **The Challenge:**
 
@@ -309,7 +331,7 @@ This positions me as a **strategic partner**, not just a contractor.
 
 ---
 
-# Part 3: Building Intuition Through Volume
+# Part 3: Building Up Your R Intuition Through Volume
 
 ## Learning Acceleration
 
@@ -593,7 +615,7 @@ result <- data |>
 
 ---
 
-## Example: Quarto Over JavaScript {.smaller}
+## Example 4: Quarto Over JavaScript {.smaller}
 
 **The Scenario:**
 
