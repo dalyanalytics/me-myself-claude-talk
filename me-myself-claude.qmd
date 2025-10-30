@@ -19,7 +19,7 @@ format:
 
 **AI-Assisted Development in R**
 
-A journey of staying in your lane while scaling your impact!!
+A journey of staying in your lane while scaling your impact!
 
 ::: {.notes}
 Hello everyone! Today I want to share my experience integrating AI into my R development workflow - not as a replacement for expertise, but as a strategic force multiplier.
@@ -36,14 +36,14 @@ Hello everyone! Today I want to share my experience integrating AI into my R dev
 
 
 ::: {.notes}
-To level-set everyone and provide some context: I'm a mom of 2 young kids with limited time resources. I'm also an active Volunteer in my community.
+To level-set everyone and provide some context: I'm a mom of 2 young kids with limited time resources. I'm also an active Volunteer in my local community.
 
 I'm managing both the technical (writing code) and business sides (doing discovery/sales calls) of my practice. I just recently onboarded a subcontractor this Summer that provides adhoc shiny development support, which has been wonderful in delegating tasks to them. 
 :::
 
 ---
 
-### 🔑 Moving Beyond 'Vibe Coding' {.smaller}
+## 🔑 Moving Beyond 'Vibe Coding' {.smaller}
 
 **Words matter. Let's reframe the conversation.**
 
@@ -121,70 +121,30 @@ tl;dr: it's hard to say things are easy, give people the confidence and tools an
 
 ---
 
-## The Old Time Allocation
-
-```{r}
-#| echo: true
-#| eval: false
-
-# Before AI assistance
-time_breakdown_before <- data.frame(
-  activity = c("Coding & Development", "Business Strategy", "Admin"),
-  percentage = c(60, 30, 10)
-)
-
-# Where my energy went:
-# - Writing boilerplate code
-# - Debugging syntax errors
-# - Googling Stack Overflow for the 100th time
-# - Context switching between tasks
-```
-
-**Result:** Always feeling behind on the business side
-
-::: {.notes}
-This time last year, November 2024, I was laser focused on client delivery, which was an estimated 85% of my time writing code. And I loved spending all my time in R, fighting bugs, researching solutions on stackoverflow and forums and straightup delivering value for my client. Emphasis on the singular client at one time, which totally enables you to fully entrench yourself in their code base and systems. As a new consultant that makes sense, but that math starts to break when you remove your "dev hat" and put on your "bizdev hat" and you need to start taking proactive steps to growing and scaling your business. When you are solo you need to be extra cautious about where to spend your time.
-:::
-
----
-
-## The New Time Allocation
-
-```{r}
-#| echo: true
-#| eval: false
-
-# With AI assistance
-time_breakdown_after <- data.frame(
-  activity = c("Coding & Development", "Business Strategy", "Admin"),
-  percentage = c(50, 40, 10)
-)
-
-# Gained 10-20% mental bandwidth back
-# Where it goes now:
-# - Contract negotiations
-# - Proposal development
-# - Financial planning
-# - Content creation (blog posts, LinkedIn)
-# - Business development
-```
-
-**Result:** More strategic, more sustainable
-
-::: {.notes}
-- Previously: 85% client development, 15% business development
-- Now: 70% client development, 25% business development, 5% Community Contributions 
-:::
-
----
 
 ## What Mental Bandwidth Buys You
 
 ::: {.incremental}
-- **Better Proposals:** More comprehensive, covering hosting solutions and long-term maintenance
+- **Better Biz Ops:** Improving my systems to be automated and Standardized
 - **Financial Clarity:** Time to understand cash flow, pricing strategy, and profitability
 - **Relationship Building:** Networking, content creation, community engagement
 - **Creative Space:** Room to think about what *could* be built, not just what *must* be built
+:::
+
+::: {.notes}
+The mental bandwidth shift from 85% client dev to 70% client dev freed up 15% of my cognitive capacity. That 15% doesn't sound like much, but it's transformational.
+
+**Better Biz Ops:** I now have time to build automated systems and standardized processes. Proposals, contracts, invoicing - things that used to be rushed now have proper templates and workflows.
+
+**Financial Clarity:** Understanding cash flow, pricing strategy, and profitability isn't a "someday" task anymore. I can make strategic financial decisions instead of reactive ones.
+
+**Relationship Building:** Networking isn't just attending events - it's consistent content creation, community engagement, and showing up in ways that build long-term relationships.
+
+**Creative Space:** This is the big one. I now have room to think about what *could* be built, not just what *must* be built. That's where packages like {shinyfa} come from - creative exploration that serves the community.
+
+Before AI: I was always feeling behind on the business side, constantly in reactive mode.
+
+After AI: More strategic, more sustainable, and more creative. I'm building a business, not just executing projects.
 :::
 
 ---
