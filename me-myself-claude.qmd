@@ -140,7 +140,7 @@ The mental bandwidth shift from 85% client dev to 70% client dev freed up 15% of
 
 **Relationship Building:** Networking isn't just attending events - it's consistent content creation, community engagement, and showing up in ways that build long-term relationships.
 
-**Creative Space:** This is the big one. I now have room to think about what *could* be built, not just what *must* be built. That's where packages like {shinyfa} come from - creative exploration that serves the community.
+**Creative Space:** This is the big one. I now have room to think about what *could* be built, not just what *must* be built. That's where packages like {shinyfa} come from - tapping into real and persistent problems and creative exploration that serves the community.
 
 Before AI: I was always feeling behind on the business side, constantly in reactive mode.
 
@@ -149,59 +149,42 @@ After AI: More strategic, more sustainable, and more creative. I'm building a bu
 
 ---
 
-## Example 1: The {shinyfa} Package {.smaller}
+## The {shinyfa} Package ![](images/shinyfa.png){.absolute top=50 right=50 width="150"}
 
-**An Awakening of Creativity**
-
-::: columns
-::: {.column width="50%"}
-**The Challenge:**
-
-- Large Shiny apps are hard to navigate
-- New team members struggle with onboarding
-- Difficult to understand reactive dependencies
-- No systematic way to analyze file relationships
-
-**The Old Me:**
-
-"That would be nice someday... but I have client work."
+::: {.incremental}
+- **The Problem:** Hired to onboard to a large, complex Shiny app for a conservation nonprofit
+- **The Reality:** Took me *months* to get comfortable navigating their codebase
+- **The Insight:** "There has to be a better way to understand file relationships and reactivity patterns"
+- **The Solution:** Started with a one-off script to analyze their app structure
+- **The Evolution:** Refined those functions → generalized the approach → built {shinyfa}
+- **The Impact:** A tool that would have saved me weeks of onboarding time
 :::
 
-::: {.column width="50%"}
-**With Claude:**
+::: {.fragment}
+**Before AI:** "That would be nice someday... but I have client work."
 
-```{r}
-#| echo: true
-#| eval: false
-
-# Fully developed with Claude Code
-library(shinyfa)
-
-# Analyze Shiny app structure
-files <- list.files("app/", pattern = "\\.R$",
-                    full.names = TRUE)
-
-analysis <- data.frame()
-for (file in files) {
-  result <- analyze_shiny_reactivity(file)
-  analysis <- bind_rows(analysis, result)
-}
-
-# Catalogs: render functions, reactive functions,
-# inputs, and file relationships
-```
-
-**Result:** Built in weeks, not months
-:::
+**With AI:** Built and released in weeks, not shelved as "someday."
 :::
 
 ::: {.notes}
-This wasn't just about building a package. It was proof that I could contribute back to the community without sacrificing my business. {shinyfa} helps developers understand large Shiny codebases by extracting and organizing information about reactivity patterns.
+This is a perfect example of how AI freed up mental bandwidth for creative work.
+
+The real-world story: I was hired by a conservation nonprofit to work on their large Shiny application. It took me MONTHS to get comfortable in their repo - understanding which files did what, how the reactive dependencies flowed, where inputs and outputs were defined. It was a significant onboarding challenge.
+
+About halfway through the project, I had this realization: "I'm a Shiny developer. There has to be a better way to systematically analyze app structure." So I wrote a one-off script to help me catalog the render functions, reactive functions, inputs, and file relationships in their app.
+
+That script was so useful that I kept refining it. Then I thought - "Other developers face this same problem." With Claude's help, I generalized those functions, added proper documentation, built tests, and packaged it up as {shinyfa}.
+
+The entire process from "useful script" to "published package" took weeks, not months. Without AI assistance, this would have stayed as a one-off script on my hard drive, or been a "someday" project I never got to.
+
+This is what mental bandwidth buys you: the ability to take a client problem, generalize it, and contribute a tool back to the community - all without sacrificing your business.
 :::
 
 ---
 
-## Example 2: The {avilistr} Package {.smaller}
+## The {avilistr} Package {.smaller}
+
+
 
 
 ---
