@@ -244,6 +244,49 @@ The code is straightforward R - iterate through files, analyze each one, bind re
 
 ---
 
+## {shinyfa} Output Example {.smaller}
+
+```{r}
+#| echo: false
+#| eval: false
+
+# Example output from analyze_shiny_reactivity()
+file_analysis
+```
+
+| file_name | type | name | input_id | output_id |
+|-----------|------|------|----------|-----------|
+| ui.R | input | selectInput | "species" | NA |
+| ui.R | output | plotOutput | NA | "dist_plot" |
+| server.R | reactive | filtered_data | NA | NA |
+| server.R | render | renderPlot | "species" | "dist_plot" |
+| modules/map.R | input | sliderInput | "zoom" | NA |
+| modules/map.R | render | renderLeaflet | "zoom" | "map" |
+
+**What you can now do:**
+- Find all inputs and where they're used
+- Identify all outputs and their render functions
+- Map reactive dependencies across files
+- Understand file relationships at a glance
+
+::: {.notes}
+This is what the output dataframe looks like after running analyze_shiny_reactivity() across your Shiny app files.
+
+Each row represents a reactive element in your app: inputs, outputs, reactive expressions, and render functions. You can see which file they're in, what type they are, their name, and how they connect (input_id, output_id).
+
+For that conservation nonprofit project, this would have been transformational during onboarding. Instead of searching through files asking "where is the species input used?", I could just filter this dataframe: file_analysis %>% filter(input_id == "species") and instantly see everywhere it's referenced.
+
+The real power is in queries like:
+- "Show me all render functions in the modules folder"
+- "Which files have reactive expressions?"
+- "What outputs don't have corresponding render functions?" (potential bugs!)
+- "Map the flow from this input to its output"
+
+This structured view of your app's reactivity is what makes {shinyfa} useful for onboarding, documentation, and understanding complex Shiny applications.
+:::
+
+---
+
 ## The {avilistr} Package {.smaller}
 
 ::: {.incremental}
