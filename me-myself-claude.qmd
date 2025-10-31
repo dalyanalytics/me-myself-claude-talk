@@ -345,20 +345,24 @@ Finding common ground in open source: birding + R + making things accessible = a
 library(avilistr)
 library(dplyr)
 
+# Load the data
+data(avilist_2025)
+
 # How many species in each bird family?
-family_counts <- avilist_global %>%
-  count(family, sort = TRUE) %>%
+family_counts <- avilist_2025 %>%
+  filter(Taxon_rank == "species") %>%
+  count(Family, sort = TRUE) %>%
   head(10)
 
 family_counts
 ```
 
 **Top 10 Bird Families:**
-- Tyrannidae (Tyrant Flycatchers): 447 species
-- Thraupidae (Tanagers): 394 species
-- Furnariidae (Ovenbirds): 321 species
-- Psittacidae (True Parrots): 201 species
-- Muscicapidae (Old World Flycatchers): 194 species
+- Tyrannidae (Tyrant Flycatchers): 441 species
+- Thraupidae (Tanagers): 390 species
+- Trochilidae (Hummingbirds): 363 species
+- Muscicapidae (Old World Flycatchers): 352 species
+- Columbidae (Pigeons and Doves): 350 species
 
 ::: {.notes}
 This is a simple example showing how birders can explore the taxonomy data. The `avilist_global` dataset is immediately available when you load the package.
@@ -373,18 +377,23 @@ The package includes Cornell Lab species codes, so you can easily integrate with
 ## {avilistr} Visual Example {.smaller}
 
 ```{r}
-#| echo: true
-#| eval: false
+#| echo: false
+#| eval: true
 #| code-line-numbers: "|3-5|8-12"
 
 library(ggplot2)
+library(dplyr)
+library(avilistr)
 
 # Compare species counts across major bird orders
-order_diversity <- avilist_global %>%
-  count(order, sort = TRUE) %>%
+data(avilist_2025)
+
+order_diversity <- avilist_2025 %>%
+  filter(Taxon_rank == "species") %>%
+  count(Order, sort = TRUE) %>%
   filter(n > 100)
 
-ggplot(order_diversity, aes(x = reorder(order, n), y = n)) +
+ggplot(order_diversity, aes(x = reorder(Order, n), y = n)) +
   geom_col(fill = "#6A94C9") +
   coord_flip() +
   labs(title = "Bird Diversity by Order (>100 species)",
