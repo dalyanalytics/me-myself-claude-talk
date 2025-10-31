@@ -50,7 +50,7 @@ I'm managing both the technical (writing code) and business sides (doing discove
 ::: {.incremental}
 - **"Vibe Coding"** → Implies reckless, hope-based development
 - **"Vibe Engineering"** → Intentional, accountable AI-assisted development
-- **"I'm Learning"** → Honest acknowledgment of exploration
+- **"I'm adding a new (agentic) tool to my tool box"** → Honest acknowledgment of exploration of this phase of hypergrowth and learning
 :::
 
 ::: {.fragment}
@@ -445,31 +445,33 @@ AI assistance doesn't just save time on what you were already doing.
 
 ## The Growth Question
 
-Before AI assistance, my filter for new projects was:
+Before AI-assisted development, my filter for new projects was:
 
 > "Can I build this in a reasonable timeframe with my current skillset given my existing client workload?"
 
-**This meant saying NO to:**
+::: {.notes}
+**This often meant saying NO to:**
 
 - Projects requiring unfamiliar R packages 
 - Learning new techniques to support the project
 - Interesting client opportunities
-
+:::
 ---
 
 ## The New Filter
 
-With AI assistance, the question became:
+With AI-assisted development, the question became:
 
-> "Is this problem interesting and valuable enough to solve?"
+> "Can I can deeply understand the desired outcome based on the contraints? I'm pretty sure I can build this"
 
+::: {.notes}
 **Now I can say YES to:**
 
 - Pipeline development and automation
 - Data engineering workflows
 - Complex hosting solutions
 - Technologies outside my comfort zone but within my skillset
-
+:::
 ---
 
 ## Claude Code as My Coding Partner {.smaller}
@@ -522,7 +524,7 @@ Built comprehensive data orchestration system in days, not weeks.
 :::
 
 ::: {.notes}
-This is a real example from my Meet the Moment client work. They needed an enterprise-grade data orchestration system to manage 50+ client dashboards, each with different refresh schedules.
+This is a real example from my client work. They needed an enterprise-grade data orchestration system to manage 50+ client dashboards, each with different refresh schedules.
 
 **The Challenge:** GitHub Actions YAML syntax is finicky. Scheduled workflows, manual testing pipelines, repository dispatch events for cross-repo triggers, configuration-driven scheduling—this is DevOps territory.
 
@@ -569,7 +571,7 @@ jobs:
 :::
 
 ::: {.notes}
-This is actual code from the MTM data orchestration system. Look at what's happening here:
+This is a snippet of actual code from a client data orchestration system. Look at what's happening here:
 
 **Scheduled trigger:** Runs daily at 6 AM UTC, processes all clients based on their individual refresh schedules (daily, weekly, monthly, quarterly).
 
@@ -588,42 +590,13 @@ This is "staying in your R lane while extending your reach." The core logic is R
 
 ## Client Project Workflow: The Pattern {.smaller}
 
-<div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin: 20px auto; max-width: 100%; flex-wrap: wrap;">
-
-<div style="background: #D68A93; padding: 12px 15px; border-radius: 8px; flex: 1; min-width: 140px; max-width: 160px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-<div style="font-size: 0.95em; font-weight: bold; color: white; line-height: 1.2;">1. Understand<br>Requirements</div>
-<div style="font-size: 0.75em; color: white; margin-top: 5px;">Human</div>
-</div>
-
-<div style="font-size: 2em; color: #F9B397; font-weight: bold;">→</div>
-
-<div style="background: #6A94C9; padding: 12px 15px; border-radius: 8px; flex: 1; min-width: 140px; max-width: 160px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-<div style="font-size: 0.95em; font-weight: bold; color: white; line-height: 1.2;">2. Generate<br>Implementation</div>
-<div style="font-size: 0.75em; color: white; margin-top: 5px;">Claude Code</div>
-</div>
-
-<div style="font-size: 2em; color: #F9B397; font-weight: bold;">→</div>
-
-<div style="background: #AD92B1; padding: 12px 15px; border-radius: 8px; flex: 1; min-width: 140px; max-width: 160px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-<div style="font-size: 0.95em; font-weight: bold; color: white; line-height: 1.2;">3. Review &<br>Course-Correct</div>
-<div style="font-size: 0.75em; color: white; margin-top: 5px;">Human</div>
-</div>
-
-<div style="font-size: 2em; color: #F9B397; font-weight: bold;">→</div>
-
-<div style="background: #6A94C9; padding: 12px 15px; border-radius: 8px; flex: 1; min-width: 140px; max-width: 160px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-<div style="font-size: 0.95em; font-weight: bold; color: white; line-height: 1.2;">4. Iterate<br>Based on Feedback</div>
-<div style="font-size: 0.75em; color: white; margin-top: 5px;">Claude Code</div>
-</div>
-
-<div style="font-size: 2em; color: #F9B397; font-weight: bold;">→</div>
-
-<div style="background: #D68A93; padding: 12px 15px; border-radius: 8px; flex: 1; min-width: 140px; max-width: 160px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-<div style="font-size: 0.95em; font-weight: bold; color: white; line-height: 1.2;">5. Final QA<br>& Delivery</div>
-<div style="font-size: 0.75em; color: white; margin-top: 5px;">Human</div>
-</div>
-
-</div>
+::: {.incremental}
+1. **Understand Requirements** (Human) → Define the problem and technical approach
+2. **Generate Implementation** (Claude Code) → Write the initial code
+3. **Review & Course-Correct** (Human) → Read every line, check for issues
+4. **Iterate Based on Feedback** (Claude Code) → Fix problems, refine solution
+5. **Final QA & Delivery** (Human) → Test thoroughly and ship to client
+:::
 
 ::: {.fragment}
 **Notice the pattern:** Human decisions at the start and end. AI execution in the middle.
