@@ -472,96 +472,319 @@ With AI assistance, the question became:
 
 ---
 
-## Example 3: The Economic Development Dashboard {.smaller}
+## Claude Code as My Coding Partner {.smaller}
 
-**The Challenge:**
+**The Mental Model:**
 
-- Nonprofit client needed a public-facing dashboard
-- Resource-strapped IT department
-- Limited technical capacity for hosting
-- Budget constraints
-- High availability requirements
+::: {.incremental}
+- **You are the manager** - Setting direction, making architectural decisions
+- **Claude is your senior developer** - Implementing solutions, handling boilerplate
+- **Human in the loop** - Technical leadership stays with you
+:::
+
+::: {.fragment}
+This isn't about replacing your skills—it's about **amplifying your capacity** to take on bigger, more interesting problems.
+:::
+
+::: {.notes}
+This is the critical mental model shift. You're not becoming dependent on AI or losing your technical skills. You're establishing a working relationship where you maintain technical leadership.
+
+**You are the manager:** You understand the client requirements, make architectural decisions, choose the technology stack, and own the final deliverable.
+
+**Claude is your senior developer:** It handles implementation details, writes boilerplate, suggests approaches, and speeds up the coding process.
+
+**Human in the loop:** You review everything, test rigorously, and course-correct when Claude goes off track. Your technical judgment is what ensures quality.
+
+This model lets you say YES to bigger projects while maintaining the quality and technical ownership that makes you valuable to clients.
+:::
+
+---
+
+## Example: GitHub Actions Data Orchestration {.smaller}
+
+**The Client Challenge:**
+
+- Multi-client dashboard infrastructure (50+ clients)
+- Each client needs automated data refresh (daily/weekly/monthly)
+- Scheduled pipelines, testing workflows, deployment triggers
+- Cross-repo coordination
 
 ::: {.fragment}
 **The Old Response:**
 
-"You'll need to find someone with DevOps expertise. This is outside my wheelhouse."
-:::
-
----
-
-## The Solution: Hybrid Hosting {.smaller}
-
-**Claude suggested using Cloudflare Workers as a reverse proxy**
-
-```javascript
-// Load balancing between Connect Cloud and ShinyApps.io
-addEventListener('fetch', event => {
-  event.respondWith(handleRequest(event.request))
-})
-
-async function handleRequest(request) {
-  const upstreamConnect = 'https://connect-cloud-instance.com'
-  const upstreamShinyApps = 'https://app.shinyapps.io/dashboard'
-
-  // Health check logic
-  const connectHealthy = await checkHealth(upstreamConnect)
-
-  // Route traffic based on availability
-  const targetUrl = connectHealthy ? upstreamConnect : upstreamShinyApps
-
-  return fetch(targetUrl, {
-    method: request.method,
-    headers: request.headers
-  })
-}
-```
-
----
-
-## Why This Matters
-
-::: {.incremental}
-1. **I would have said NO to this project**
-2. JavaScript for Cloudflare Workers was outside my expertise
-3. Claude generated the necessary infrastructure code
-4. I maintained the R/Shiny dashboard (my expertise)
-5. Client got a comprehensive, managed solution
-6. I grew my service offerings
+"This would take weeks to set up properly. I'd need to learn GitHub Actions deeply."
 :::
 
 ::: {.fragment}
-**The principle:** Stay in your lane for the core value, but extend your reach for the solution architecture.
+**With Claude Code:**
+
+Built comprehensive data orchestration system in days, not weeks.
+:::
+
+::: {.notes}
+This is a real example from my Meet the Moment client work. They needed an enterprise-grade data orchestration system to manage 50+ client dashboards, each with different refresh schedules.
+
+**The Challenge:** GitHub Actions YAML syntax is finicky. Scheduled workflows, manual testing pipelines, repository dispatch events for cross-repo triggers, configuration-driven scheduling—this is DevOps territory.
+
+**My Approach:** I understood the architecture (what needed to happen and when), but I didn't want to spend weeks becoming a GitHub Actions expert.
+
+**Claude's Role:** Generated the YAML workflows, helped set up the orchestrator pattern, created the manual testing workflows, and built the configuration-driven scheduling system.
+
+**My Role:** Designed the overall architecture, specified requirements, tested everything, and ensured it worked for the business use case.
+
+**Result:** Production-ready system that scales to 50+ clients, all automated, all documented. I now understand GitHub Actions well enough to maintain and extend it, but I didn't have to become an expert to deliver value.
 :::
 
 ---
 
-## Comprehensive Proposals
+## The GitHub Actions YAML {.smaller}
 
-Clients now get proposals that include:
+```yaml
+name: Data Orchestrator
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Daily at 6 AM UTC
+  workflow_dispatch:
+
+jobs:
+  orchestrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v2
+
+      - name: Process clients based on schedule
+        run: |
+          Rscript scripts/orchestrator.R
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+```
+
+::: {.fragment}
+**I understand what it does. Claude wrote the syntax.**
+:::
+
+::: {.notes}
+This is actual code from the MTM data orchestration system. Look at what's happening here:
+
+**Scheduled trigger:** Runs daily at 6 AM UTC, processes all clients based on their individual refresh schedules (daily, weekly, monthly, quarterly).
+
+**Manual trigger:** `workflow_dispatch` allows testing on demand.
+
+**R integration:** Sets up R environment, installs packages, runs the orchestrator script.
+
+**Secrets management:** Properly uses GitHub secrets for cross-repo operations and database access.
+
+**The key insight:** I didn't need to memorize GitHub Actions syntax. I needed to understand the architecture—what needs to happen, when, and why. Claude Code handled translating that understanding into correct YAML.
+
+This is "staying in your R lane while extending your reach." The core logic is R code (my expertise). The automation wrapper is GitHub Actions (Claude's expertise).
+:::
+
+---
+
+## Client Project Workflow: The Pattern {.smaller}
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin: 20px auto; max-width: 100%; flex-wrap: wrap;">
+
+<div style="background: #D68A93; padding: 12px 15px; border-radius: 8px; flex: 1; min-width: 140px; max-width: 160px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+<div style="font-size: 0.95em; font-weight: bold; color: white; line-height: 1.2;">1. Understand<br>Requirements</div>
+<div style="font-size: 0.75em; color: white; margin-top: 5px;">Human</div>
+</div>
+
+<div style="font-size: 2em; color: #F9B397; font-weight: bold;">→</div>
+
+<div style="background: #6A94C9; padding: 12px 15px; border-radius: 8px; flex: 1; min-width: 140px; max-width: 160px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+<div style="font-size: 0.95em; font-weight: bold; color: white; line-height: 1.2;">2. Generate<br>Implementation</div>
+<div style="font-size: 0.75em; color: white; margin-top: 5px;">Claude Code</div>
+</div>
+
+<div style="font-size: 2em; color: #F9B397; font-weight: bold;">→</div>
+
+<div style="background: #AD92B1; padding: 12px 15px; border-radius: 8px; flex: 1; min-width: 140px; max-width: 160px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+<div style="font-size: 0.95em; font-weight: bold; color: white; line-height: 1.2;">3. Review &<br>Course-Correct</div>
+<div style="font-size: 0.75em; color: white; margin-top: 5px;">Human</div>
+</div>
+
+<div style="font-size: 2em; color: #F9B397; font-weight: bold;">→</div>
+
+<div style="background: #6A94C9; padding: 12px 15px; border-radius: 8px; flex: 1; min-width: 140px; max-width: 160px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+<div style="font-size: 0.95em; font-weight: bold; color: white; line-height: 1.2;">4. Iterate<br>Based on Feedback</div>
+<div style="font-size: 0.75em; color: white; margin-top: 5px;">Claude Code</div>
+</div>
+
+<div style="font-size: 2em; color: #F9B397; font-weight: bold;">→</div>
+
+<div style="background: #D68A93; padding: 12px 15px; border-radius: 8px; flex: 1; min-width: 140px; max-width: 160px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+<div style="font-size: 0.95em; font-weight: bold; color: white; line-height: 1.2;">5. Final QA<br>& Delivery</div>
+<div style="font-size: 0.75em; color: white; margin-top: 5px;">Human</div>
+</div>
+
+</div>
+
+::: {.fragment}
+**Notice the pattern:** Human decisions at the start and end. AI execution in the middle.
+:::
+
+::: {.notes}
+This is my actual workflow for every client project. Let me walk through what this looks like in practice:
+
+**1. Understand Requirements (Human):** I talk to the client, understand their business problem, and translate that into technical requirements. This is where domain expertise matters—knowing what questions to ask, understanding their constraints.
+
+**2. Generate Implementation (Claude Code):** I describe what I need to Claude. "Build a Shiny module that handles user authentication." "Create a GitHub Actions workflow for automated testing." Claude generates the initial implementation.
+
+**3. Review & Course-Correct (Human):** This is critical. I read every line of generated code. Does it match my mental model? Are there security issues? Does it follow R best practices? Does it fit the client's existing architecture?
+
+**4. Iterate Based on Feedback (Claude Code):** When I find issues (and I always do), I direct Claude to fix them. "This function should use dplyr instead of base R." "Add error handling for API failures."
+
+**5. Final QA & Delivery (Human):** I test everything thoroughly, write documentation, and deliver to the client. This is where my reputation is on the line—the final quality check is always human.
+
+The pattern ensures that strategic decisions and quality control stay with the human, while implementation speed comes from AI assistance.
+:::
+
+---
+
+## Tips & Tricks: Managing Your AI Partner {.smaller}
+
+::: {.incremental}
+**Be Specific with Requirements**
+
+- "Add error handling" → "Add tryCatch with informative error messages for API failures"
+- "Make it faster" → "Use data.table instead of dplyr for this 1M+ row operation"
+
+**Always Review Generated Code Before Running**
+
+- Check for security issues (hardcoded credentials, SQL injection risks)
+- Verify package dependencies actually exist
+- Ensure code follows your team's style guide
+
+**Use Incremental Commits to Track What Worked**
+
+- Commit after each successful change
+- Makes it easy to roll back when Claude goes off track
+- Detailed commit messages help future you understand decisions
+
+**Keep Claude Focused on R/Your Core Stack**
+
+- Don't let it convince you to rewrite everything in Python
+- Stay in your lane—use AI to extend reach, not replace your expertise
+:::
+
+::: {.notes}
+These are hard-won lessons from daily use of Claude Code in client work.
+
+**Be Specific:** Vague instructions get vague results. The more specific you are about what you want, the better Claude's output will be. Think of it like managing a junior developer—clear requirements lead to better code.
+
+**Always Review:** This cannot be emphasized enough. Claude will confidently generate code that looks right but has subtle bugs. It will hallucinate package functions. It will suggest approaches that work but aren't appropriate for your use case. Your job is to catch these issues.
+
+**Incremental Commits:** This is a game-changer. When you commit frequently, you can easily see what changed and why. When Claude suggests a refactoring that breaks everything, you can quickly revert. Plus, it creates an audit trail of your decision-making.
+
+**Stay in Your Lane:** Claude will sometimes suggest using different languages or frameworks. "This would be easier in Python." Maybe, but if your expertise is R and your client expects R code, stay in R. Use Claude to get better at R, not to escape it.
+
+The goal is to amplify your existing skills, not replace them.
+:::
+
+---
+
+## When to Use Claude Code vs. Code Yourself {.smaller}
 
 ::: columns
 ::: {.column width="50%"}
-**Technical Delivery:**
+**Use Claude Code for:**
 
-- Dashboard development
-- Data pipeline architecture
-- Testing and QA
+::: {.incremental}
+- Boilerplate and scaffolding
+- Unfamiliar packages/syntax
+- Repetitive transformations
+- Test data generation
+- Documentation writing
+- YAML/config files
+:::
 :::
 
 ::: {.column width="50%"}
-**Managed Services:**
+**Code Yourself for:**
 
-- Hosting solutions
-- Load balancing
-- Backup strategies
-- Monitoring and alerts
+::: {.incremental}
+- Business logic
+- Client-specific domain knowledge
+- Performance-critical sections
+- Security-sensitive code
+- Final architecture decisions
 :::
 :::
+:::
 
-<br>
+::: {.fragment}
+<div style="text-align: center; margin-top: 20px;">
+**The sweet spot:** Use Claude for the "how" while you own the "what" and "why."
+</div>
+:::
 
-This positions me as a **strategic partner**, not just a contractor.
+::: {.notes}
+This is the decision framework I use every day. Let me explain the reasoning:
+
+**Use Claude Code for:**
+- **Boilerplate:** Setting up Shiny modules, package structure, GitHub Actions templates—these follow known patterns. Let Claude handle it.
+- **Unfamiliar packages:** When I need to use a package I've never used before, Claude can generate example code faster than I can read documentation.
+- **Repetitive transformations:** If I'm doing the same data manipulation 20 times with different columns, Claude can generate the variations.
+- **Test data:** Creating realistic fake data is tedious. Claude excels at this.
+- **Documentation:** Claude can draft README files and function documentation. I review and refine.
+- **YAML/config:** These are finicky and tedious. Perfect for AI assistance.
+
+**Code Yourself for:**
+- **Business logic:** The core algorithms that make your solution valuable—these need human understanding.
+- **Client-specific domain knowledge:** Claude doesn't know your client's business. You do.
+- **Performance-critical sections:** When milliseconds matter, you need to understand exactly what's happening.
+- **Security-sensitive code:** Authentication, authorization, data encryption—review these extremely carefully or write them yourself.
+- **Architecture decisions:** Should this be a Shiny module or a function? Should we use Supabase or PostgreSQL? These strategic decisions are yours.
+
+The key insight: Claude Code is best for the "how" (implementation details), while you should always own the "what" (requirements) and "why" (strategic decisions).
+:::
+
+---
+
+## The Next Frontier: Subagents {.smaller}
+
+::: {.fragment}
+**Coming soon to Claude Code:** Specialized agents for specific tasks
+:::
+
+::: {.incremental}
+- **Testing agent:** Automatically write unit tests for new functions
+- **Documentation agent:** Generate comprehensive docs from code
+- **Deployment agent:** Handle CI/CD and infrastructure as code
+- **Code review agent:** Catch bugs and suggest improvements
+:::
+
+::: {.fragment}
+<div style="text-align: center; margin-top: 20px;">
+**The future:** AI partners that handle entire workflows, not just individual tasks.
+</div>
+:::
+
+::: {.notes}
+This is a teaser for where AI-assisted development is heading. I'm currently exploring subagents in Claude Code, and it's genuinely exciting.
+
+**What are subagents?** Specialized AI agents that focus on specific types of tasks. Instead of one general-purpose AI assistant, you have a team of specialists.
+
+**Testing agent:** When you write a new function, the testing agent can automatically generate unit tests that cover edge cases you might not have thought of.
+
+**Documentation agent:** Analyzes your code and generates comprehensive documentation—not just function signatures, but usage examples and explanations.
+
+**Deployment agent:** Handles the DevOps work—writing Dockerfiles, setting up CI/CD pipelines, managing infrastructure as code.
+
+**Code review agent:** Acts like a senior developer reviewing your code—catches potential bugs, suggests performance improvements, identifies security issues.
+
+**Why this matters:** Right now, I manage Claude Code task by task. With subagents, I could describe a feature and let specialized agents handle testing, documentation, and deployment automatically.
+
+**The caveat:** I'm still exploring this. The human-in-the-loop principle remains—you're still the manager, making strategic decisions and ensuring quality. But the AI team gets more capable.
+
+This is the next evolution of AI-assisted development, and I'm excited to see where it goes.
+:::
 
 ---
 
@@ -672,19 +895,53 @@ shinyApp(ui, server)
 
 ---
 
-## Learning from AI Errors
+## Learning from Claude's Real Mistakes {.smaller}
 
-**Claude makes mistakes. This is actually valuable.**
+**Claude makes mistakes. This is actually valuable—here are real examples from building this presentation:**
 
 ::: {.incremental}
-- **Hallucinated packages:** Forces you to verify what exists
-- **Wrong function arguments:** Makes you read documentation
-- **Mixing tidyverse/base R:** Teaches you to spot inconsistencies
-- **Over-engineering:** Shows you what NOT to do
+**1. The SHINYFA Hallucination**
+
+- Asked Claude to write content about the `{shinyfa}` package
+- Claude confidently said it was for "Font Awesome icons in Shiny apps"
+- Generated example code: `fa_icon("rocket", fill = "#0051BA")`
+- **Reality:** {shinyfa} analyzes Shiny app reactivity patterns (completely different!)
+- **Fix:** Provided the actual documentation URL, Claude self-corrected
+- **Lesson:** Always verify domain-specific claims, especially for packages
+
+**2. The Column Name Disaster**
+
+- Trying to create bird diversity plots with `{avilistr}` package
+- Claude used `avilist_global` dataset (doesn't exist—it's `avilist_2025`)
+- Used lowercase `order_name` column (actual column is `Order`, capitalized)
+- Multiple rounds of "Column not found" errors
+- **Fix:** Checked the actual package structure: `names(avilist_2025)`
+- **Lesson:** When stuck in error loops, inspect the source directly
+
+**3. The Package Function Hunt**
+
+- Wanted a Sankey chart for mental bandwidth visualization
+- Claude tried `make_long()` from ggsankey (function doesn't exist)
+- Tried `sankeyfy()` (also doesn't exist in that package)
+- Multiple package attempts before admitting defeat
+- **Fix:** Pivoted to HTML/CSS solution that actually worked
+- **Lesson:** Be ready to abandon AI's approach when it's not working
 :::
 
 ::: {.fragment}
-**The pattern recognition you build from fixing AI errors is faster than traditional trial-and-error.**
+**These mistakes made me a better R developer—I had to understand the packages deeply to fix them.**
+:::
+
+::: {.notes}
+These are three real examples from building this very presentation. Each mistake was a learning opportunity that improved my R skills.
+
+**The SHINYFA Hallucination:** This is documented in the CLAUDE.md file. When I asked Claude to create presentation content about my {shinyfa} package, it completely fabricated what the package does. It assumed from the name that "shinyfa" must be about Font Awesome icons and generated confident, plausible-sounding (but completely wrong) example code. I caught it because I wrote the package—I know what it actually does. This taught me to always verify AI-generated content about domain-specific tools, especially in the R ecosystem where package names can be misleading.
+
+**The Column Name Disaster:** This happened while creating the {avilistr} examples. Claude used the wrong dataset name (`avilist_global` instead of `avilist_2025`) and wrong column names (`order_name` instead of `Order`). We went through multiple error cycles before I stopped and actually checked the package structure myself using `names(avilist_2025)`. This forced me to learn how to properly inspect package datasets, check column names, and understand the data structure—skills I use constantly now.
+
+**The Package Function Hunt:** When creating the mental bandwidth visualization, Claude tried multiple R packages for Sankey charts. It confidently used functions like `make_long()` and `sankeyfy()` that don't actually exist (or don't work as expected). After several failed attempts, I made the call to pivot to an HTML/CSS solution. This taught me that sometimes the "pure R" solution isn't the best solution, and it's okay to use other tools when they're more appropriate.
+
+**The key insight:** Each of these mistakes forced me to develop deeper understanding. I couldn't just accept Claude's output—I had to understand the packages, data structures, and available functions well enough to correct the errors. This is exactly the kind of learning that builds intuition and makes you a better developer. You're not becoming dependent on AI; you're accelerating your learning by encountering (and fixing) more problems faster than traditional development would expose you to.
 :::
 
 ---
