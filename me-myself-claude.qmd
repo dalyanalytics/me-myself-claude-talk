@@ -289,32 +289,122 @@ This structured view of your app's reactivity is what makes {shinyfa} useful for
 
 ## The {avilistr} Package {.smaller}
 
-::: {.incremental}
-- **The Discovery:** Started birding in 2025 - found the AviList Global Avian Checklist (an Excel sheet!)
-- **The Realization:** "R birders need this taxonomy data... but it's in Excel"
-- **The Solution:** Wrapped the published Excel sheet into an R package with Cornell Lab species codes
-- **The Value Add:** Created starter code showing how to integrate with eBird data via {rebird}
-- **The Impact:** ~11k species, unified taxonomy, ready for R pipelines
-:::
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 30px auto; max-width: 100%;">
+
+<div style="background: #AD92B1; padding: 15px 20px; border-radius: 8px; flex: 1; max-width: 180px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+<div style="font-size: 1.1em; font-weight: bold; color: white; line-height: 1.3;">New Hobby</div>
+<div style="font-size: 0.9em; color: white; margin-top: 8px;">Started birding, found taxonomy in Excel</div>
+</div>
+
+<div style="font-size: 2.5em; color: #F9B397; font-weight: bold;">→</div>
+
+<div style="background: #6A94C9; padding: 15px 20px; border-radius: 8px; flex: 1; max-width: 180px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+<div style="font-size: 1.1em; font-weight: bold; color: white; line-height: 1.3;">Wrap Excel</div>
+<div style="font-size: 0.9em; color: white; margin-top: 8px;">11k+ species, Cornell Lab codes</div>
+</div>
+
+<div style="font-size: 2.5em; color: #F9B397; font-weight: bold;">→</div>
+
+<div style="background: #D68A93; padding: 15px 20px; border-radius: 8px; flex: 1; max-width: 180px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+<div style="font-size: 1.1em; font-weight: bold; color: white; line-height: 1.3;">CRAN Package</div>
+<div style="font-size: 0.9em; color: white; margin-top: 8px;">Less than a week</div>
+</div>
+
+</div>
 
 ::: {.fragment}
-**Before AI:** "I'd love to do this, but I just don't have the time."
+<div style="text-align: center; margin-top: 30px;">
+**Before AI:** "I'd love to do this, but package documentation is tedious."
 
-**With AI:** Published to CRAN with comprehensive docs and vignettes in less than a week.
+**With AI:** Published with comprehensive docs and vignettes in less than a week.
+</div>
 :::
 
 ::: {.notes}
-Total honesty: this wasn't some groundbreaking technical achievement. I took a published Excel sheet (the AviList Global Avian Checklist) and wrapped it into an R package. The Excel conversion itself was straightforward - not a heavy lift at all.
+**The Personal Story:** I started birding in 2025 - a new hobby outside of tech. I discovered the AviList Global Avian Checklist, which provides a unified global bird taxonomy. The problem? It was in Excel. For R users who want to work with bird data - especially integrating with eBird through the {rebird} package - having this taxonomy accessible in R makes workflows much cleaner.
 
-I started birding this year and discovered this unified global bird taxonomy. For R users who want to work with bird data - especially integrating with eBird through the {rebird} package - having this taxonomy accessible in R makes workflows much cleaner.
+**The Technical Reality:** Total honesty - this wasn't some groundbreaking technical achievement. I took a published Excel sheet and wrapped it into an R package. The Excel conversion itself was straightforward, not a heavy lift at all.
 
-The real work - and where AI made the difference - was creating the starter code and documentation. The getting-started vignette shows practical workflows: exploring the 11,131 species, finding specific groups (like all 194 thrush species), comparing naming differences between taxonomies, and connecting to real-time eBird observations.
+**Where AI Made the Difference:** The real work was creating the starter code and documentation. The getting-started vignette shows practical workflows: exploring the 11,131 species, finding specific groups (like all 194 thrush species), comparing naming differences between taxonomies, and connecting to real-time eBird observations.
 
-With AI assistance, I could focus on "what examples would actually help birders?" rather than getting bogged down in the tedium of writing documentation. Claude helped me structure the vignettes, write clear examples, and make the package immediately useful to someone who installs it. The entire process - from idea to published on CRAN with comprehensive documentation - took less than a week.
+**The Timeline:** With AI assistance, I could focus on "what examples would actually help birders?" rather than getting bogged down in the tedium of writing documentation. Claude helped me structure the vignettes, write clear examples, and make the package immediately useful. The entire process - from idea to published on CRAN with comprehensive documentation - took less than a week.
 
-This is about lowering the barrier to contribution. You don't need to build something technically complex to add value to a community. Sometimes it's just "take this useful thing in the wrong format and make it accessible to your community" - and with AI, doing that well (with good docs!) becomes feasible in days, not months.
+**The Bigger Message:** This is about lowering the barrier to contribution. You don't need to build something technically complex to add value to a community. Sometimes it's just "take this useful thing in the wrong format and make it accessible to your community" - and with AI, doing that well (with good docs!) becomes feasible in days, not months.
 
 Finding common ground in open source: birding + R + making things accessible = a contribution I'm genuinely proud of.
+:::
+
+---
+
+## {avilistr} Example: Exploring Bird Families {.smaller}
+
+```{r}
+#| echo: true
+#| eval: false
+
+library(avilistr)
+library(dplyr)
+
+# How many species in each bird family?
+family_counts <- avilist_global %>%
+  group_by(family_name) %>%
+  summarise(species_count = n()) %>%
+  arrange(desc(species_count)) %>%
+  head(10)
+
+family_counts
+```
+
+**Top 10 Bird Families:**
+- Tyrannidae (Tyrant Flycatchers): 447 species
+- Thraupidae (Tanagers): 394 species
+- Furnariidae (Ovenbirds): 321 species
+- Psittacidae (True Parrots): 201 species
+- Muscicapidae (Old World Flycatchers): 194 species
+
+::: {.notes}
+This is a simple example showing how birders can explore the taxonomy data. The `avilist_global` dataset is immediately available when you load the package.
+
+With just a few lines of dplyr code, you can answer questions like "Which bird families are the most diverse?" This kind of exploration would be tedious with an Excel file but is straightforward with the data in R.
+
+The package includes Cornell Lab species codes, so you can easily integrate with eBird data through the {rebird} package to get real-time observations of species from these families.
+:::
+
+---
+
+## {avilistr} Visual Example {.smaller}
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "|3-6|9-13"
+
+library(ggplot2)
+
+# Compare species counts across major bird orders
+order_diversity <- avilist_global %>%
+  group_by(order_name) %>%
+  summarise(species = n()) %>%
+  filter(species > 100)
+
+ggplot(order_diversity, aes(x = reorder(order_name, species), y = species)) +
+  geom_col(fill = "#6A94C9") +
+  coord_flip() +
+  labs(title = "Bird Diversity by Order (>100 species)",
+       x = NULL, y = "Number of Species") +
+  theme_minimal()
+```
+
+::: {.fragment}
+**Passeriformes dominates** with 6,700+ species - over half of all bird species!
+:::
+
+::: {.notes}
+This shows a simple visualization you can create with the avilistr data. The code is straightforward - group by taxonomic order, count species, and plot.
+
+What's interesting is discovering patterns like Passeriformes (perching birds/songbirds) representing over 60% of all bird species. This kind of exploratory analysis is exactly what R birders want to do.
+
+The value isn't in complex data processing - it's in making the taxonomy accessible so birders can ask and answer their own questions. With AI help, I could focus on creating these kinds of useful examples in the documentation rather than struggling with package structure and CRAN submission requirements.
 :::
 
 ---
@@ -325,7 +415,7 @@ AI assistance doesn't just save time on what you were already doing.
 
 **It unlocks what you weren't doing at all:**
 
-- Open source contributions (like shinyfa)
+- Open source contributions (like shinyfa and avilistr)
 - Writing better tests and documentation
 - Building developer tools that solve real problems
 - Package development with proper structure
