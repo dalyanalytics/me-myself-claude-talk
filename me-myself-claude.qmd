@@ -121,6 +121,22 @@ tl;dr: it's hard to say things are easy, give people the confidence and tools an
 
 </div>
 
+::: {.notes}
+This visualization shows the most fundamental shift that AI-assisted development has created for me as a solo consultant.
+
+**Before AI:** 85% of my mental energy and time went to client development work. That's writing code, debugging, implementing features, wrestling with syntax. Only 15% went to business development—proposals, networking, marketing, financial planning. There was no room for anything else.
+
+**The AI Impact:** AI assistance freed up 15% of my cognitive capacity. Not by making me work less, but by making the technical work less mentally taxing. I'm still doing client dev, but it drops from 85% to 70% because tasks that used to take hours (debugging YAML, googling package syntax, scaffolding boilerplate) now take minutes.
+
+**The Reallocation:** That 15% didn't disappear—it got redistributed:
+- **Business Development grew from 15% to 25%** - Now I can actually do proper business operations: automated systems, financial planning, strategic thinking about where the consultancy is going.
+- **Community Contribution became possible at 5%** - Before AI, open source contributions felt like a luxury I couldn't afford. Now I have capacity for packages like {shinyfa} and {avilistr}, conference talks like this one, and community engagement.
+
+**The Key Insight:** This isn't about working more hours. It's about cognitive load. When AI handles the syntax details, documentation lookups, and boilerplate generation, my brain has room for strategic thinking, creative problem-solving, and community engagement. That's the mental bandwidth shift.
+
+This slide sets up everything that follows in the talk—all four parts are enabled by this fundamental reallocation of cognitive capacity.
+:::
+
 ---
 
 
@@ -1177,7 +1193,6 @@ Before your next AI-assisted project, write down:
 
 **This clarity prevents the dumpster fire.**
 
----
 
 # Conclusion
 
