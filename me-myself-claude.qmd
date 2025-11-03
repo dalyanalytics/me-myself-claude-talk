@@ -45,6 +45,8 @@ I'm managing both the technical (writing code) and business sides (doing discove
 
 ## 🔑 Moving Beyond 'Vibe Coding' {.smaller}
 
+::: columns
+::: {.column width="60%"}
 **Words matter. Let's reframe the conversation.**
 
 ::: {.incremental}
@@ -52,13 +54,11 @@ I'm managing both the technical (writing code) and business sides (doing discove
 - **"Vibe Engineering"** → Intentional, accountable AI-assisted development
 - **"I'm adding a new (agentic) tool to my tool box"** → Honest acknowledgment of exploration of this phase of hypergrowth and learning
 :::
+:::
 
-::: {.fragment}
-**The Reality:**
-
-We're in an **exploratory phase**. There are no settled best practices yet. Making mistakes is part of professional growth.
-
-But you remain **fully accountable** for the outcome.
+::: {.column width="40%"}
+![](images/vibes.jpeg){width=100%}
+:::
 :::
 
 ::: {.notes}
@@ -70,7 +70,9 @@ It also does a disservice to our community when it comes to advocating for democ
 
 The distinction Fitkin makes is critical: "vibe coding" suggests careless dependency where you hope AI outputs work. "Vibe engineering" means experienced developers intentionally leveraging AI tools while maintaining full accountability.
 
-This isn't about replacing human expertise - it's about experienced engineers guiding AI tool adoption as an enhancement to craft, not a substitute for professional judgment. 
+This isn't about replacing human expertise - it's about experienced engineers guiding AI tool adoption as an enhancement to craft, not a substitute for professional judgment.
+
+**The Reality:** We're in an **exploratory phase**. There are no settled best practices yet. Making mistakes is part of professional growth. But you remain **fully accountable** for the outcome.
 
 tl;dr: it's hard to say things are easy, give people the confidence and tools and then back track and say 'well that's not serious data science" so everything you 'vibe coded' shouldnt be used.
 :::
