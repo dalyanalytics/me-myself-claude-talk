@@ -752,7 +752,7 @@ The key insight: Claude Code is best for the "how" (implementation details), whi
 
 ---
 
-## The Part 2 Takeaway
+## Ruthlessly Solutions-Focused
 
 ::: {.fragment}
 **AI-assisted development has made me even more ruthlessly solutions-focused for my clients.**
