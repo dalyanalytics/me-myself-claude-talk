@@ -222,80 +222,74 @@ This is a perfect example of how AI freed up mental bandwidth for creative work.
 
 ## {shinyfa} in Action {.smaller}
 
+::: columns
+::: {.column width="55%"}
 ```{r}
 #| echo: true
 #| eval: false
-#| code-line-numbers: "|4|7-10|13|16"
 
 library(shinyfa)
 library(dplyr)
 
-file_path_df <- list.files("SHINY-SERVER-DIRECTORY",
-                           pattern = "\\.R$", full.names = TRUE)
+file_path_df <- list.files(
+  "SHINY-SERVER-DIRECTORY",
+  pattern = "\\.R$",
+  full.names = TRUE
+)
 
 file_analysis <- data.frame()
 
 for (file in file_path_df) {
-  shiny_analysis <- analyze_shiny_reactivity(file_path = file)
+  shiny_analysis <-
+    analyze_shiny_reactivity(
+      file_path = file
+    )
 
-  if (is.null(shiny_analysis)) next  # Skip empty files
+  if (is.null(shiny_analysis)) next
 
-  shiny_analysis$file_name <- basename(file)
+  shiny_analysis$file_name <-
+    basename(file)
 
-  file_analysis <- bind_rows(file_analysis, shiny_analysis)
+  file_analysis <- bind_rows(
+    file_analysis,
+    shiny_analysis
+  )
 }
-
-print(file_analysis)
 ```
-
-**Result:** Catalog of render functions, reactive functions, inputs, and file relationships across your entire Shiny app.
-
-::: {.notes}
-This is the core workflow for using {shinyfa}. You point it at your Shiny app directory, and it systematically analyzes each R file.
-
-The `analyze_shiny_reactivity()` function is doing the heavy lifting - it parses each file and extracts information about reactivity patterns. The result is a dataframe that gives you a complete map of your app's structure.
-
-This is exactly what I needed during that conservation nonprofit project. Instead of manually clicking through dozens of files trying to understand "where is this input used?" or "which files have render functions?", you get a structured dataset you can query, filter, and explore.
-
-The code is straightforward R - iterate through files, analyze each one, bind results. But the value is enormous when you're trying to onboard to a complex codebase or understand the architecture of a large Shiny app.
 :::
 
----
+::: {.column width="45%"}
+**Output:**
 
-## {shinyfa} Output Example {.smaller}
+| file_name | type | name |
+|-----------|------|------|
+| ui.R | input | selectInput |
+| ui.R | output | plotOutput |
+| server.R | reactive | filtered_data |
+| server.R | render | renderPlot |
+| modules/map.R | input | sliderInput |
+| modules/map.R | render | renderLeaflet |
 
-```{r}
-#| echo: false
-#| eval: false
-
-# Example output from analyze_shiny_reactivity()
-file_analysis
-```
-
-| file_name | type | name | input_id | output_id |
-|-----------|------|------|----------|-----------|
-| ui.R | input | selectInput | "species" | NA |
-| ui.R | output | plotOutput | NA | "dist_plot" |
-| server.R | reactive | filtered_data | NA | NA |
-| server.R | render | renderPlot | "species" | "dist_plot" |
-| modules/map.R | input | sliderInput | "zoom" | NA |
-| modules/map.R | render | renderLeaflet | "zoom" | "map" |
-
+Catalog of render functions, reactive functions, inputs, and file relationships.
+:::
+:::
 
 ::: {.notes}
-This is what the output dataframe looks like after running analyze_shiny_reactivity() across your Shiny app files.
+This shows the core workflow for using {shinyfa}. You point it at your Shiny app directory, and it systematically analyzes each R file.
 
-Each row represents a reactive element in your app: inputs, outputs, reactive expressions, and render functions. You can see which file they're in, what type they are, their name, and how they connect (input_id, output_id).
+**Left side - The Code:** The `analyze_shiny_reactivity()` function parses each file and extracts information about reactivity patterns. The code is straightforward R - iterate through files, analyze each one, bind results.
 
-For that conservation nonprofit project, this would have been transformational during onboarding. Instead of searching through files asking "where is the species input used?", I could just filter this dataframe: file_analysis %>% filter(input_id == "species") and instantly see everywhere it's referenced.
+**Right side - The Output:** The result is a dataframe that gives you a complete map of your app's structure. Each row represents a reactive element: inputs, outputs, reactive expressions, and render functions. You can see which file they're in, what type they are, their name, and how they connect.
 
-The real power is in queries like:
+**Why This Matters:** For that conservation nonprofit project, this would have been transformational during onboarding. Instead of manually searching through dozens of files asking "where is the species input used?", you get a structured dataset you can query: `file_analysis %>% filter(input_id == "species")` and instantly see everywhere it's referenced.
+
+**The Power:** You can answer questions like:
 - "Show me all render functions in the modules folder"
 - "Which files have reactive expressions?"
 - "What outputs don't have corresponding render functions?" (potential bugs!)
 - "Map the flow from this input to its output"
 
-This structured view of your app's reactivity is what makes {shinyfa} useful for onboarding, documentation, and understanding complex Shiny applications.
+This structured view of your app's reactivity is what makes {shinyfa} useful for onboarding, documentation, and understanding complex Shiny applications. The value is enormous when you're trying to understand the architecture of a large Shiny app.
 :::
 
 ---
