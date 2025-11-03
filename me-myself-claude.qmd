@@ -512,6 +512,8 @@ This model lets you say YES to bigger projects while maintaining the quality and
 
 ## Example: GitHub Actions Data Orchestration {.smaller}
 
+::: columns
+::: {.column width="45%"}
 **The Client Challenge:**
 
 - Multi-client dashboard infrastructure (50+ clients)
@@ -520,35 +522,11 @@ This model lets you say YES to bigger projects while maintaining the quality and
 - Cross-repo coordination
 
 ::: {.fragment}
-**The Old Response:**
-
-"This would take weeks to set up properly. I'd need to learn GitHub Actions deeply."
+**Built comprehensive system in days, not weeks.**
+:::
 :::
 
-::: {.fragment}
-**With Claude Code:**
-
-Built comprehensive data orchestration system in days, not weeks.
-:::
-
-::: {.notes}
-This is a real example from my client work. They needed an enterprise-grade data orchestration system to manage 50+ client dashboards, each with different refresh schedules.
-
-**The Challenge:** GitHub Actions YAML syntax is finicky. Scheduled workflows, manual testing pipelines, repository dispatch events for cross-repo triggers, configuration-driven scheduling—this is DevOps territory.
-
-**My Approach:** I understood the architecture (what needed to happen and when), but I didn't want to spend weeks becoming a GitHub Actions expert.
-
-**Claude's Role:** Generated the YAML workflows, helped set up the orchestrator pattern, created the manual testing workflows, and built the configuration-driven scheduling system.
-
-**My Role:** Designed the overall architecture, specified requirements, tested everything, and ensured it worked for the business use case.
-
-**Result:** Production-ready system that scales to 50+ clients, all automated, all documented. I now understand GitHub Actions well enough to maintain and extend it, but I didn't have to become an expert to deliver value.
-:::
-
----
-
-## The GitHub Actions YAML {.smaller}
-
+::: {.column width="55%"}
 ```yaml
 name: Data Orchestrator
 on:
@@ -577,19 +555,33 @@ jobs:
 ::: {.fragment}
 **I understand what it does. Claude wrote the syntax.**
 :::
+:::
+:::
 
 ::: {.notes}
-This is a snippet of actual code from a client data orchestration system. Look at what's happening here:
+This is a real example from my Meet the Moment client work. They needed an enterprise-grade data orchestration system to manage 50+ client dashboards, each with different refresh schedules.
 
-**Scheduled trigger:** Runs daily at 6 AM UTC, processes all clients based on their individual refresh schedules (daily, weekly, monthly, quarterly).
+**The Client Challenge (Left):**
+- **50+ clients:** Each with their own dashboard
+- **Different schedules:** Daily, weekly, monthly, quarterly refreshes
+- **Complex infrastructure:** Scheduled pipelines, testing workflows, deployment triggers
+- **Cross-repo coordination:** Repository dispatch events to trigger builds in separate repos
 
-**Manual trigger:** `workflow_dispatch` allows testing on demand.
+**The YAML (Right):** This is actual code from the system. Look at what's happening:
+- **Scheduled trigger:** `cron: '0 6 * * *'` runs daily at 6 AM UTC, processes all clients based on their individual refresh schedules
+- **Manual trigger:** `workflow_dispatch` allows testing on demand
+- **R integration:** Sets up R environment, installs packages, runs the orchestrator script
+- **Secrets management:** Properly uses GitHub secrets for cross-repo operations and database access
 
-**R integration:** Sets up R environment, installs packages, runs the orchestrator script.
+**The Key Insight:** I didn't need to memorize GitHub Actions syntax. I needed to understand the architecture—what needs to happen, when, and why. Claude Code handled translating that understanding into correct YAML.
 
-**Secrets management:** Properly uses GitHub secrets for cross-repo operations and database access.
+**My Approach:** I understood the architecture (what needed to happen and when), but I didn't want to spend weeks becoming a GitHub Actions expert.
 
-**The key insight:** I didn't need to memorize GitHub Actions syntax. I needed to understand the architecture—what needs to happen, when, and why. Claude Code handled translating that understanding into correct YAML.
+**Claude's Role:** Generated the YAML workflows, helped set up the orchestrator pattern, created the manual testing workflows, and built the configuration-driven scheduling system.
+
+**My Role:** Designed the overall architecture, specified requirements, tested everything, and ensured it worked for the business use case.
+
+**Result:** Production-ready system that scales to 50+ clients, all automated, all documented. I now understand GitHub Actions well enough to maintain and extend it, but I didn't have to become an expert to deliver value.
 
 This is "staying in your R lane while extending your reach." The core logic is R code (my expertise). The automation wrapper is GitHub Actions (Claude's expertise).
 :::
