@@ -1033,11 +1033,7 @@ clean_data <- function(data) {
 # Keep it simple. Keep it readable. Keep it maintainable.
 ```
 
----
-
-# Part 4: The Human in the Loop
-
-## Maintaining Technical Leadership
+# Part 4: Human In/On the Loop
 
 ---
 
@@ -1156,20 +1152,6 @@ library(dplyr)
 
 ---
 
-## Hand on the Wheel
-
-**Key Principle:** AI accelerates; you steer.
-
-::: {.incremental}
-- **Let AI generate** the boilerplate, the repetitive code, the initial structure
-- **You maintain** the architecture, the business logic, the critical decisions
-- **Review everything** like you're mentoring an intern
-- **Refactor freely** to match your style and standards
-- **Test thoroughly** because AI doesn't understand your edge cases
-:::
-
----
-
 ## When to Override AI
 
 You should override or ignore AI suggestions when:
@@ -1184,13 +1166,22 @@ You should override or ignore AI suggestions when:
 
 ---
 
-# Conclusion
+## Your AI Values Exercise
 
-## Bringing It All Together
+Before your next AI-assisted project, write down:
+
+1. **What I will always do myself:**
+2. **What AI can help me with:**
+3. **What I need to understand deeply:**
+4. **What I'm comfortable delegating:**
+
+**This clarity prevents the dumpster fire.**
 
 ---
 
-## The Four Pillars
+# Conclusion
+
+## The Four Pillars of AI-assisted development
 
 ::: columns
 ::: {.column width="50%"}
@@ -1224,6 +1215,20 @@ You should override or ignore AI suggestions when:
 
 ---
 
+## Hand on the Wheel
+
+**Key Principle:** AI accelerates; you steer.
+
+::: {.incremental}
+- **Let AI generate** the boilerplate, the repetitive code, the initial structure
+- **You maintain** the architecture, the business logic, the critical decisions
+- **Review everything** like you're mentoring an intern
+- **Refactor freely** to match your style and standards
+- **Test thoroughly** because AI doesn't understand your edge cases
+:::
+
+---
+
 ## The Core Philosophy
 
 **AI doesn't replace expertise.**
@@ -1238,19 +1243,6 @@ You should override or ignore AI suggestions when:
 - You own the relationships
 - You deliver the value
 :::
-
----
-
-## Your AI Values Exercise
-
-Before your next AI-assisted project, write down:
-
-1. **What I will always do myself:**
-2. **What AI can help me with:**
-3. **What I need to understand deeply:**
-4. **What I'm comfortable delegating:**
-
-**This clarity prevents the dumpster fire.**
 
 ---
 
