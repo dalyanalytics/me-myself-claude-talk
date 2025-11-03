@@ -410,7 +410,7 @@ The value isn't in complex data processing - it's in making the taxonomy accessi
 
 ---
 
-## The Creative Multiplier
+## 🔑 The Creative Multiplier
 
 AI assistance doesn't just save time on what you were already doing.
 
@@ -694,65 +694,7 @@ The goal is to amplify your existing skills, not replace them.
 
 ---
 
-## When to Use Claude Code vs. Code Yourself {.smaller}
-
-::: columns
-::: {.column width="50%"}
-**Use Claude Code for:**
-
-::: {.incremental}
-- Boilerplate and scaffolding
-- Unfamiliar packages/syntax
-- Repetitive transformations
-- Test data generation
-- Documentation writing
-- YAML/config files
-:::
-:::
-
-::: {.column width="50%"}
-**Code Yourself for:**
-
-::: {.incremental}
-- Business logic
-- Client-specific domain knowledge
-- Performance-critical sections
-- Security-sensitive code
-- Final architecture decisions
-:::
-:::
-:::
-
-::: {.fragment}
-<div style="text-align: center; margin-top: 20px;">
-**The sweet spot:** Use Claude for the "how" while you own the "what" and "why."
-</div>
-:::
-
-::: {.notes}
-This is the decision framework I use every day. Let me explain the reasoning:
-
-**Use Claude Code for:**
-- **Boilerplate:** Setting up Shiny modules, package structure, GitHub Actions templates—these follow known patterns. Let Claude handle it.
-- **Unfamiliar packages:** When I need to use a package I've never used before, Claude can generate example code faster than I can read documentation.
-- **Repetitive transformations:** If I'm doing the same data manipulation 20 times with different columns, Claude can generate the variations.
-- **Test data:** Creating realistic fake data is tedious. Claude excels at this.
-- **Documentation:** Claude can draft README files and function documentation. I review and refine.
-- **YAML/config:** These are finicky and tedious. Perfect for AI assistance.
-
-**Code Yourself for:**
-- **Business logic:** The core algorithms that make your solution valuable—these need human understanding.
-- **Client-specific domain knowledge:** Claude doesn't know your client's business. You do.
-- **Performance-critical sections:** When milliseconds matter, you need to understand exactly what's happening.
-- **Security-sensitive code:** Authentication, authorization, data encryption—review these extremely carefully or write them yourself.
-- **Architecture decisions:** Should this be a Shiny module or a function? Should we use Supabase or PostgreSQL? These strategic decisions are yours.
-
-The key insight: Claude Code is best for the "how" (implementation details), while you should always own the "what" (requirements) and "why" (strategic decisions).
-:::
-
----
-
-## Ruthlessly Solutions-Focused
+## 🔑 Ruthlessly Solutions-Focused
 
 ::: {.fragment}
 **AI-assisted development has made me even more ruthlessly solutions-focused for my clients.**
@@ -787,7 +729,6 @@ This is the key insight that ties together everything in Part 2. AI-assisted dev
 This is the promise of AI-assisted development for consultants: you become MORE valuable to clients because you can focus your expertise where it matters most.
 :::
 
----
 
 # Part 3: Building Up Your R Intuition Through Volume
 
@@ -893,6 +834,66 @@ shinyApp(ui, server)
 
 # The "getting started" friction is eliminated
 ```
+
+---
+
+## When to Use Claude Code vs. Code Yourself {.smaller}
+
+::: columns
+::: {.column width="50%"}
+**Use Claude Code for:**
+
+::: {.incremental}
+- Boilerplate and scaffolding
+- Unfamiliar packages/syntax
+- Repetitive transformations
+- Test data generation
+- Documentation writing
+- YAML/config files
+:::
+:::
+
+::: {.column width="50%"}
+**Code Yourself for:**
+
+::: {.incremental}
+- Business logic
+- Client-specific domain knowledge
+- Performance-critical sections
+- Security-sensitive code
+- Final architecture decisions
+:::
+:::
+:::
+
+::: {.fragment}
+<div style="text-align: center; margin-top: 20px;">
+**The sweet spot:** Use Claude for the "how" while you own the "what" and "why."
+</div>
+:::
+
+::: {.notes}
+This is the decision framework I use every day. Let me explain the reasoning:
+
+**Use Claude Code for:**
+- **Boilerplate:** Setting up Shiny modules, package structure, GitHub Actions templates—these follow known patterns. Let Claude handle it.
+- **Unfamiliar packages:** When I need to use a package I've never used before, Claude can generate example code faster than I can read documentation.
+- **Repetitive transformations:** If I'm doing the same data manipulation 20 times with different columns, Claude can generate the variations.
+- **Test data:** Creating realistic fake data is tedious. Claude excels at this.
+- **Documentation:** Claude can draft README files and function documentation. I review and refine.
+- **YAML/config:** These are finicky and tedious. Perfect for AI assistance.
+
+**Code Yourself for:**
+- **Business logic:** The core algorithms that make your solution valuable—these need human understanding.
+- **Client-specific domain knowledge:** Claude doesn't know your client's business. You do.
+- **Performance-critical sections:** When milliseconds matter, you need to understand exactly what's happening.
+- **Security-sensitive code:** Authentication, authorization, data encryption—review these extremely carefully or write them yourself.
+- **Architecture decisions:** Should this be a Shiny module or a function? Should we use Supabase or PostgreSQL? These strategic decisions are yours.
+
+The key insight: Claude Code is best for the "how" (implementation details), while you should always own the "what" (requirements) and "why" (strategic decisions).
+
+This framework fits perfectly in Part 3 because it's fundamentally about learning—understanding what tasks help you build R intuition (code yourself) versus what tasks are better delegated (use Claude). When you encounter Claude's mistakes (next slide), this framework helps you decide what to fix yourself versus when to redirect Claude.
+:::
 
 ---
 
