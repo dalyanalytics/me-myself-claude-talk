@@ -752,46 +752,6 @@ The key insight: Claude Code is best for the "how" (implementation details), whi
 
 ---
 
-## The Next Frontier: Subagents {.smaller}
-
-::: {.fragment}
-**Coming soon to Claude Code:** Specialized agents for specific tasks
-:::
-
-::: {.incremental}
-- **Testing agent:** Automatically write unit tests for new functions
-- **Documentation agent:** Generate comprehensive docs from code
-- **Deployment agent:** Handle CI/CD and infrastructure as code
-- **Code review agent:** Catch bugs and suggest improvements
-:::
-
-::: {.fragment}
-<div style="text-align: center; margin-top: 20px;">
-**The future:** AI partners that handle entire workflows, not just individual tasks.
-</div>
-:::
-
-::: {.notes}
-This is a teaser for where AI-assisted development is heading. I'm currently exploring subagents in Claude Code, and it's genuinely exciting.
-
-**What are subagents?** Specialized AI agents that focus on specific types of tasks. Instead of one general-purpose AI assistant, you have a team of specialists.
-
-**Testing agent:** When you write a new function, the testing agent can automatically generate unit tests that cover edge cases you might not have thought of.
-
-**Documentation agent:** Analyzes your code and generates comprehensive documentation—not just function signatures, but usage examples and explanations.
-
-**Deployment agent:** Handles the DevOps work—writing Dockerfiles, setting up CI/CD pipelines, managing infrastructure as code.
-
-**Code review agent:** Acts like a senior developer reviewing your code—catches potential bugs, suggests performance improvements, identifies security issues.
-
-**Why this matters:** Right now, I manage Claude Code task by task. With subagents, I could describe a feature and let specialized agents handle testing, documentation, and deployment automatically.
-
-**The caveat:** I'm still exploring this. The human-in-the-loop principle remains—you're still the manager, making strategic decisions and ensuring quality. But the AI team gets more capable.
-
-This is the next evolution of AI-assisted development, and I'm excited to see where it goes.
-:::
-
-
 # Part 3: Building Up Your R Intuition Through Volume
 
 ## Learning Acceleration
