@@ -620,30 +620,34 @@ The pattern ensures that strategic decisions and quality control stay with the h
 
 ---
 
-## Tips & Tricks: Managing Your AI Partner {.smaller}
+## Managing Your AI Partner {.smaller}
 
-::: {.incremental}
+::: columns
+::: {.column width="50%"}
 **Be Specific with Requirements**
 
 - "Add error handling" → "Add tryCatch with informative error messages for API failures"
 - "Make it faster" → "Use data.table instead of dplyr for this 1M+ row operation"
 
-**Always Review Generated Code Before Running**
+**Always Review Generated Code**
 
 - Check for security issues (hardcoded credentials, SQL injection risks)
 - Verify package dependencies actually exist
 - Ensure code follows your team's style guide
+:::
 
-**Use Incremental Commits to Track What Worked**
+::: {.column width="50%"}
+**Use Incremental Commits**
 
 - Commit after each successful change
 - Makes it easy to roll back when Claude goes off track
 - Detailed commit messages help future you understand decisions
 
-**Keep Claude Focused on R/Your Core Stack**
+**Keep Claude Focused on R**
 
 - Don't let it convince you to rewrite everything in Python
 - Stay in your lane—use AI to extend reach, not replace your expertise
+:::
 :::
 
 ::: {.notes}
