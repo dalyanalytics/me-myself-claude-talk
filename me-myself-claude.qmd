@@ -247,7 +247,7 @@ This is a perfect example of how AI freed up mental bandwidth for creative work.
 
 ---
 
-## The {avilistr} Package {.smaller}
+## The {avilistr} Package <img src="images/avilistr.png" width="80" style="vertical-align: middle; margin-left: 10px;"> {.smaller}
 
 ::: columns
 ::: {.column width="45%"}
