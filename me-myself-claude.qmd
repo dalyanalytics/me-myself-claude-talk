@@ -167,15 +167,12 @@ After AI: More strategic, more sustainable, and more creative. I'm building a bu
 
 ---
 
-## The {shinyfa} Package {.smaller}
+## The {shinyfa} Package <img src="images/shinyfa.png" width="80" style="vertical-align: middle; margin-left: 10px;"> {.smaller}
 
 ::: columns
 ::: {.column width="45%"}
-<div style="text-align: center; margin-bottom: 15px;">
-  <img src="images/shinyfa.png" width="100" style="display: inline-block;">
-</div>
 
-<div style="display: flex; flex-direction: column; gap: 15px;">
+<div style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
 
 <div style="background: #6A94C9; padding: 12px 15px; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
 <div style="font-size: 1em; font-weight: bold; color: white; line-height: 1.2;">Client Problem</div>
