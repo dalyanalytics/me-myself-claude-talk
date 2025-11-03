@@ -263,11 +263,6 @@ file_analysis
 | modules/map.R | input | sliderInput | "zoom" | NA |
 | modules/map.R | render | renderLeaflet | "zoom" | "map" |
 
-**What you can now do:**
-- Find all inputs and where they're used
-- Identify all outputs and their render functions
-- Map reactive dependencies across files
-- Understand file relationships at a glance
 
 ::: {.notes}
 This is what the output dataframe looks like after running analyze_shiny_reactivity() across your Shiny app files.
@@ -336,7 +331,7 @@ Finding common ground in open source: birding + R + making things accessible = a
 
 ---
 
-## {avilistr} Example: Exploring Bird Families {.smaller}
+## {avilistr} in Action {.smaller}
 
 ```{r}
 #| echo: true
@@ -365,7 +360,7 @@ family_counts
 - Columbidae (Pigeons and Doves): 350 species
 
 ::: {.notes}
-This is a simple example showing how birders can explore the taxonomy data. The `avilist_global` dataset is immediately available when you load the package.
+This is a simple example showing how birders can explore the taxonomy data. The `avilist_2025` dataset is immediately available when you load the package.
 
 With just a few lines of dplyr code, you can answer questions like "Which bird families are the most diverse?" This kind of exploration would be tedious with an Excel file but is straightforward with the data in R.
 
@@ -374,7 +369,7 @@ The package includes Cornell Lab species codes, so you can easily integrate with
 
 ---
 
-## {avilistr} Visual Example {.smaller}
+## {avilistr} Output Example {.smaller}
 
 ```{r}
 #| echo: false
@@ -439,7 +434,44 @@ AI assistance doesn't just save time on what you were already doing.
 
 # Part 2: Saying Yes to Bigger & Funner Problems
 
-## Scaling Strategy
+## Optimizing for Professional Joy
+
+**As a solo consultant, I'm not optimizing for maximum revenue—I'm optimizing for professional joy.**
+
+::: {.incremental}
+**Professional joy means:**
+
+- **Values-aligned clients:** Nonprofits, social impact organizations, NGOs
+- **High personal interaction:** Deep relationships, not transactional projects
+- **Quality over quantity:** Maintaining high standards for my client base
+- **Technical depth:** Challenging problems that expand my R expertise
+- **Professional development:** Time for community engagement, learning, conferences
+- **Life balance:** Not sacrificing home life for business growth
+:::
+
+::: {.fragment}
+**AI assistance doesn't just free up time—it lets me be selective about where I invest it.**
+:::
+
+::: {.notes}
+This is the core philosophy that drives everything in Part 2. I'm running a solo consultancy, and I could optimize for different things—maximum revenue, maximum number of clients, or rapid business growth. But that's not what I'm after.
+
+**Professional Joy as the North Star:** I'm optimizing for professional joy, which for me means working with clients whose missions I care about. Nonprofits, social impact organizations, NGOs—these are organizations doing important work in the world, often with limited resources. I find deep satisfaction in helping them leverage data and technology to amplify their impact.
+
+**High Personal Interaction:** I'm not interested in being a code factory churning out anonymous projects. I want deep relationships with my clients—understanding their challenges, being a trusted partner, and seeing the long-term impact of the work we do together.
+
+**Quality Over Quantity:** Maintaining high standards means being selective. Not every project is a good fit, even if the money is good. I'd rather work with 5 clients I'm deeply invested in than 20 clients where I'm just checking boxes.
+
+**Technical Depth:** Professional joy also means working on problems that challenge me technically. I want to keep growing as an R developer, learning new packages, exploring new approaches, and building expertise in areas like data engineering, automation, and infrastructure.
+
+**Professional Development:** This includes speaking at conferences like this one, contributing open source packages, participating in the R community, and continuous learning. These activities don't directly generate revenue, but they're essential to professional satisfaction and long-term growth.
+
+**Life Balance:** I'm a solo consultant, not a startup founder trying to build a unicorn. I have a life outside of work that matters—family, hobbies, health. Sustainable consulting means not burning out.
+
+**The AI Advantage:** Here's where AI becomes transformative. It doesn't just save me time—it gives me the capacity to be *selective*. I can say YES to the projects that bring professional joy and NO to the ones that don't, because AI assistance means I'm not constantly capacity-constrained. I can take on challenging technical problems without sacrificing quality or work-life balance.
+
+This philosophy sets up everything that follows in Part 2. The technical skills and workflows I'm about to share aren't about doing more work—they're about doing the *right* work, with the *right* clients, in a way that's sustainable and joyful.
+:::
 
 ---
 
@@ -759,7 +791,6 @@ This is a teaser for where AI-assisted development is heading. I'm currently exp
 This is the next evolution of AI-assisted development, and I'm excited to see where it goes.
 :::
 
----
 
 # Part 3: Building Up Your R Intuition Through Volume
 
