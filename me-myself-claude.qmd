@@ -284,6 +284,7 @@ This is a perfect example of how AI freed up mental bandwidth for creative work.
 :::
 
 ::: {.column width="55%"}
+**Output:**
 ```{r}
 #| echo: false
 #| eval: true
@@ -702,66 +703,14 @@ This is the fundamental shift in how I learn R now. It's not about replacing dee
 
 **Building Intuition:** Intuition comes from pattern recognition, and pattern recognition requires exposure to lots of patterns. AI-assisted development accelerates this by letting you iterate faster, fail faster, and see more approaches in less time.
 
+**Practical Examples:** This volume approach works for everyday tasks too:
+- **Generating fake data:** "Claude, generate realistic university enrollment data" - what would take 20+ minutes of data.frame construction happens in 30 seconds. You learn patterns for realistic data generation.
+- **Project scaffolding:** "Claude, create a basic Shiny app structure with modules" - the "getting started" friction is eliminated. You can immediately start on the interesting parts.
+- **Documentation:** Claude drafts README files and vignettes that you review and refine.
+- **Test data:** Creating edge cases and test scenarios becomes trivial.
+
 This isn't about becoming dependent on AI—it's about using AI to accelerate the learning process by increasing your exposure to different R patterns and approaches.
 :::
-
----
-
-## Practical Use Cases {.smaller}
-
-**1. Generating Fake Data**
-
-```{r}
-#| echo: true
-#| eval: false
-
-# "Claude, generate realistic university course enrollment data"
-set.seed(123)
-courses <- data.frame(
-  course_id = paste0("COURSE", 1:50),
-  department = sample(c("Math", "CS", "Biology", "English", "History"), 50, replace = TRUE),
-  enrollment = sample(15:150, 50, replace = TRUE),
-  semester = sample(c("Fall 2024", "Spring 2025"), 50, replace = TRUE),
-  instructor_rating = round(runif(50, 2.5, 5.0), 1)
-)
-
-# This would have taken me 20+ minutes
-# Claude did it in 30 seconds
-# I learned about realistic data generation patterns
-```
-
----
-
-## Practical Use Cases {.smaller}
-
-**2. Project Scaffolding**
-
-```{r}
-#| echo: true
-#| eval: false
-
-# "Claude, create a basic Shiny app structure with modules"
-
-# app.R
-library(shiny)
-source("modules/data_module.R")
-source("modules/plot_module.R")
-
-ui <- fluidPage(
-  titlePanel("Dashboard"),
-  dataModuleUI("data"),
-  plotModuleUI("plot")
-)
-
-server <- function(input, output, session) {
-  data <- dataModuleServer("data")
-  plotModuleServer("plot", data)
-}
-
-shinyApp(ui, server)
-
-# The "getting started" friction is eliminated
-```
 
 ---
 
