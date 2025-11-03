@@ -732,50 +732,53 @@ This is the promise of AI-assisted development for consultants: you become MORE 
 
 # Part 3: Building Up Your R Intuition Through Volume
 
-## Learning Acceleration
+## Learning Through Volume
 
----
+::: columns
+::: {.column width="50%"}
+**Traditional Learning:**
 
-## The Traditional Learning Curve
+- Read docs (30 min)
+- Try implementation (1 hour)
+- Hit error
+- Google/Stack Overflow (20 min)
+- Try again (30 min)
+- Success? (Maybe)
 
-```{r}
-#| echo: true
-#| eval: false
+**Result:** 2.5+ hours for one pattern
+:::
 
-# Learning new R patterns traditionally:
-# 1. Read documentation (30 minutes)
-# 2. Try implementation (1 hour)
-# 3. Hit error (5 minutes of frustration)
-# 4. Google/Stack Overflow (20 minutes)
-# 5. Try again (30 minutes)
-# 6. Success! (Maybe)
-#
-# Total time: 2.5+ hours for one pattern
+::: {.column width="50%"}
+**AI-Assisted Learning:**
 
-learning_rate_traditional <- "Slow but deliberate"
-```
+- Ask Claude (2 min)
+- Review code (5 min)
+- Test it (5 min)
+- Encounter error (immediate)
+- Understand WHY it failed
+- Iterate (10 min)
 
----
+**Result:** 22 minutes, 3-4 approaches seen
+:::
+:::
 
-## The High-Volume Approach
+::: {.fragment}
+**Fast iteration builds intuition faster than slow deliberation.**
+:::
 
-```{r}
-#| echo: true
-#| eval: false
+::: {.notes}
+This is the fundamental shift in how I learn R now. It's not about replacing deep learning—it's about encountering more patterns, more errors, and more solutions in the same amount of time.
 
-# Learning with AI assistance:
-# 1. Ask Claude for implementation (2 minutes)
-# 2. Review generated code (5 minutes)
-# 3. Test it (5 minutes)
-# 4. Encounter error (immediate)
-# 5. Understand WHY it failed (learning moment)
-# 6. Adjust and iterate (10 minutes)
-#
-# Total time: 22 minutes
-# But you've seen 3-4 different approaches
+**Traditional Learning (2.5+ hours):** You learn one approach deeply, but slowly. You read documentation carefully, implement thoughtfully, debug methodically. It's thorough but time-consuming. You might learn one way to solve a problem.
 
-learning_rate_ai_assisted <- "Fast iteration builds intuition"
-```
+**AI-Assisted Learning (22 minutes):** You see multiple approaches quickly. Claude generates an implementation, you review it, test it, encounter errors, understand WHY it failed, and iterate. In the same 2.5 hours, you've gone through this cycle 6-7 times, seeing different packages, different patterns, different approaches. You've learned through volume.
+
+**The Learning Advantage:** The key insight is that you're not learning less—you're learning MORE through exposure to variety. When Claude makes a mistake with column names (avilist_2025 vs avilist_global), you learn how to inspect package data. When Claude hallucinates a function (make_long), you learn how to verify package capabilities. When Claude's approach doesn't work, you learn to pivot.
+
+**Building Intuition:** Intuition comes from pattern recognition, and pattern recognition requires exposure to lots of patterns. AI-assisted development accelerates this by letting you iterate faster, fail faster, and see more approaches in less time.
+
+This isn't about becoming dependent on AI—it's about using AI to accelerate the learning process by increasing your exposure to different R patterns and approaches.
+:::
 
 ---
 
