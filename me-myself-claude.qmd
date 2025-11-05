@@ -366,13 +366,11 @@ AI assistance doesn't just save time on what you were already doing.
 
 ## Optimizing for Professional Joy
 
-**As a solo consultant, I'm not optimizing for maximum revenue—I'm optimizing for professional joy.**
-
 ```{r}
 #| echo: false
 #| eval: true
-#| fig-width: 9
-#| fig-height: 6
+#| fig-width: 11
+#| fig-height: 8
 
 library(ggplot2)
 
@@ -390,21 +388,17 @@ components <- data.frame(
 
 ggplot(components) +
   geom_rect(aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax, fill = color),
-            alpha = 0.4, color = "white", linewidth = 3) +
+            alpha = 0.4, color = "white", linewidth = 4) +
   geom_text(aes(x = x_label, y = y_label, label = label),
-            size = 6, fontface = "bold", color = "#404041") +
-  annotate("point", x = 1, y = 1, size = 25, color = "#404041", alpha = 0.1, shape = 19) +
+            size = 8, fontface = "bold", color = "#404041") +
+  annotate("point", x = 1, y = 1, size = 35, color = "#404041", alpha = 0.1, shape = 19) +
   annotate("text", x = 1, y = 1, label = "Professional\nJoy",
-           size = 7, fontface = "bold", color = "#404041") +
+           size = 10, fontface = "bold", color = "#404041") +
   scale_fill_identity() +
   coord_fixed(ratio = 1, xlim = c(-0.1, 2.1), ylim = c(-0.1, 2.1)) +
   theme_void() +
   theme(plot.margin = margin(20, 20, 20, 20))
 ```
-
-::: {.fragment}
-**AI assistance doesn't just free up time—it lets me be selective about where I invest it.**
-:::
 
 ::: {.notes}
 This is the core philosophy that drives everything in Part 2. I'm running a solo consultancy, and I could optimize for different things—maximum revenue, maximum number of clients, or rapid business growth. But that's not what I'm after.
