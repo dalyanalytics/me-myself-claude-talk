@@ -422,7 +422,7 @@ This philosophy sets up everything that follows in Part 2. The technical skills 
 
 ---
 
-## The Growth Question
+## The Old Filter
 
 Before AI-assisted development, my filter for new projects was:
 
@@ -439,9 +439,10 @@ Before AI-assisted development, my filter for new projects was:
 
 ## The New Filter
 
-With AI-assisted development, the question became:
+With AI-assisted development, my new filter has become:
 
-> "Can I can deeply understand the desired outcome based on the contraints? I'm pretty sure I can build this"
+> "I can certainly build it! 
+How can I thoughtfully spend time deeply understanding the desired outcome & client constraints?"
 
 ::: {.notes}
 **Now I can say YES to:**
@@ -455,16 +456,14 @@ With AI-assisted development, the question became:
 
 ## Claude Code as My Coding Partner {.smaller}
 
-**The Mental Model:**
-
 ::: {.incremental}
-- **You are the manager** - Setting direction, making architectural decisions
-- **Claude is your senior developer** - Implementing solutions, handling boilerplate
-- **Human in the loop** - Technical leadership stays with you
+- **I'm the manager**: Setting direction, making architectural decisions
+- **Claude is my senior developer partner**: Implementing solutions, handling boilerplate code
+- **Human in/on the loop**: Active technical leadership stays with me!
 :::
 
 ::: {.fragment}
-This isn't about replacing your skills—it's about **amplifying your capacity** to take on bigger, more interesting problems.
+With more help from Claude I get to **amplify my capacity** to take on bigger, more interesting problems.
 :::
 
 ::: {.notes}
@@ -483,50 +482,38 @@ This model lets you say YES to bigger projects while maintaining the quality and
 
 ## Client Example: Using GitHub Actions For Data Orchestration {.smaller}
 
-::: columns
-::: {.column width="45%"}
-**The Client Challenge:**
+<div style="display: flex; flex-direction: column; gap: 12px; margin: 20px auto; max-width: 90%;">
 
-- Multi-client dashboard infrastructure (50+ clients)
-- Each client needs automated data refresh (daily/weekly/monthly)
-- Scheduled pipelines, testing workflows, deployment triggers
-- Cross-repo coordination
+<div style="background: #6A94C9; padding: 10px 15px; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+<div style="font-size: 0.9em; font-weight: bold; color: white;">Data Orchestration Repo</div>
+<div style="font-size: 0.75em; color: white; margin-top: 3px;">GitHub Actions (API, webhooks, Railway)</div>
+</div>
 
-::: {.fragment}
-**Built comprehensive system in days, not weeks.**
-:::
-:::
+<div style="text-align: center; font-size: 2em; color: #F9B397; font-weight: bold; line-height: 0.3;">↓</div>
 
-::: {.column width="55%"}
-```yaml
-name: Data Orchestrator
-on:
-  schedule:
-    - cron: '0 6 * * *'  # Daily at 6 AM UTC
-  workflow_dispatch:
+<div style="background: #AD92B1; padding: 10px 15px; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+<div style="font-size: 0.9em; font-weight: bold; color: white;">Load Data in Supabase</div>
+<div style="font-size: 0.75em; color: white; margin-top: 3px;">RLS rules per client_id for data isolation</div>
+</div>
 
-jobs:
-  orchestrate:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+<div style="text-align: center; font-size: 2em; color: #F9B397; font-weight: bold; line-height: 0.3;">↓</div>
 
-      - name: Setup R
-        uses: r-lib/actions/setup-r@v2
+<div style="background: #D68A93; padding: 10px 15px; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+<div style="font-size: 0.9em; font-weight: bold; color: white;">Client Dashboards (Quarto)</div>
+<div style="font-size: 0.75em; color: white; margin-top: 3px;">50+ dashboards on Netlify, each pulls only their data</div>
+</div>
 
-      - name: Process clients based on schedule
-        run: |
-          Rscript scripts/orchestrator.R
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-```
+<div style="text-align: center; font-size: 2em; color: #F9B397; font-weight: bold; line-height: 0.3;">↓</div>
+
+<div style="background: #F9B397; padding: 10px 15px; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+<div style="font-size: 0.9em; font-weight: bold; color: white;">Template System</div>
+<div style="font-size: 0.75em; color: white; margin-top: 3px;">Shared components, feature toggles, GH Action PRs for updates</div>
+</div>
+
+</div>
 
 ::: {.fragment}
-**I understand what it does. Claude wrote the syntax.**
-:::
-:::
+**Enterprise-grade infrastructure built in days with Claude's help. I own the architecture.**
 :::
 
 ::: {.notes}
