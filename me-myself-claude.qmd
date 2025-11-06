@@ -364,41 +364,9 @@ AI assistance doesn't just save time on what you were already doing.
 
 # Part 2: Saying Yes to Bigger & Funner Problems
 
-## Optimizing for Professional Joy
+## Optimizing for Professional Joy {.smaller}
 
-```{r}
-#| echo: false
-#| eval: true
-#| fig-width: 11
-#| fig-height: 8
-
-library(ggplot2)
-
-# Create data for four quadrants representing professional joy components
-components <- data.frame(
-  xmin = c(0, 1, 0, 1),
-  xmax = c(1, 2, 1, 2),
-  ymin = c(1, 1, 0, 0),
-  ymax = c(2, 2, 1, 1),
-  label = c("Client\nWork", "Technical\nGrowth", "Life\nBalance", "Community"),
-  color = c("#6A94C9", "#AD92B1", "#F9B397", "#D68A93"),
-  x_label = c(0.5, 1.5, 0.5, 1.5),
-  y_label = c(1.5, 1.5, 0.5, 0.5)
-)
-
-ggplot(components) +
-  geom_rect(aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax, fill = color),
-            alpha = 0.4, color = "white", linewidth = 4) +
-  geom_text(aes(x = x_label, y = y_label, label = label),
-            size = 8, fontface = "bold", color = "#404041") +
-  annotate("point", x = 1, y = 1, size = 35, color = "#404041", alpha = 0.1, shape = 19) +
-  annotate("text", x = 1, y = 1, label = "Professional\nJoy",
-           size = 10, fontface = "bold", color = "#404041") +
-  scale_fill_identity() +
-  coord_fixed(ratio = 1, xlim = c(-0.1, 2.1), ylim = c(-0.1, 2.1)) +
-  theme_void() +
-  theme(plot.margin = margin(20, 20, 20, 20))
-```
+![](images/professional-joy.png){width=120%; fig-align="center"}
 
 ::: {.notes}
 This is the core philosophy that drives everything in Part 2. I'm running a solo consultancy, and I could optimize for different things—maximum revenue, maximum number of clients, or rapid business growth. But that's not what I'm after.
@@ -456,26 +424,67 @@ How can I thoughtfully spend time deeply understanding the desired outcome & cli
 
 ## Claude Code as My Coding Partner {.smaller}
 
+::: columns
+::: {.column width="50%"}
+**The Mental Model**
+
 ::: {.incremental}
 - **I'm the manager**: Setting direction, making architectural decisions
-- **Claude is my senior developer partner**: Implementing solutions, handling boilerplate code
-- **Human in/on the loop**: Active technical leadership stays with me!
+- **Claude is my senior developer partner**: Implementing solutions, handling boilerplate
+- **Human in/on the loop**: Active technical leadership stays with me
+:::
+:::
+
+::: {.column width="50%"}
+**Tips & Tricks for Managing the Partnership**
+
+::: {.incremental}
+- Be specific with requirements
+- Always review generated code
+- Use incremental commits
+- Feed documentation links
+- Ask for multiple options
+- Run Claude in parallel across related repos
+:::
+:::
 :::
 
 ::: {.fragment}
-With more help from Claude I get to **amplify my capacity** to take on bigger, more interesting problems.
+With Claude's help I **amplify my capacity** to take on bigger, more interesting problems.
 :::
 
 ::: {.notes}
-This is the critical mental model shift. You're not becoming dependent on AI or losing your technical skills. You're establishing a working relationship where you maintain technical leadership.
+This is the critical mental model shift and the practical techniques I use daily in client work.
 
-**You are the manager:** You understand the client requirements, make architectural decisions, choose the technology stack, and own the final deliverable.
+**The Mental Model:**
 
-**Claude is your senior developer:** It handles implementation details, writes boilerplate, suggests approaches, and speeds up the coding process.
+**You are the manager:** You understand client requirements, make architectural decisions, choose the technology stack, and own the final deliverable.
 
-**Human in the loop:** You review everything, test rigorously, and course-correct when Claude goes off track. Your technical judgment is what ensures quality.
+**Claude is your senior developer partner:** It handles implementation details, writes boilerplate, suggests approaches, and speeds up the coding process.
 
-This model lets you say YES to bigger projects while maintaining the quality and technical ownership that makes you valuable to clients.
+**Human in/on the loop:** You review everything, test rigorously, and course-correct when Claude goes off track. Your technical judgment ensures quality.
+
+**My Daily Tips & Tricks:**
+
+**Be Specific with Requirements:** Vague instructions get vague results. "Add error handling" → "Add tryCatch with informative error messages for API failures." "Make it faster" → "Use data.table instead of dplyr for this 1M+ row operation."
+
+**Always Review Generated Code:** Check for security issues (hardcoded credentials, SQL injection risks), verify package dependencies actually exist, ensure code follows your style guide. Claude will confidently generate code that looks right but has subtle bugs or hallucinates package functions.
+
+**Use Incremental Commits:** Commit after each successful change. Makes it easy to roll back when Claude goes off track. Detailed commit messages help future you understand decisions.
+
+**Leverage Context & Tools:** I use MCP tools (like mcptools for R session integration) to give Claude better context about my running R environment. This dramatically improves code suggestions.
+
+**Feed Documentation Links:** When working with specific packages or APIs, I provide Claude with direct links to documentation. "Read this shinyfa documentation: https://dalyanalytics.github.io/shinyfa/" This prevents hallucinations and ensures accurate code generation.
+
+**Feed Other AI Prompts:** Sometimes I brainstorm with Claude first, take those ideas to another AI for a different perspective, then bring both back to Claude for synthesis. Cross-pollinating ideas leads to better solutions.
+
+**Ask for Multiple Options:** Instead of accepting Claude's first suggestion, I ask "Give me 3 different approaches to this problem." Then I often go with a hybrid solution combining the best parts of each.
+
+**Run Claude in Parallel:** For complex projects like my GitHub Actions data orchestration system, I have multiple Positron IDE windows open—one for the orchestration repo, one for the dashboard template, one for a client dashboard. I run Claude in parallel across these related repos, which lets me work on the full system architecture simultaneously while maintaining context in each repo.
+
+**Stay in Your Lane:** Don't let Claude convince you to rewrite everything in Python. Use AI to extend your R expertise, not replace it.
+
+This model lets you say YES to bigger projects while maintaining the quality and technical ownership that makes you valuable to clients. Claude is a tool and partner—you're still the expert leading the work.
 :::
 
 ---
@@ -513,11 +522,11 @@ This model lets you say YES to bigger projects while maintaining the quality and
 </div>
 
 ::: {.fragment}
-**Enterprise-grade infrastructure built in days with Claude's help. I own the architecture.**
+**Right-sized enterprise-grade infrastructure built in a few weeks with Claude Code's help.**
 :::
 
 ::: {.notes}
-This is a real example from my Meet the Moment client work. They needed an enterprise-grade data orchestration system to manage 50+ client dashboards, each with different refresh schedules.
+This is a real example from my client work. They needed an enterprise-grade (but right-sized) data automation system to manage 50+ client dashboards, each with different refresh schedules and features.
 
 **The Client Challenge (Left):**
 - **50+ clients:** Each with their own dashboard
@@ -546,7 +555,7 @@ This is "staying in your R lane while extending your reach." The core logic is R
 
 ---
 
-## Client Project Workflow: The Pattern {.smaller}
+## Client Project Workflow {.smaller}
 
 ::: {.incremental}
 1. **Understand Requirements** (Human) → Define the problem and technical approach
@@ -574,52 +583,6 @@ This is my actual workflow for every client project. Let me walk through what th
 **5. Final QA & Delivery (Human):** I test everything thoroughly, write documentation, and deliver to the client. This is where my reputation is on the line—the final quality check is always human.
 
 The pattern ensures that strategic decisions and quality control stay with the human, while implementation speed comes from AI assistance.
-:::
-
----
-
-## Managing Your AI Partner {.smaller}
-
-::: columns
-::: {.column width="50%"}
-**Be Specific with Requirements**
-
-- "Add error handling" → "Add tryCatch with informative error messages for API failures"
-- "Make it faster" → "Use data.table instead of dplyr for this 1M+ row operation"
-
-**Always Review Generated Code**
-
-- Check for security issues (hardcoded credentials, SQL injection risks)
-- Verify package dependencies actually exist
-- Ensure code follows your team's style guide
-:::
-
-::: {.column width="50%"}
-**Use Incremental Commits**
-
-- Commit after each successful change
-- Makes it easy to roll back when Claude goes off track
-- Detailed commit messages help future you understand decisions
-
-**Keep Claude Focused on R**
-
-- Don't let it convince you to rewrite everything in Python
-- Stay in your lane—use AI to extend reach, not replace your expertise
-:::
-:::
-
-::: {.notes}
-These are hard-won lessons from daily use of Claude Code in client work.
-
-**Be Specific:** Vague instructions get vague results. The more specific you are about what you want, the better Claude's output will be. Think of it like managing a junior developer—clear requirements lead to better code.
-
-**Always Review:** This cannot be emphasized enough. Claude will confidently generate code that looks right but has subtle bugs. It will hallucinate package functions. It will suggest approaches that work but aren't appropriate for your use case. Your job is to catch these issues.
-
-**Incremental Commits:** This is a game-changer. When you commit frequently, you can easily see what changed and why. When Claude suggests a refactoring that breaks everything, you can quickly revert. Plus, it creates an audit trail of your decision-making.
-
-**Stay in Your Lane:** Claude will sometimes suggest using different languages or frameworks. "This would be easier in Python." Maybe, but if your expertise is R and your client expects R code, stay in R. Use Claude to get better at R, not to escape it.
-
-The goal is to amplify your existing skills, not replace them.
 :::
 
 ---
@@ -716,376 +679,217 @@ This is the fundamental shift in how I learn R now. It's not about replacing dee
 This isn't about becoming dependent on AI—it's about using AI to accelerate the learning process by increasing your exposure to different R patterns and approaches.
 :::
 
+
 ---
 
-## When to Use Claude Code vs. Code Yourself {.smaller}
+## Mistake #1: Package Confusion {.smaller}
 
-::: columns
-::: {.column width="50%"}
-**Use Claude Code for:**
+**Claude doesn't read the docs—just like you when you're rushing**
 
 ::: {.incremental}
-- Boilerplate and scaffolding
-- Unfamiliar packages/syntax
-- Repetitive transformations
-- Test data generation
-- Documentation writing
-- YAML/config files
-:::
-:::
-
-::: {.column width="50%"}
-**Code Yourself for:**
-
-::: {.incremental}
-- Business logic
-- Client-specific domain knowledge
-- Performance-critical sections
-- Security-sensitive code
-- Final architecture decisions
-:::
-:::
+- **What happened:** Asked Claude about `{shinyfa}` → it hallucinated "Font Awesome icons"
+- **The real error:** Like installing a package and guessing without reading vignettes/examples
+- **It's not just new packages:** Even with {ggplot2}, Claude confuses function arguments
+- **Why this happens:** You're experienced, busy, assume things should come easy, so you circumvent
+- **The lesson:** This forces you to **actually read documentation** and verify behavior
+- **Fix strategy:** Feed Claude the documentation URL, then it self-corrects
 :::
 
 ::: {.fragment}
-<div style="text-align: center; margin-top: 20px;">
-**The sweet spot:** Use Claude for the "how" while you own the "what" and "why."
-</div>
+**This mistake makes you better at evaluating package quality and knowing where good docs live.**
 :::
 
 ::: {.notes}
-This is the decision framework I use every day. Let me explain the reasoning:
+**The Package Confusion Problem: "Not Reading the Docs"**
 
-**Use Claude Code for:**
-- **Boilerplate:** Setting up Shiny modules, package structure, GitHub Actions templates—these follow known patterns. Let Claude handle it.
-- **Unfamiliar packages:** When I need to use a package I've never used before, Claude can generate example code faster than I can read documentation.
-- **Repetitive transformations:** If I'm doing the same data manipulation 20 times with different columns, Claude can generate the variations.
-- **Test data:** Creating realistic fake data is tedious. Claude excels at this.
-- **Documentation:** Claude can draft README files and function documentation. I review and refine.
-- **YAML/config:** These are finicky and tedious. Perfect for AI assistance.
+The {shinyfa} hallucination is documented in CLAUDE.md. Claude assumed from the package name it must be about Font Awesome icons and confidently generated completely wrong example code. **This is exactly what a human developer does when they install a package and start guessing without reading the vignette or examples.**
 
-**Code Yourself for:**
-- **Business logic:** The core algorithms that make your solution valuable—these need human understanding.
-- **Client-specific domain knowledge:** Claude doesn't know your client's business. You do.
-- **Performance-critical sections:** When milliseconds matter, you need to understand exactly what's happening.
-- **Security-sensitive code:** Authentication, authorization, data encryption—review these extremely carefully or write them yourself.
-- **Architecture decisions:** Should this be a Shiny module or a function? Should we use Supabase or PostgreSQL? These strategic decisions are yours.
+But here's the key insight: **this happens with mature packages too.** Even with {ggplot2}, Claude will confuse function arguments, mix up geom parameters, or suggest deprecated approaches. It's not just "new packages are risky"—Claude can hallucinate about ANY package if it doesn't have current context.
 
-The key insight: Claude Code is best for the "how" (implementation details), while you should always own the "what" (requirements) and "why" (strategic decisions).
+**Why does this happen to humans?** You're really experienced. You've used hundreds of R packages. You're busy. You think "Hey, I'm good at this, this other thing should come really easy." So you circumvent the fundamentals—you skip the vignette, skim the examples, and start coding. Then you hit errors because you assumed instead of verified.
 
-This framework fits perfectly in Part 3 because it's fundamentally about learning—understanding what tasks help you build R intuition (code yourself) versus what tasks are better delegated (use Claude). When you encounter Claude's mistakes (next slide), this framework helps you decide what to fix yourself versus when to redirect Claude.
+**What this teaches you:** You MUST verify package behavior. Feed Claude documentation URLs: "Read the shinyfa docs at https://dalyanalytics.github.io/shinyfa/" Then Claude self-corrects. This forces you to know WHERE the good documentation lives and HOW to read it critically. You become better at evaluating package quality and understanding what's actually possible.
+
+**The skill you build:** Systematic verification. Don't assume—verify. This applies whether you're using AI or coding yourself.
 :::
 
 ---
 
-## Learning from Claude's Real Mistakes {.smaller}
+## Mistake #2: Data Structure Assumptions {.smaller}
 
-**Claude makes mistakes. This is actually valuable—here are real examples from building this presentation:**
+**Claude assumes instead of checking—sound familiar?**
 
 ::: {.incremental}
-**1. The SHINYFA Hallucination**
-
-- Asked Claude to write content about the `{shinyfa}` package
-- Claude confidently said it was for "Font Awesome icons in Shiny apps"
-- Generated example code: `fa_icon("rocket", fill = "#0051BA")`
-- **Reality:** {shinyfa} analyzes Shiny app reactivity patterns (completely different!)
-- **Fix:** Provided the actual documentation URL, Claude self-corrected
-- **Lesson:** Always verify domain-specific claims, especially for packages
-
-**2. The Column Name Disaster**
-
-- Trying to create bird diversity plots with `{avilistr}` package
-- Claude used `avilist_global` dataset (doesn't exist—it's `avilist_2025`)
-- Used lowercase `order_name` column (actual column is `Order`, capitalized)
-- Multiple rounds of "Column not found" errors
-- **Fix:** Checked the actual package structure: `names(avilist_2025)`
-- **Lesson:** When stuck in error loops, inspect the source directly
-
-**3. The Package Function Hunt**
-
-- Wanted a Sankey chart for mental bandwidth visualization
-- Claude tried `make_long()` from ggsankey (function doesn't exist)
-- Tried `sankeyfy()` (also doesn't exist in that package)
-- Multiple package attempts before admitting defeat
-- **Fix:** Pivoted to HTML/CSS solution that actually worked
-- **Lesson:** Be ready to abandon AI's approach when it's not working
+- **What Claude does:** Assumes column names, data types, relationships
+- **Example:** Used `avilist_global` (doesn't exist) instead of `avilist_2025`
+- **Example:** Assumed lowercase `order_name` when actual column is `Order`
+- **Example:** Infers connections between columns instead of asking for lookup tables
+- **Why this happens:** Experience breeds assumptions; you skip verification when busy
+- **The lesson:** Use **mcptools** to give Claude actual R session context
+- **Fix strategy:** `names(data)`, `str(data)`, or let mcptools read your environment
 :::
 
 ::: {.fragment}
-**These mistakes made me a better R developer—I had to understand the packages deeply to fix them.**
+**This mistake teaches you proper data inspection habits—skills you use constantly.**
 :::
 
 ::: {.notes}
-These are three real examples from building this very presentation. Each mistake was a learning opportunity that improved my R skills.
+**Data Structure Assumptions: Why mcptools is Essential**
 
-**The SHINYFA Hallucination:** This is documented in the CLAUDE.md file. When I asked Claude to create presentation content about my {shinyfa} package, it completely fabricated what the package does. It assumed from the name that "shinyfa" must be about Font Awesome icons and generated confident, plausible-sounding (but completely wrong) example code. I caught it because I wrote the package—I know what it actually does. This taught me to always verify AI-generated content about domain-specific tools, especially in the R ecosystem where package names can be misleading.
+Claude LOVES to assume things about your data:
+- Assumes column names without checking (`order_name` vs `Order`)
+- Assumes dataset names (`avilist_global` vs `avilist_2025`)
+- Assumes data types (factor vs character, Date vs POSIXct)
+- Assumes relationships between columns instead of asking for lookup tables
 
-**The Column Name Disaster:** This happened while creating the {avilistr} examples. Claude used the wrong dataset name (`avilist_global` instead of `avilist_2025`) and wrong column names (`order_name` instead of `Order`). We went through multiple error cycles before I stopped and actually checked the package structure myself using `names(avilist_2025)`. This forced me to learn how to properly inspect package datasets, check column names, and understand the data structure—skills I use constantly now.
+**Why does this happen to humans?** You've worked with similar data before. You're experienced. You assume this new dataset follows the same patterns. You're busy, so you skip the basic inspection step. Then you hit "column not found" errors because you assumed instead of checked.
 
-**The Package Function Hunt:** When creating the mental bandwidth visualization, Claude tried multiple R packages for Sankey charts. It confidently used functions like `make_long()` and `sankeyfy()` that don't actually exist (or don't work as expected). After several failed attempts, I made the call to pivot to an HTML/CSS solution. This taught me that sometimes the "pure R" solution isn't the best solution, and it's okay to use other tools when they're more appropriate.
+**The mcptools solution:** When you use MCP tools like mcptools, Claude can actually READ your R session. It can see `names(your_data)`, check `str(your_data)`, understand what objects exist. This dramatically reduces hallucination because Claude has actual context instead of assumptions.
 
-**The key insight:** Each of these mistakes forced me to develop deeper understanding. I couldn't just accept Claude's output—I had to understand the packages, data structures, and available functions well enough to correct the errors. This is exactly the kind of learning that builds intuition and makes you a better developer. You're not becoming dependent on AI; you're accelerating your learning by encountering (and fixing) more problems faster than traditional development would expose you to.
+**What this teaches you:** How to properly inspect data structures. When Claude makes wrong assumptions, you learn to immediately check: `names(data)`, `str(data)`, `class(column)`, `unique(column)`. These debugging habits make you a better data scientist.
+
+**The deeper lesson:** Providing explicit context (a lookup table) is better than letting Claude (or any developer) infer relationships from content. Making assumptions explicit prevents errors.
+
+**The skill you build:** Rigorous data inspection and explicit context over implicit assumptions.
 :::
 
 ---
 
-## The Failing Fast Advantage
+## Mistake #3: Over-Abstraction {.smaller}
 
-```{r}
-#| echo: true
-#| eval: false
-
-# Traditional development:
-attempts <- 1
-learning <- "slow and careful"
-
-# AI-assisted development:
-attempts <- 10
-learning <- "rapid pattern recognition"
-
-# You encounter and solve more problems in less time
-# Each failure teaches you something about:
-# - What works in R
-# - What's idiomatic
-# - What's maintainable
-# - What's efficient
-```
-
----
-
-## The 80% Problem: AI Limitations {.smaller}
-
-**Not everything AI generates is production-ready.**
-
-::: columns
-::: {.column width="50%"}
-**Where AI Excels:**
-
-- Boilerplate code
-- Standard patterns
-- Initial structure
-- Quick prototypes
-- Documentation drafts
-:::
-
-::: {.column width="50%"}
-**Where AI Falls Short:**
-
-- Data cleaning scripts (≈80% okay)
-- Edge case handling
-- Domain-specific logic
-- Performance optimization
-- Security considerations
-:::
-:::
-
-<br>
-
-::: {.fragment}
-**The term:** "AI Slop" - code that *technically works* but isn't quite right.
-:::
-
----
-
-## Over-Abstraction Warning
-
-```{r}
-#| echo: true
-#| eval: false
-
-# Claude's suggestion (over-abstracted):
-create_advanced_pipeline <- function(data, config, transformations, validators,
-                                      error_handlers, logging_strategy, ...) {
-  # 200 lines of abstraction
-}
-
-# What I actually need (maintainable):
-clean_data <- function(data) {
-  data |>
-    filter(!is.na(key_column)) |>
-    mutate(date = as.Date(date))
-}
-
-# Keep it simple. Keep it readable. Keep it maintainable.
-```
-
-# Part 4: Human In/On the Loop
-
----
-
-## Establishing Your AI Values
-
-Before integrating AI into your workflow, ask yourself:
+**Why is Claude (or you) always doing it the hard way?**
 
 ::: {.incremental}
-1. **What code can I maintain 6 months from now?**
-2. **Where do I need to maintain expertise?**
-3. **What represents my core value proposition?**
-4. **What should I always understand deeply?**
+- **Claude's tendency:** Always reaches for complex solutions first
+- **Example:** Tried 3 different Sankey packages with hallucinated functions
+- **Example:** Creates nested functions when a simple dplyr chain works
+- **Why this happens:** You want to show expertise, build "proper" systems, over-engineer
+- **The lesson:** Simple is better. Ask "Why are you doing it the hard way?"
+- **Fix strategy:** Ask for multiple options, choose the simplest that works
 :::
 
 ::: {.fragment}
-**These become your guardrails.**
+**This mistake teaches you that simplicity is a skill—recognizing unnecessary complexity.**
+:::
+
+::: {.notes}
+**Over-Abstraction: "Why Are You Doing It The Hard Way?"**
+
+Claude has a STRONG tendency to over-engineer solutions:
+- Tried 3 different Sankey packages with hallucinated functions when HTML/CSS was simpler
+- Creates nested helper functions when a single dplyr chain is clearer
+- Reaches for complex packages when base R works fine
+- Suggests class systems when a simple list would do
+
+**Why does this happen to humans?** You want to demonstrate expertise. You want to build "proper" systems with abstraction and reusability. You've learned best practices about DRY (Don't Repeat Yourself) and you over-apply them. Sometimes the simple solution feels too simple—like you're not being professional enough.
+
+**I now ask Claude directly:** "Why are you doing it the hard way? Show me the simplest solution."
+
+**What this teaches you:** Simplicity is a skill. The ability to recognize when a solution is unnecessarily complex comes from seeing LOTS of complex solutions and learning to reject them. Each time Claude over-abstracts, you practice simplifying. Each time you ask for multiple options, you practice evaluating trade-offs.
+
+**The skill you build:** Choosing appropriate complexity. Not every problem needs a framework. Sometimes a simple dplyr chain beats a custom function. Sometimes HTML/CSS beats a complex R package. Simplicity when possible, complexity when necessary.
 :::
 
 ---
 
-## Defining the Relationship
+## Building Better Prompts from Mistakes {.smaller}
 
-**Claude is not your boss. Claude is your colleague.**
+**Each mistake pattern teaches you how to redirect Claude (and yourself)**
 
-::: columns
-::: {.column width="50%"}
-**Claude as Colleague:**
-
-- Suggests approaches
-- Generates initial drafts
-- Handles boilerplate
-- Explores alternatives
-- Speeds up research
+::: {.incremental}
+- **Package confusion** → Feed documentation links upfront
+- **Data assumptions** → Use mcptools, provide `str(data)` output, give lookup tables
+- **Over-abstraction** → Ask for multiple approaches, request "simplest solution"
 :::
 
-::: {.column width="50%"}
-**You as Leader:**
-
-- Make architectural decisions
-- Review and refine code
-- Ensure maintainability
-- Apply domain expertise
-- Own the final product
-:::
+::: {.fragment}
+**Learning at Scale:** You encounter these patterns 10x/day instead of 1x/week. Each failure refines your prompting skills AND your R intuition.
 :::
 
----
+::: {.fragment}
+**You're not becoming dependent—you're becoming a better technical leader who knows how to redirect when things go wrong.**
+:::
 
-## The Dumpster Fire Prevention Rule
+::: {.notes}
+**The Meta-Lesson: Building Better Prompts**
 
-**If you can't explain the code, you don't own it.**
+Each mistake category teaches you how to prompt better:
+- **Package confusion** → Feed documentation links upfront
+- **Data assumptions** → Use mcptools, provide `str(data)` output, give lookup tables
+- **Over-abstraction** → Ask for multiple approaches, request "simplest solution"
 
-```{r}
-#| echo: true
-#| eval: false
+**Learning at Scale:** The volume advantage means you encounter these mistake patterns FASTER than traditional development. Instead of one careful implementation per week, you see 10 attempts per day. Each failure refines your prompting skills AND your R intuition. You're not becoming dependent—you're becoming a better technical leader who knows how to redirect when things go wrong.
 
-# Bad: AI-generated code you don't understand
-result <- complex_ai_function(data, params = list(
-  algorithm = "advanced_ml_technique",
-  hyperparameters = list(alpha = 0.05, beta = 0.9, gamma = 2.5),
-  cross_validation = TRUE,
-  ensemble_method = "stacking"
-))
-
-# Good: Code you understand and can maintain
-result <- data |>
-  filter(status == "active") |>
-  group_by(category) |>
-  summarize(total = sum(value))
-
-# If you can't debug it, don't ship it.
-```
+This is exactly what Part 3 is about: using AI-assisted development to accelerate learning through high-volume pattern recognition, not to avoid learning.
+:::
 
 ---
 
-## Example 4: Quarto Over JavaScript {.smaller}
+## 🔑 The Art of the Practice {.smaller}
 
-**The Scenario:**
+**Skill development is a systematic approach—research, analysis, consistent action**
 
-- Client wants an interactive dashboard
-- AI suggests a JavaScript framework (React, Vue, etc.)
-- Impressive demo, cutting-edge tech
+::: {.incremental}
+- **Not about the final product alone** → It's about the process of getting there
+- **Research & Analysis** → Understanding patterns, learning from mistakes, building intuition
+- **Consistent Action** → High-volume iteration, failing fast, course-correcting
+- **Achieving Mastery** → Through deliberate practice and pattern recognition
+- **Personal Growth** → Overcoming challenges, maintaining motivation, staying disciplined
+:::
 
-**The Problem:**
+::: {.fragment}
+**AI-assisted development accelerates the practice by increasing volume—but the discipline of learning is still yours.**
+:::
 
-- I'm an R developer, not a JavaScript expert
-- Client needs updates and maintenance
-- In 6 months, can I confidently modify this code?
+::: {.notes}
+**The Art of the Practice: Systematic Skill Development**
 
----
+The "art of the practice" refers to a systematic approach to skill development, whether in creative fields like visual arts or music, or in technical areas like R development and leadership. It goes beyond just the final product to encompass research, analysis, and consistent action to achieve mastery and personal growth. This involves understanding and applying strategies to improve skills, maintain motivation, and overcome challenges.
 
-## Staying in Your Lane
+**Research & Analysis:** In Part 3, we've covered how to learn from Claude's mistakes—package confusion, data assumptions, over-abstraction. This is the research and analysis phase. You're not just fixing errors; you're understanding WHY they happen and what patterns they reveal about effective R development.
 
-```{r}
-#| echo: true
-#| eval: false
+**Consistent Action:** The volume advantage of AI-assisted development (10 attempts/day vs 1/week) is the consistent action. You're practicing constantly, iterating rapidly, building muscle memory for recognizing good code vs bad code, simple vs over-complex, verified vs assumed.
 
-# Instead of AI-generated JavaScript:
-# ❌ Complex build process
-# ❌ Node dependencies
-# ❌ Framework-specific patterns I don't deeply understand
+**Achieving Mastery:** Mastery comes from pattern recognition, and pattern recognition requires exposure to lots of patterns. By encountering Claude's mistakes at scale, you're accelerating your path to mastery. You're learning what good documentation looks like, how to inspect data structures properly, when to choose simplicity over abstraction.
 
-# I chose Quarto:
-# ✅ Markdown-based (familiar)
-# ✅ R code chunks (my expertise)
-# ✅ Easy to maintain
-# ✅ Client can understand the structure
+**Personal Growth & Overcoming Challenges:** The discipline of the practice is staying engaged when Claude makes mistakes, not giving up when errors repeat, maintaining curiosity about WHY something failed rather than just fixing it. The temptation with AI is to become passive—just accept what it generates. The art of the practice is staying active, critical, and intentional.
 
-library(ggplot2)
-library(dplyr)
+**Maintaining Motivation:** The professional joy we discussed in Part 1 (client work, technical growth, life balance, community) is what maintains motivation. The ruthless solutions-focus from Part 2 is what keeps you disciplined. The learning through volume from Part 3 is what builds your skills systematically.
 
-# This is my wheelhouse
-# I can modify this at 2am if needed
-# The client can read this
-```
+**The Key Insight:** AI-assisted development accelerates the practice by increasing volume and speed of iteration. But it doesn't replace the discipline of learning. You still need to:
+- Read the documentation (don't assume)
+- Inspect your data structures (don't infer)
+- Choose simplicity (don't over-engineer)
+- Stay curious about failures (don't just fix and move on)
 
----
+This is systematic skill development—using AI as a tool to practice more, fail faster, and learn deeper. The art is in how you engage with the process, not just the output you produce.
+:::
 
-## When to Override AI
-
-You should override or ignore AI suggestions when:
-
-1. The solution is over-engineered for your needs
-2. It uses technologies outside your maintenance capacity
-3. It introduces dependencies you don't want to manage
-4. You can't explain it to your client
-5. It feels like "magic" instead of logic
-
-**Your expertise is your compass.**
-
----
+# Conclusion: Human In/On the Loop
 
 ## Your AI Values Exercise
 
 Before your next AI-assisted project, write down:
 
-1. **What I will always do myself:**
-2. **What AI can help me with:**
-3. **What I need to understand deeply:**
-4. **What I'm comfortable delegating:**
+1. **What I will always do myself**
+2. **What AI can help me with**
+3. **What I need to understand deeply**
+4. **What I'm comfortable delegating**
 
-**This clarity prevents the dumpster fire.**
+**This clarity prevents AI-Assisted development from going out of bounds**
 
+::: {.notes}
+Before you start working with AI tools like Claude Code, take time to establish your personal values and boundaries. This isn't about restricting AI use—it's about using it intentionally.
 
-# Conclusion
+**What I will always do myself:** For me, this includes final code review, client communication, architectural decisions, and anything security-sensitive. These are areas where my expertise and judgment are irreplaceable.
 
-## The Four Pillars of AI-assisted development
+**What AI can help me with:** Boilerplate code, documentation, unfamiliar packages, repetitive transformations, initial implementations. These are areas where AI accelerates my work without compromising quality.
 
-::: columns
-::: {.column width="50%"}
-**1. Mental Bandwidth**
+**What I need to understand deeply:** The business logic, the data architecture, the deployment pipeline, how everything connects. Even if AI writes the code, I need to understand it well enough to maintain and extend it.
 
-- 10-20% time back
-- Strategic focus
-- Creative projects
+**What I'm comfortable delegating:** The implementation details, the syntax lookup, the initial scaffolding. These are tasks that AI handles well and that don't require my deep expertise.
 
-**2. Bigger Problems**
-
-- Say yes to growth
-- Expand service offerings
-- Comprehensive solutions
-:::
-
-::: {.column width="50%"}
-**3. Accelerated Learning**
-
-- High-volume iteration
-- Pattern recognition
-- Fail fast, learn faster
-
-**4. Human Leadership**
-
-- Establish AI values
-- Maintain expertise
-- Own the final product
-:::
+This exercise creates guardrails that help you work with AI effectively without losing technical leadership or creating maintenance nightmares.
 :::
 
 ---
@@ -1121,10 +925,9 @@ Before your next AI-assisted project, write down:
 
 ---
 
-## Final Thoughts {.center}
+## Final Thoughts 
 
-> "When AI frees up your mental bandwidth,
-> you don't get lazy—you get strategic."
+> "When AI frees up your mental bandwidth, you don't get lazy—you get strategic."
 
 <br>
 
