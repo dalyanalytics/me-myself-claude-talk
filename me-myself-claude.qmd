@@ -1,38 +1,23 @@
 ---
 title: "Me, Myself & Claude"
-subtitle: "How I Leverage AI-Assisted Development to Scale My Solo R-based Data Science Consultancy"
+subtitle: "How I Leverage AI-Assisted Development to Scale My R-based Data Science Consultancy"
 author: "Jasmine Daly<br>Principal Consultant & Founder<br>Daly Analytics"
 date: "Wednesday, November 12, 2025"
 format:
   revealjs:
     theme: [simple, theme/daly-analytics.scss]
     transition: slide
-    slide-number: true
-    chalkboard: true
     preview-links: auto
     code-line-numbers: false
     highlight-style: github
     logo: images/sunset.png
 ---
 
-## Introduction {.center}
-
-**AI-Assisted Development in R**
-
-A journey of staying in your lane while scaling your impact!
-
-::: {.notes}
-Hello everyone! Today I want to share my experience integrating AI into my R development workflow - not as a replacement for expertise, but as a strategic force multiplier.
-:::
-
----
-
 ## Who Am I? {.smaller}
 
 - R Developer & Data Scientist since 2014
-- Maintainer of {shinyLP}, {ttbbeer}, {avilistr}^, {shinyfa}^
-- Running a *mostly* solo consultancy focused on delivering solutions with data science, analytics & AI 
-- Building Shiny applications, interactive dashboards, and data automation pipelines
+- Maintainer of 4 R Packages: {shinyLP}, {ttbbeer}, {avilistr}, {shinyfa}
+- Principal Consultant focused on delivering solutions with data science, analytics & AI for nonprofits and mission-driven orgs
 
 
 ::: {.notes}
@@ -64,7 +49,7 @@ I'm managing both the technical (writing code) and business sides (doing discove
 ::: {.notes}
 Credit to Christopher Fitkin's LinkedIn post on "vibe engineering" which really resonated with me.
 
-One of the key takeaways of this entire talk is to reframe our language around how we talk about AI-assisted coding. "Vibe Coding" - while often funny - really diminishes our impact and the capacity for others to understand our lived experience as software developers.
+One of the key takeaways of this entire talk is to reframe our language around how we talk about AI-assisted coding. "Vibe Coding" - while often a funny phrase - really diminishes our impact and the capacity for others to understand our lived experience as software developers.
 
 It also does a disservice to our community when it comes to advocating for democratizing our field for diverse participants while also trying to emphasize the real complexity around ethics, governance, and professional responsibility.
 
@@ -141,7 +126,6 @@ This slide sets up everything that follows in the talk—all four parts are enab
 
 
 ## What Mental Bandwidth Buys You
-
 ::: {.incremental}
 - **Better Biz Ops:** Improving my systems to be automated and Standardized
 - **Financial Clarity:** Time to understand cash flow, pricing strategy, and profitability
@@ -595,7 +579,6 @@ The pattern ensures that strategic decisions and quality control stay with the h
 
 ::: {.incremental}
 - I'm not thinking about syntax—I'm thinking about client outcomes
-- I'm not googling package documentation—I'm designing system architecture
 - I'm not debugging YAML—I'm solving business problems
 - My mental energy goes to **what matters**: understanding client needs and delivering value
 :::
@@ -629,29 +612,19 @@ This is the promise of AI-assisted development for consultants: you become MORE 
 
 ::: columns
 ::: {.column width="50%"}
-**Traditional Learning:**
-
-- Read docs (30 min)
-- Try implementation (1 hour)
-- Hit error
-- Google/Stack Overflow (20 min)
-- Try again (30 min)
-- Success? (Maybe)
-
-**Result:** 2.5+ hours for one pattern
+<div style="text-align: center;">
+  <img src="images/small-highway.jpg" style="width: 100%; border-radius: 8px;">
+  <p style="margin-top: 2px; font-size: 1em; font-weight: bold;">Traditional Learning</p>
+  <p style="font-size: 0.8em;">2.5+ hours for one pattern</p>
+</div>
 :::
 
 ::: {.column width="50%"}
-**AI-Assisted Learning:**
-
-- Ask Claude (2 min)
-- Review code (5 min)
-- Test it (5 min)
-- Encounter error (immediate)
-- Understand WHY it failed
-- Iterate (10 min)
-
-**Result:** 22 minutes, 3-4 approaches seen
+<div style="text-align: center;">
+  <img src="images/big-highway.jpg" style="width: 100%; border-radius: 8px;">
+  <p style="margin-top: 2px; font-size: 1em; font-weight: bold;">AI-Assisted Learning</p>
+  <p style="font-size: 0.8em;">22 minutes, 3-4 approaches seen</p>
+</div>
 :::
 :::
 
@@ -876,7 +849,6 @@ Before your next AI-assisted project, write down:
 3. **What I need to understand deeply**
 4. **What I'm comfortable delegating**
 
-**This clarity prevents AI-Assisted development from going out of bounds**
 
 ::: {.notes}
 Before you start working with AI tools like Claude Code, take time to establish your personal values and boundaries. This isn't about restricting AI use—it's about using it intentionally.
@@ -904,23 +876,6 @@ This exercise creates guardrails that help you work with AI effectively without 
 - **Review everything** like you're mentoring an intern
 - **Refactor freely** to match your style and standards
 - **Test thoroughly** because AI doesn't understand your edge cases
-:::
-
----
-
-## The Core Philosophy
-
-**AI doesn't replace expertise.**
-
-**It amplifies it.**
-
-<br>
-
-::: {.incremental}
-- You remain the architect
-- You maintain the standards
-- You own the relationships
-- You deliver the value
 :::
 
 ---

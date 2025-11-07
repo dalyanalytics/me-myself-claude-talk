@@ -1,0 +1,831 @@
+---
+title: "Me, Myself & Claude"
+subtitle: "How I Leverage AI-Assisted Development to Scale My Solo R-based Data Science Consultancy"
+author: "Jasmine Daly<br>Principal Consultant & Founder<br>Daly Analytics"
+date: "Wednesday, November 12, 2025"
+format:
+  revealjs:
+    theme: [simple, theme/daly-analytics.scss]
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+    code-line-numbers: false
+    highlight-style: github
+    logo: images/sunset.png
+---
+
+## Introduction {.center}
+
+**AI-Assisted Development in R**
+
+A journey of staying in your lane while scaling your impact!
+
+::: {.notes}
+Hello everyone! Today I want to share my experience integrating AI into my R development workflow - not as a replacement for expertise, but as a strategic force multiplier.
+:::
+
+---
+
+## Who Am I? {.smaller}
+
+- R Developer & Data Scientist since 2014
+- Maintainer of {shinyLP}, {ttbbeer}, {avilistr}^, {shinyfa}^
+- Running a *mostly* solo consultancy focused on delivering solutions with data science, analytics & AI 
+- Building Shiny applications, interactive dashboards, and data automation pipelines
+
+
+::: {.notes}
+To level-set everyone and provide some context: I'm a mom of 2 young kids with limited time resources. I'm also an active Volunteer in my local community.
+
+I'm managing both the technical (writing code) and business sides (doing discovery/sales calls) of my practice. I just recently onboarded a subcontractor this Summer that provides adhoc shiny development support, which has been wonderful in delegating tasks to them. 
+:::
+
+---
+
+## 🔑 Moving Beyond 'Vibe Coding' {.smaller}
+
+**Words matter. Let's reframe the conversation.**
+
+::: {.incremental}
+- **"Vibe Coding"** → Implies reckless, hope-based development
+- **"Vibe Engineering"** → Intentional, accountable AI-assisted development
+- **"I'm Learning"** → Honest acknowledgment of exploration
+:::
+
+::: {.fragment}
+**The Reality:**
+
+We're in an **exploratory phase**. There are no settled best practices yet. Making mistakes is part of professional growth.
+
+But you remain **fully accountable** for the outcome.
+:::
+
+::: {.notes}
+Credit to Christopher Fitkin's LinkedIn post on "vibe engineering" which really resonated with me.
+
+One of the key takeaways of this entire talk is to reframe our language around how we talk about AI-assisted coding. "Vibe Coding" - while often funny - really diminishes our impact and the capacity for others to understand our lived experience as software developers.
+
+It also does a disservice to our community when it comes to advocating for democratizing our field for diverse participants while also trying to emphasize the real complexity around ethics, governance, and professional responsibility.
+
+The distinction Fitkin makes is critical: "vibe coding" suggests careless dependency where you hope AI outputs work. "Vibe engineering" means experienced developers intentionally leveraging AI tools while maintaining full accountability.
+
+This isn't about replacing human expertise - it's about experienced engineers guiding AI tool adoption as an enhancement to craft, not a substitute for professional judgment. 
+
+tl;dr: it's hard to say things are easy, give people the confidence and tools and then back track and say 'well that's not serious data science" so everything you 'vibe coded' shouldnt be used.
+:::
+
+# Part 1: Strategic Thinking Unlocked for Greater Community Contributions
+
+## The Mental Bandwidth Shift {.smaller}
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 40px; padding: 20px 10px; max-width: 100%; margin: 0 auto;">
+
+<div style="text-align: center; flex: 1; max-width: 280px;">
+<h3 style="font-size: 1.6em; margin-bottom: 15px; color: #404041; font-weight: bold;">Before AI</h3>
+
+<div style="background: #6A94C9; height: 340px; display: flex; flex-direction: column; justify-content: center; margin-bottom: 8px; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+<div style="font-size: 1.2em; font-weight: bold; color: white; line-height: 1.3;">Client Dev</div>
+<div style="font-size: 2em; font-weight: bold; color: white; margin-top: 5px;">85%</div>
+</div>
+
+<div style="background: #D68A93; height: 60px; display: flex; flex-direction: column; justify-content: center; margin-bottom: 8px; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); overflow: visible;">
+<div style="font-size: 0.95em; font-weight: bold; color: white; line-height: 1.2;">Biz Dev 15%</div>
+</div>
+</div>
+
+<div style="text-align: center; flex: 0 0 auto;">
+<div style="font-size: 4em; color: #F9B397; font-weight: bold; line-height: 1;">→</div>
+<div style="font-size: 1em; color: #404041; font-weight: bold; margin-top: 5px; line-height: 1.2;">AI Unlocks<br>15%</div>
+</div>
+
+<div style="text-align: center; flex: 1; max-width: 280px;">
+<h3 style="font-size: 1.6em; margin-bottom: 15px; color: #404041; font-weight: bold;">With AI</h3>
+
+<div style="background: #6A94C9; height: 280px; display: flex; flex-direction: column; justify-content: center; margin-bottom: 8px; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+<div style="font-size: 1.2em; font-weight: bold; color: white; line-height: 1.3;">Client Dev</div>
+<div style="font-size: 2em; font-weight: bold; color: white; margin-top: 5px;">70%</div>
+</div>
+
+<div style="background: #D68A93; height: 100px; display: flex; flex-direction: column; justify-content: center; margin-bottom: 8px; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+<div style="font-size: 1em; font-weight: bold; color: white; line-height: 1.2;">Biz Dev</div>
+<div style="font-size: 1.6em; font-weight: bold; color: white; margin-top: 3px;">25%</div>
+</div>
+
+<div style="background: #AD92B1; min-height: 40px; height: 40px; display: flex; flex-direction: column; justify-content: center; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 5px 10px;">
+<div style="font-size: 0.85em; font-weight: bold; color: white; line-height: 1.1;">Community 5%</div>
+</div>
+</div>
+
+</div>
+
+---
+
+
+## What Mental Bandwidth Buys You
+
+::: {.incremental}
+- **Better Biz Ops:** Improving my systems to be automated and Standardized
+- **Financial Clarity:** Time to understand cash flow, pricing strategy, and profitability
+- **Relationship Building:** Networking, content creation, community engagement
+- **Creative Space:** Room to think about what *could* be built, not just what *must* be built
+:::
+
+::: {.notes}
+The mental bandwidth shift from 85% client dev to 70% client dev freed up 15% of my cognitive capacity. That 15% doesn't sound like much, but it's transformational.
+
+**Better Biz Ops:** I now have time to build automated systems and standardized processes. Proposals, contracts, invoicing - things that used to be rushed now have proper templates and workflows.
+
+**Financial Clarity:** Understanding cash flow, pricing strategy, and profitability isn't a "someday" task anymore. I can make strategic financial decisions instead of reactive ones.
+
+**Relationship Building:** Networking isn't just attending events - it's consistent content creation, community engagement, and showing up in ways that build long-term relationships.
+
+**Creative Space:** This is the big one. I now have room to think about what *could* be built, not just what *must* be built. That's where packages like {shinyfa} come from - tapping into real and persistent problems and creative exploration that serves the community.
+
+Before AI: I was always feeling behind on the business side, constantly in reactive mode.
+
+After AI: More strategic, more sustainable, and more creative. I'm building a business, not just executing projects.
+:::
+
+---
+
+## The {shinyfa} Package ![](images/shinyfa.png){.absolute top=50 right=50 width="150"}
+
+::: {.incremental}
+- **The Problem:** Hired to onboard to a large, complex Shiny app for a conservation nonprofit
+- **The Reality:** Took me *months* to get comfortable navigating their codebase
+- **The Insight:** "There has to be a better way to understand file relationships and reactivity patterns"
+- **The Solution:** Started with a one-off script to analyze their app structure
+- **The Evolution:** Refined those functions → generalized the approach → built {shinyfa}
+- **The Impact:** A tool that would have saved me weeks of onboarding time
+:::
+
+::: {.fragment}
+**Before AI:** "That would be nice someday... but I have client work."
+
+**With AI:** Built and released in weeks, not shelved as "someday."
+:::
+
+::: {.notes}
+This is a perfect example of how AI freed up mental bandwidth for creative work.
+
+The real-world story: I was hired by a conservation nonprofit to work on their large Shiny application. It took me MONTHS to get comfortable in their repo - understanding which files did what, how the reactive dependencies flowed, where inputs and outputs were defined. It was a significant onboarding challenge.
+
+About halfway through the project, I had this realization: "I'm a Shiny developer. There has to be a better way to systematically analyze app structure." So I wrote a one-off script to help me catalog the render functions, reactive functions, inputs, and file relationships in their app.
+
+That script was so useful that I kept refining it. Then I thought - "Other developers face this same problem." With Claude's help, I generalized those functions, added proper documentation, built tests, and packaged it up as {shinyfa}.
+
+The entire process from "useful script" to "published package" took weeks, not months. Without AI assistance, this would have stayed as a one-off script on my hard drive, or been a "someday" project I never got to.
+
+This is what mental bandwidth buys you: the ability to take a client problem, generalize it, and contribute a tool back to the community - all without sacrificing your business.
+:::
+
+---
+
+## The {avilistr} Package {.smaller}
+
+::: {.incremental}
+- **The Discovery:** Started birding in 2025 - found the AviList Global Avian Checklist (an Excel sheet!)
+- **The Realization:** "R birders need this taxonomy data... but it's in Excel"
+- **The Solution:** Wrapped the published Excel sheet into an R package with Cornell Lab species codes
+- **The Value Add:** Created starter code showing how to integrate with eBird data via {rebird}
+- **The Impact:** 11,131 species, unified taxonomy, ready for R pipelines
+:::
+
+::: {.fragment}
+**Before AI:** "I'd love to do this, but package documentation is tedious."
+
+**With AI:** Published with comprehensive docs and vignettes in less than a week.
+:::
+
+::: {.notes}
+Total honesty: this wasn't some groundbreaking technical achievement. I took a published Excel sheet (the AviList Global Avian Checklist) and wrapped it into an R package. The Excel conversion itself was straightforward - not a heavy lift at all.
+
+I started birding this year and discovered this unified global bird taxonomy. For R users who want to work with bird data - especially integrating with eBird through the {rebird} package - having this taxonomy accessible in R makes workflows much cleaner.
+
+The real work - and where AI made the difference - was creating the starter code and documentation. The getting-started vignette shows practical workflows: exploring the 11,131 species, finding specific groups (like all 194 thrush species), comparing naming differences between taxonomies, and connecting to real-time eBird observations.
+
+With AI assistance, I could focus on "what examples would actually help birders?" rather than getting bogged down in the tedium of writing documentation. Claude helped me structure the vignettes, write clear examples, and make the package immediately useful to someone who installs it. The entire process - from idea to published on CRAN with comprehensive documentation - took less than a week.
+
+This is about lowering the barrier to contribution. You don't need to build something technically complex to add value to a community. Sometimes it's just "take this useful thing in the wrong format and make it accessible to your community" - and with AI, doing that well (with good docs!) becomes feasible in days, not months.
+
+Finding common ground in open source: birding + R + making things accessible = a contribution I'm genuinely proud of.
+:::
+
+---
+
+## The Creative Multiplier
+
+AI assistance doesn't just save time on what you were already doing.
+
+**It unlocks what you weren't doing at all:**
+
+- Open source contributions (like shinyfa)
+- Writing better tests and documentation
+- Building developer tools that solve real problems
+- Package development with proper structure
+- Community engagement and knowledge sharing
+
+::: {.fragment}
+**The timeline tells the story:**
+
+- {ttbbeer} (July 2016) → {shinyLP} (September 2016) → ... **8 years 9 months** ... → {avilistr} (June 2025)
+:::
+
+::: {.fragment}
+*Side note: ChatGPT is great for hex sticker design and branding ideas!*
+:::
+
+::: {.notes}
+Let's talk about what this really means. I'm not becoming dependent on Claude - I'm accelerating my growth as an R developer.
+
+The timeline is striking: {ttbbeer} my first package was released July 2016, {shinyLP} my second package September 2016. Then... nothing on CRAN until {avilistr} in June 2025. That's 8 years 9 months (September 16, 2016 – June 17, 2025)
+:::
+
+---
+
+# Part 2: Saying Yes to Bigger & Funner Problems
+
+## Scaling Strategy
+
+---
+
+## The Growth Question
+
+Before AI assistance, my filter for new projects was:
+
+> "Can I build this in a reasonable timeframe with my current skillset given my existing client workload?"
+
+**This meant saying NO to:**
+
+- Projects requiring unfamiliar R packages 
+- Learning new techniques to support the project
+- Interesting client opportunities
+
+---
+
+## The New Filter
+
+With AI assistance, the question became:
+
+> "Is this problem interesting and valuable enough to solve?"
+
+**Now I can say YES to:**
+
+- Pipeline development and automation
+- Data engineering workflows
+- Complex hosting solutions
+- Technologies outside my comfort zone but within my skillset
+
+---
+
+## Example 3: The Economic Development Dashboard {.smaller}
+
+**The Challenge:**
+
+- Nonprofit client needed a public-facing dashboard
+- Resource-strapped IT department
+- Limited technical capacity for hosting
+- Budget constraints
+- High availability requirements
+
+::: {.fragment}
+**The Old Response:**
+
+"You'll need to find someone with DevOps expertise. This is outside my wheelhouse."
+:::
+
+---
+
+## The Solution: Hybrid Hosting {.smaller}
+
+**Claude suggested using Cloudflare Workers as a reverse proxy**
+
+```javascript
+// Load balancing between Connect Cloud and ShinyApps.io
+addEventListener('fetch', event => {
+  event.respondWith(handleRequest(event.request))
+})
+
+async function handleRequest(request) {
+  const upstreamConnect = 'https://connect-cloud-instance.com'
+  const upstreamShinyApps = 'https://app.shinyapps.io/dashboard'
+
+  // Health check logic
+  const connectHealthy = await checkHealth(upstreamConnect)
+
+  // Route traffic based on availability
+  const targetUrl = connectHealthy ? upstreamConnect : upstreamShinyApps
+
+  return fetch(targetUrl, {
+    method: request.method,
+    headers: request.headers
+  })
+}
+```
+
+---
+
+## Why This Matters
+
+::: {.incremental}
+1. **I would have said NO to this project**
+2. JavaScript for Cloudflare Workers was outside my expertise
+3. Claude generated the necessary infrastructure code
+4. I maintained the R/Shiny dashboard (my expertise)
+5. Client got a comprehensive, managed solution
+6. I grew my service offerings
+:::
+
+::: {.fragment}
+**The principle:** Stay in your lane for the core value, but extend your reach for the solution architecture.
+:::
+
+---
+
+## Comprehensive Proposals
+
+Clients now get proposals that include:
+
+::: columns
+::: {.column width="50%"}
+**Technical Delivery:**
+
+- Dashboard development
+- Data pipeline architecture
+- Testing and QA
+:::
+
+::: {.column width="50%"}
+**Managed Services:**
+
+- Hosting solutions
+- Load balancing
+- Backup strategies
+- Monitoring and alerts
+:::
+:::
+
+<br>
+
+This positions me as a **strategic partner**, not just a contractor.
+
+---
+
+# Part 3: Building Up Your R Intuition Through Volume
+
+## Learning Acceleration
+
+---
+
+## The Traditional Learning Curve
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Learning new R patterns traditionally:
+# 1. Read documentation (30 minutes)
+# 2. Try implementation (1 hour)
+# 3. Hit error (5 minutes of frustration)
+# 4. Google/Stack Overflow (20 minutes)
+# 5. Try again (30 minutes)
+# 6. Success! (Maybe)
+#
+# Total time: 2.5+ hours for one pattern
+
+learning_rate_traditional <- "Slow but deliberate"
+```
+
+---
+
+## The High-Volume Approach
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Learning with AI assistance:
+# 1. Ask Claude for implementation (2 minutes)
+# 2. Review generated code (5 minutes)
+# 3. Test it (5 minutes)
+# 4. Encounter error (immediate)
+# 5. Understand WHY it failed (learning moment)
+# 6. Adjust and iterate (10 minutes)
+#
+# Total time: 22 minutes
+# But you've seen 3-4 different approaches
+
+learning_rate_ai_assisted <- "Fast iteration builds intuition"
+```
+
+---
+
+## Practical Use Cases {.smaller}
+
+**1. Generating Fake Data**
+
+```{r}
+#| echo: true
+#| eval: false
+
+# "Claude, generate realistic university course enrollment data"
+set.seed(123)
+courses <- data.frame(
+  course_id = paste0("COURSE", 1:50),
+  department = sample(c("Math", "CS", "Biology", "English", "History"), 50, replace = TRUE),
+  enrollment = sample(15:150, 50, replace = TRUE),
+  semester = sample(c("Fall 2024", "Spring 2025"), 50, replace = TRUE),
+  instructor_rating = round(runif(50, 2.5, 5.0), 1)
+)
+
+# This would have taken me 20+ minutes
+# Claude did it in 30 seconds
+# I learned about realistic data generation patterns
+```
+
+---
+
+## Practical Use Cases {.smaller}
+
+**2. Project Scaffolding**
+
+```{r}
+#| echo: true
+#| eval: false
+
+# "Claude, create a basic Shiny app structure with modules"
+
+# app.R
+library(shiny)
+source("modules/data_module.R")
+source("modules/plot_module.R")
+
+ui <- fluidPage(
+  titlePanel("Dashboard"),
+  dataModuleUI("data"),
+  plotModuleUI("plot")
+)
+
+server <- function(input, output, session) {
+  data <- dataModuleServer("data")
+  plotModuleServer("plot", data)
+}
+
+shinyApp(ui, server)
+
+# The "getting started" friction is eliminated
+```
+
+---
+
+## Learning from AI Errors
+
+**Claude makes mistakes. This is actually valuable.**
+
+::: {.incremental}
+- **Hallucinated packages:** Forces you to verify what exists
+- **Wrong function arguments:** Makes you read documentation
+- **Mixing tidyverse/base R:** Teaches you to spot inconsistencies
+- **Over-engineering:** Shows you what NOT to do
+:::
+
+::: {.fragment}
+**The pattern recognition you build from fixing AI errors is faster than traditional trial-and-error.**
+:::
+
+---
+
+## The Failing Fast Advantage
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Traditional development:
+attempts <- 1
+learning <- "slow and careful"
+
+# AI-assisted development:
+attempts <- 10
+learning <- "rapid pattern recognition"
+
+# You encounter and solve more problems in less time
+# Each failure teaches you something about:
+# - What works in R
+# - What's idiomatic
+# - What's maintainable
+# - What's efficient
+```
+
+---
+
+## The 80% Problem: AI Limitations {.smaller}
+
+**Not everything AI generates is production-ready.**
+
+::: columns
+::: {.column width="50%"}
+**Where AI Excels:**
+
+- Boilerplate code
+- Standard patterns
+- Initial structure
+- Quick prototypes
+- Documentation drafts
+:::
+
+::: {.column width="50%"}
+**Where AI Falls Short:**
+
+- Data cleaning scripts (≈80% okay)
+- Edge case handling
+- Domain-specific logic
+- Performance optimization
+- Security considerations
+:::
+:::
+
+<br>
+
+::: {.fragment}
+**The term:** "AI Slop" - code that *technically works* but isn't quite right.
+:::
+
+---
+
+## Over-Abstraction Warning
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Claude's suggestion (over-abstracted):
+create_advanced_pipeline <- function(data, config, transformations, validators,
+                                      error_handlers, logging_strategy, ...) {
+  # 200 lines of abstraction
+}
+
+# What I actually need (maintainable):
+clean_data <- function(data) {
+  data |>
+    filter(!is.na(key_column)) |>
+    mutate(date = as.Date(date))
+}
+
+# Keep it simple. Keep it readable. Keep it maintainable.
+```
+
+---
+
+# Part 4: The Human in the Loop
+
+## Maintaining Technical Leadership
+
+---
+
+## Establishing Your AI Values
+
+Before integrating AI into your workflow, ask yourself:
+
+::: {.incremental}
+1. **What code can I maintain 6 months from now?**
+2. **Where do I need to maintain expertise?**
+3. **What represents my core value proposition?**
+4. **What should I always understand deeply?**
+:::
+
+::: {.fragment}
+**These become your guardrails.**
+:::
+
+---
+
+## Defining the Relationship
+
+**Claude is not your boss. Claude is your colleague.**
+
+::: columns
+::: {.column width="50%"}
+**Claude as Colleague:**
+
+- Suggests approaches
+- Generates initial drafts
+- Handles boilerplate
+- Explores alternatives
+- Speeds up research
+:::
+
+::: {.column width="50%"}
+**You as Leader:**
+
+- Make architectural decisions
+- Review and refine code
+- Ensure maintainability
+- Apply domain expertise
+- Own the final product
+:::
+:::
+
+---
+
+## The Dumpster Fire Prevention Rule
+
+**If you can't explain the code, you don't own it.**
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Bad: AI-generated code you don't understand
+result <- complex_ai_function(data, params = list(
+  algorithm = "advanced_ml_technique",
+  hyperparameters = list(alpha = 0.05, beta = 0.9, gamma = 2.5),
+  cross_validation = TRUE,
+  ensemble_method = "stacking"
+))
+
+# Good: Code you understand and can maintain
+result <- data |>
+  filter(status == "active") |>
+  group_by(category) |>
+  summarize(total = sum(value))
+
+# If you can't debug it, don't ship it.
+```
+
+---
+
+## Example 4: Quarto Over JavaScript {.smaller}
+
+**The Scenario:**
+
+- Client wants an interactive dashboard
+- AI suggests a JavaScript framework (React, Vue, etc.)
+- Impressive demo, cutting-edge tech
+
+**The Problem:**
+
+- I'm an R developer, not a JavaScript expert
+- Client needs updates and maintenance
+- In 6 months, can I confidently modify this code?
+
+---
+
+## Staying in Your Lane
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Instead of AI-generated JavaScript:
+# ❌ Complex build process
+# ❌ Node dependencies
+# ❌ Framework-specific patterns I don't deeply understand
+
+# I chose Quarto:
+# ✅ Markdown-based (familiar)
+# ✅ R code chunks (my expertise)
+# ✅ Easy to maintain
+# ✅ Client can understand the structure
+
+library(ggplot2)
+library(dplyr)
+
+# This is my wheelhouse
+# I can modify this at 2am if needed
+# The client can read this
+```
+
+---
+
+## Hand on the Wheel
+
+**Key Principle:** AI accelerates; you steer.
+
+::: {.incremental}
+- **Let AI generate** the boilerplate, the repetitive code, the initial structure
+- **You maintain** the architecture, the business logic, the critical decisions
+- **Review everything** like you're mentoring an intern
+- **Refactor freely** to match your style and standards
+- **Test thoroughly** because AI doesn't understand your edge cases
+:::
+
+---
+
+## When to Override AI
+
+You should override or ignore AI suggestions when:
+
+1. The solution is over-engineered for your needs
+2. It uses technologies outside your maintenance capacity
+3. It introduces dependencies you don't want to manage
+4. You can't explain it to your client
+5. It feels like "magic" instead of logic
+
+**Your expertise is your compass.**
+
+---
+
+# Conclusion
+
+## Bringing It All Together
+
+---
+
+## The Four Pillars
+
+::: columns
+::: {.column width="50%"}
+**1. Mental Bandwidth**
+
+- 10-20% time back
+- Strategic focus
+- Creative projects
+
+**2. Bigger Problems**
+
+- Say yes to growth
+- Expand service offerings
+- Comprehensive solutions
+:::
+
+::: {.column width="50%"}
+**3. Accelerated Learning**
+
+- High-volume iteration
+- Pattern recognition
+- Fail fast, learn faster
+
+**4. Human Leadership**
+
+- Establish AI values
+- Maintain expertise
+- Own the final product
+:::
+:::
+
+---
+
+## The Core Philosophy
+
+**AI doesn't replace expertise.**
+
+**It amplifies it.**
+
+<br>
+
+::: {.incremental}
+- You remain the architect
+- You maintain the standards
+- You own the relationships
+- You deliver the value
+:::
+
+---
+
+## Your AI Values Exercise
+
+Before your next AI-assisted project, write down:
+
+1. **What I will always do myself:**
+2. **What AI can help me with:**
+3. **What I need to understand deeply:**
+4. **What I'm comfortable delegating:**
+
+**This clarity prevents the dumpster fire.**
+
+---
+
+## Final Thoughts {.center}
+
+> "When AI frees up your mental bandwidth,
+> you don't get lazy—you get strategic."
+
+<br>
+
+**Stay in your lane.**
+
+**Keep your hand on the wheel.**
+
+**Build with confidence.**
+
+---
+
+## Thank You {.center}
+
+![](images/horizontal-logo.png){width=60% fig-align="center"}
+
+**Questions?**
+
+<br>
+
+Contact: [jasmine@dalyanalytics.com]
+
+GitHub: [@jasdumas]
+
+Website: [dalyanalytics.com]
+
+::: {.notes}
+Thank you all for your time. I'm happy to take questions about AI-assisted development, R workflows, or anything else we've covered today.
+:::

@@ -47,6 +47,15 @@ $backgroundColor: $warm-beige;
   letter-spacing: 0.01em;
 }
 
+// Reduce slide padding for more content space
+.reveal .slides {
+  padding: 0 20px;
+}
+
+.reveal .slide-content {
+  padding: 0 10px;
+}
+
 // Headings with more refined spacing
 .reveal h1,
 .reveal h2,
@@ -54,20 +63,22 @@ $backgroundColor: $warm-beige;
 .reveal h4 {
   font-weight: 700;
   line-height: 1.2;
-  margin-bottom: 0.8em;
+  margin-bottom: 0.5em;
 }
 
 .reveal h1 {
   color: $pink;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   letter-spacing: 0.02em;
+  font-size: 2em;
 }
 
 .reveal h2 {
   color: $pink;
   border-bottom: 3px solid $orange;
-  padding-bottom: 0.4em;
-  margin-bottom: 1em;
+  padding-bottom: 0.3em;
+  margin-bottom: 0.5em;
+  font-size: 1.6em;
 }
 
 .reveal h3 {
@@ -217,8 +228,9 @@ $backgroundColor: $warm-beige;
 // Lists with refined spacing
 .reveal ul,
 .reveal ol {
-  margin: 1em 0;
-  
+  margin: 0.5em 0;
+  margin-top: 0.3em;
+
   li {
     margin-bottom: 0.6em;
     line-height: 1.6;
@@ -228,6 +240,11 @@ $backgroundColor: $warm-beige;
       font-weight: 700;
     }
   }
+}
+
+// Reduce spacing for incremental lists after headings
+.reveal .incremental {
+  margin-top: 0.3em;
 }
 
 // Nested lists
