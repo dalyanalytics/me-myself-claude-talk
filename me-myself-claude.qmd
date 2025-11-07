@@ -546,7 +546,7 @@ This is "staying in your R lane while extending your reach." The core logic is R
 :::
 
 ::: {.fragment}
-**Notice the pattern:** Human decisions at the start and end. AI execution in the middle.
+Human decisions at the start, middle and end. AI execution sprinkled in the middle.
 :::
 
 ::: {.notes}
@@ -866,7 +866,7 @@ This exercise creates guardrails that help you work with AI effectively without 
 
 > "When AI frees up your mental bandwidth, you don't get lazy—you get strategic."
 
-<br>
+::: {.incremental}
 
 - **Build with intention.**
 
@@ -875,7 +875,7 @@ This exercise creates guardrails that help you work with AI effectively without 
 - **Stay strategic about solutions.**
 
 - **Stay joyful in the work.**
-
+:::
 
 ---
 
