@@ -862,47 +862,38 @@ This exercise creates guardrails that help you work with AI effectively without 
 
 ---
 
-## Hand on the Wheel
-
-**AI accelerates; you steer.**
-
-::: {.incremental}
-- **Let AI generate** the boilerplate, the repetitive code, the initial structure
-- **You maintain** the architecture, the business logic, the critical decisions
-- **Review everything** like you're cross-training a colleague 
-- **Refactor freely** to match your style and standards
-- **Test thoroughly** because AI doesn't understand your edge cases or requirements unless you supply them
-:::
-
----
-
 ## Final Thoughts 
 
 > "When AI frees up your mental bandwidth, you don't get lazy—you get strategic."
 
 <br>
 
-**Stay in your lane.**
+- **Build with intention.**
 
-**Keep your hand on the wheel.**
+- **Stay curious about failures.**
 
-**Build with confidence.**
+- **Stay strategic about solutions.**
+
+- **Stay joyful in the work.**
+
 
 ---
 
 ## Thank You {.center}
 
-![](images/horizontal-logo.png){width=60% fig-align="center"}
+<div style="text-align: center;">
+  <img src="images/horizontal-logo.png" style="width: 60%; max-width: 500px;">
+</div>
 
 **Questions?**
 
 <br>
 
-Contact: [jasmine@dalyanalytics.com]
+Contact: [jasmine@dalyanalytics.com]()
 
-GitHub: [@jasdumas]
+GitHub: [@jasdumas]()
 
-Website: [dalyanalytics.com]
+Website: [dalyanalytics.com]()
 
 ::: {.notes}
 Thank you all for your time. I'm happy to take questions about AI-assisted development, R workflows, or anything else we've covered today.
