@@ -847,6 +847,8 @@ Before your next AI-assisted project, write down:
 
 
 ::: {.notes}
+The relationship with Claude is both IN the loop and ON the loop. Integrated and Supervisory. In the weeds and yet at the 10,000 foot view.
+
 Before you start working with AI tools like Claude Code, take time to establish your personal values and boundaries. This isn't about restricting AI use—it's about using it intentionally.
 
 **What I will always do myself:** For me, this includes final code review, client communication, architectural decisions, and anything security-sensitive. These are areas where my expertise and judgment are irreplaceable.
