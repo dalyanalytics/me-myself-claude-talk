@@ -326,15 +326,11 @@ Finding common ground in open source: birding + R + accessibility = a contributi
 
 ## 🔑 The Creative Multiplier
 
-AI assistance doesn't just save time on what you were already doing.
+AI assistance doesn't just save time on what you were already doing. **It unlocks what you weren't previously able to complete before!**
 
-**It unlocks what you weren't doing at all:**
-
-- Open source contributions (like shinyfa and avilistr)
-- Writing better tests and documentation
-- Building developer tools that solve real problems
-- Package development with proper structure
-- Community engagement and knowledge sharing
+- Automated Biz Dev and Biz Ops systems
+- Writing better unit tests, documentation, package branding, hex stickers
+- Community engagement and knowledge sharing, networking
 
 ::: {.notes}
 *Side note: ChatGPT is great for hex sticker design and branding ideas!*
@@ -615,7 +611,7 @@ This is the promise of AI-assisted development for consultants: you become MORE 
 <div style="text-align: center;">
   <img src="images/small-highway.jpg" style="width: 100%; border-radius: 8px;">
   <p style="margin-top: 2px; font-size: 1em; font-weight: bold;">Traditional Learning</p>
-  <p style="font-size: 0.8em;">2.5+ hours for one pattern</p>
+  <p style="font-size: 0.8em;">A few hours for a few appraches</p>
 </div>
 :::
 
@@ -623,7 +619,7 @@ This is the promise of AI-assisted development for consultants: you become MORE 
 <div style="text-align: center;">
   <img src="images/big-highway.jpg" style="width: 100%; border-radius: 8px;">
   <p style="margin-top: 2px; font-size: 1em; font-weight: bold;">AI-Assisted Learning</p>
-  <p style="font-size: 0.8em;">22 minutes, 3-4 approaches seen</p>
+  <p style="font-size: 0.8em;">A few minutes for many approaches</p>
 </div>
 :::
 :::
@@ -868,14 +864,14 @@ This exercise creates guardrails that help you work with AI effectively without 
 
 ## Hand on the Wheel
 
-**Key Principle:** AI accelerates; you steer.
+**AI accelerates; you steer.**
 
 ::: {.incremental}
 - **Let AI generate** the boilerplate, the repetitive code, the initial structure
 - **You maintain** the architecture, the business logic, the critical decisions
-- **Review everything** like you're mentoring an intern
+- **Review everything** like you're cross-training a colleague 
 - **Refactor freely** to match your style and standards
-- **Test thoroughly** because AI doesn't understand your edge cases
+- **Test thoroughly** because AI doesn't understand your edge cases or requirements unless you supply them
 :::
 
 ---

@@ -29,9 +29,19 @@ $presentation-heading-font-weight: 700;
 $presentation-heading-letter-spacing: normal;
 $presentation-heading-text-transform: none;
 
+// Drastically reduced heading sizes
+$presentation-h1-font-size: 1.6em;
+$presentation-h2-font-size: 1.3em;
+$presentation-h3-font-size: 1.1em;
+$presentation-h4-font-size: 1em;
+
 // Main font
-$presentation-font-size-root: 40px;
+$presentation-font-size-root: 36px;
 $presentation-font: "Frank Ruhl Libre", Georgia, serif;
+
+// Reduce slide margins
+$presentation-block-margin: 10px;
+$presentation-slide-width: 100%;
 
 // Code blocks
 $code-block-bg: #f8f8f8;
@@ -47,38 +57,41 @@ $backgroundColor: $warm-beige;
   letter-spacing: 0.01em;
 }
 
-// Reduce slide padding for more content space
+// Drastically reduce slide padding for more content space
 .reveal .slides {
-  padding: 0 20px;
+  padding: 0 10px !important;
+  margin: 0 !important;
 }
 
 .reveal .slide-content {
-  padding: 0 10px;
+  padding: 0 10px !important;
+  margin: 0 auto !important;
 }
 
-// Headings with more refined spacing
+// Headings with drastically reduced sizes and spacing
 .reveal h1,
 .reveal h2,
 .reveal h3,
 .reveal h4 {
   font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 0.5em;
+  line-height: 1.1;
+  margin-top: 0.2em !important;
+  margin-bottom: 0.3em !important;
 }
 
 .reveal h1 {
   color: $pink;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   letter-spacing: 0.02em;
-  font-size: 2em;
+  font-size: 1.6em !important;
 }
 
 .reveal h2 {
   color: $pink;
   border-bottom: 3px solid $orange;
-  padding-bottom: 0.3em;
-  margin-bottom: 0.5em;
-  font-size: 1.6em;
+  padding-bottom: 0.2em !important;
+  margin-bottom: 0.3em !important;
+  font-size: 1.3em !important;
 }
 
 .reveal h3 {
