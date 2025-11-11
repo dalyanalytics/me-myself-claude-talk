@@ -59,11 +59,13 @@ This is a **perfect example** of the "Human in the Loop" principle from the talk
 - Human maintains technical leadership
 
 ## Files
-- `me-myself-claude.qmd` - Main presentation file
+- `me-myself-claude.qmd` - Main presentation file with embedded speaker notes
+- `speaker-notes.md` - Cleaned-up transcript organized by slide sections
 - `CLAUDE.md` - This memory file for future sessions
 - `theme/daly-analytics.scss` - Custom Reveal.js theme with Daly Analytics brand colors
 - `images/` - Directory for presentation images (with README guide)
 - `.github/workflows/render-quarto.yml.disabled` - GitHub Action (currently disabled)
+- `"Me, Myself & Claude - 7 November 2025.srt"` - Original transcript file (untracked)
 
 ---
 
@@ -101,6 +103,52 @@ This is a **perfect example** of the "Human in the Loop" principle from the talk
 - Claude implements technical solutions and generates content
 - Jasmine reviews and refines with domain expertise
 - Claude maintains this change log for future reference
+
+### Session 2: Speaker Notes Integration (2025-11-10)
+
+**Context:** Continuation session after running out of context. User provided full SRT transcript from practice run and requested speaker notes be added to presentation slides.
+
+**Claude Generated:**
+- ✅ Created `speaker-notes.md` from SRT transcript
+  - Removed all filler words (umm, uh, like)
+  - Fixed transcription errors
+  - Organized by slide sections matching presentation structure
+  - Maintained Jasmine's authentic conversational voice
+- ✅ Streamlined verbose sections while keeping key phrases:
+  - "Learning Through Volume" - condensed highway metaphor
+  - GitHub Actions example - kept "real hand on the wheel"
+  - All three Mistake sections - reduced from 11/7/6 paragraphs to 4/5/5
+  - AI Values Exercise - cleaner grammar and directness
+- ✅ Added speaker notes to ALL 18+ slide sections in `me-myself-claude.qmd`:
+  - Part 1: Who Am I, Vibe Coding, Mental Bandwidth (7 slides)
+  - Part 2: Professional Joy, Filters, Claude Partnership, GitHub Actions, Workflow (8 slides)
+  - Part 3: Learning Volume, 3 Mistakes, Better Prompts, Art of Practice (7 slides)
+  - Conclusion: AI Values, Final Thoughts (2 slides)
+- ✅ Used TodoWrite tool throughout to track progress on 18 tasks
+- ✅ Replaced verbose technical notes with streamlined conversational notes matching actual speaking style
+
+**Jasmine Edited:**
+- 📝 Requested streamlining of mistake sections
+- 📝 Requested AI values slide cleanup
+- 📝 Removed extra notes block (lines 334-337 with package timeline)
+
+**Technical Approach:**
+- Read both `speaker-notes.md` and `me-myself-claude.qmd` to map content
+- Systematically replaced existing `{.notes}` sections with streamlined speaker notes
+- Maintained authentic voice: kept phrases like "real hand on the wheel", "right-sized enterprise-grade"
+- Removed overly technical explanations in favor of conversational delivery style
+
+**Key Collaboration Pattern:**
+- Claude processed 30+ minute transcript into organized notes
+- Jasmine identified verbose sections needing condensing
+- Claude streamlined while preserving authentic voice and key messages
+- All notes now match how Jasmine actually speaks vs. how documentation reads
+
+**Impact:**
+- Presentation now has comprehensive speaker notes in Reveal.js `{.notes}` format
+- Notes will appear in presenter view during talk delivery
+- Authentic voice preserved throughout all 25 minutes of content
+- Ready for November 12, 2025 presentation
 
 ---
 
