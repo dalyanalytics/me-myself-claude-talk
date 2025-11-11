@@ -21,9 +21,13 @@ format:
 
 
 ::: {.notes}
-To level-set everyone and provide some context: I'm a mom of 2 young kids with limited time resources. I'm also an active Volunteer in my local community.
+Hi everyone, I'm so excited to be here with you all, presenting my talk titled "Me, Myself, and Claude: How I Leverage AI-Assisted Development to Scale My R-based Data Science Consultancy." I'm Jasmine Daly.
 
-I'm managing both the technical (writing code) and business sides (doing discovery/sales calls) of my practice. I just recently onboarded a subcontractor this Summer that provides adhoc shiny development support, which has been wonderful in delegating tasks to them. 
+A little bit more about who I am. I'm an R developer and data scientist since about 2014. I'm the maintainer of four R packages, and we'll go over the last two in the upcoming slides as well.
+
+I'm the Principal Consultant at Daly Analytics, focused on delivering solutions with data science, analytics, and AI. I'm focused on non-profit and mission-driven organizations, handling both the technical and the writing aspects of the consultancy, as well as the sales and marketing aspects.
+
+And just to level set everybody, I'm also the mom of two young kids. I'm an active volunteer in my community. So leveraging AI-assisted development in my practice has been a real game changer, and I'm so excited to share some of my thoughts and concepts about how I use AI-assisted development, specifically Claude and Claude Code.
 :::
 
 ---
@@ -47,19 +51,13 @@ I'm managing both the technical (writing code) and business sides (doing discove
 :::
 
 ::: {.notes}
-Credit to Christopher Fitkin's LinkedIn post on "vibe engineering" which really resonated with me.
+I came upon this post and this image on LinkedIn, and it was a really great description of a lot of thoughts that have been flying around in my head, really around moving beyond "vibe coding."
 
-One of the key takeaways of this entire talk is to reframe our language around how we talk about AI-assisted coding. "Vibe Coding" - while often a funny phrase - really diminishes our impact and the capacity for others to understand our lived experience as software developers.
+Vibe coding is this funny little term that's popped up, but it's really important that we understand that having the proper language helps us to orient the conversation around the work that we're actually doing, besides some of the fun silly stuff or the mistakes that we're highlighting.
 
-It also does a disservice to our community when it comes to advocating for democratizing our field for diverse participants while also trying to emphasize the real complexity around ethics, governance, and professional responsibility.
+Vibe coding often implies reckless, hope-based development. Vibe engineering is intentional, accountable AI system development. And what I like to phrase about how I'm doing this is using a lot more words and not just using the small little phrases. I'm adding a new agentic tool to my toolbox. And it's an honest acknowledgement about the exploration phase of this hyper-growth mode of learning and development, and it really helps reframe and understand and not devalue the work that I do and the work that I've done before AI has come into place.
 
-The distinction Fitkin makes is critical: "vibe coding" suggests careless dependency where you hope AI outputs work. "Vibe engineering" means experienced developers intentionally leveraging AI tools while maintaining full accountability.
-
-This isn't about replacing human expertise - it's about experienced engineers guiding AI tool adoption as an enhancement to craft, not a substitute for professional judgment.
-
-**The Reality:** We're in an **exploratory phase**. There are no settled best practices yet. Making mistakes is part of professional growth. But you remain **fully accountable** for the outcome.
-
-tl;dr: it's hard to say things are easy, give people the confidence and tools and then back track and say 'well that's not serious data science" so everything you 'vibe coded' shouldnt be used.
+And so I really like for us, as we're going forward and thinking as you're seeing the rest of the slides, this is all a new tool in our toolbox, a new way of thinking. It's not reckless, it's not hope-based. There's a lot of deep intention in what I'm building for my clients and what I think a lot of you are also building.
 :::
 
 # Part 1: Strategic Thinking Unlocked for Greater Community Contributions
@@ -107,19 +105,11 @@ tl;dr: it's hard to say things are easy, give people the confidence and tools an
 </div>
 
 ::: {.notes}
-This visualization shows the most fundamental shift that AI-assisted development has created for me as a solo consultant.
+The mental bandwidth shift of where I was at, probably around this time last year before I was using AI in my code development and my practice. As the principal consultant and developer, I spent an enormous amount of time writing code. Totally what I signed up for, brings me a lot of joy. But it really doesn't allow me to spend meaningful time doing business development, networking, community aspects, and the real sometimes joyful aspects of this work.
 
-**Before AI:** 85% of my mental energy and time went to client development work. That's writing code, debugging, implementing features, wrestling with syntax. Only 15% went to business development—proposals, networking, marketing, financial planning. There was no room for anything else.
+And what I found, looking back from last year to now, with AI integrated into my development process, I get to steal a little bit of that time back and partition it across more emphasis on business development and business operations, which is really important for scaling and growth. And as well as getting back into the community and R/stats community, which really brings me a lot of joy and really helps connect up the "why" of what I do and giving back.
 
-**The AI Impact:** AI assistance freed up 15% of my cognitive capacity. Not by making me work less, but by making the technical work less mentally taxing. I'm still doing client dev, but it drops from 85% to 70% because tasks that used to take hours (debugging YAML, googling package syntax, scaffolding boilerplate) now take minutes.
-
-**The Reallocation:** That 15% didn't disappear—it got redistributed:
-- **Business Development grew from 15% to 25%** - Now I can actually do proper business operations: automated systems, financial planning, strategic thinking about where the consultancy is going.
-- **Community Contribution became possible at 5%** - Before AI, open source contributions felt like a luxury I couldn't afford. Now I have capacity for packages like {shinyfa} and {avilistr}, conference talks like this one, and community engagement.
-
-**The Key Insight:** This isn't about working more hours. It's about cognitive load. When AI handles the syntax details, documentation lookups, and boilerplate generation, my brain has room for strategic thinking, creative problem-solving, and community engagement. That's the mental bandwidth shift.
-
-This slide sets up everything that follows in the talk—all four parts are enabled by this fundamental reallocation of cognitive capacity.
+And so it's been a really interesting shift about having the same amount of time—limited at that—and where it goes towards and what I can now do, now that I leverage AI-assisted code development.
 :::
 
 ---
@@ -134,19 +124,13 @@ This slide sets up everything that follows in the talk—all four parts are enab
 :::
 
 ::: {.notes}
-The mental bandwidth shift from 85% client dev to 70% client dev freed up 15% of my cognitive capacity. That 15% doesn't sound like much, but it's transformational.
+So what that really buys you, to kind of flesh it out: better business operations. I get to spend a lot of time improving my systems, automating things, standardizing things. Coming from being a developer to now being a business owner, efficiency is key where I spend my time. It's really important, and it's important to have systems that match up the way I think and the way I want to operate this business. And it really creates a sustainable, thoughtful way that doesn't also lead to burnout.
 
-**Better Biz Ops:** I now have time to build automated systems and standardized processes. Proposals, contracts, invoicing - things that used to be rushed now have proper templates and workflows.
+Having a lot of time to understand cash flow, pricing strategy, profitability, packaging the services up that I do—it really opened up a lot more time to think about these aspects.
 
-**Financial Clarity:** Understanding cash flow, pricing strategy, and profitability isn't a "someday" task anymore. I can make strategic financial decisions instead of reactive ones.
+Relationship building. I've been able to go to so many more in-person events, virtual events like this one, creating content and posts and community engagement. And it's been so wonderful to get back out there and meet more people and hear about what they're doing and the ways in which they're solving their problems.
 
-**Relationship Building:** Networking isn't just attending events - it's consistent content creation, community engagement, and showing up in ways that build long-term relationships.
-
-**Creative Space:** This is the big one. I now have room to think about what *could* be built, not just what *must* be built. That's where packages like {shinyfa} come from - tapping into real and persistent problems and creative exploration that serves the community.
-
-Before AI: I was always feeling behind on the business side, constantly in reactive mode.
-
-After AI: More strategic, more sustainable, and more creative. I'm building a business, not just executing projects.
+Creative space—really the room to think about what could be built and not just what must be built. It's a really fun time I'm finding to not be just super heads down in what I'm doing, but really think about, well, if I had more time, if I had a couple more hours, what could I build? That could be interesting, that could be fun, that could be silly, that could change how somebody else goes about their work. And so that's been really exciting to have that creative space back.
 :::
 
 ---
@@ -207,26 +191,13 @@ Catalog of render functions, reactive functions, inputs, and file relationships 
 :::
 
 ::: {.notes}
-This is a perfect example of how AI freed up mental bandwidth for creative work.
+So I'm going to go over a package that I wrote called ShinyFA, which was released earlier this year. So, I had a client, and it took me a very, very long time to onboard to their application. Grateful for their patience and their guidance, but it was a massive, massive Shiny app. Lots of different files, interconnected functions, the structure of it was challenging. Sometimes you get a shot to your confidence when you're kind of fighting file systems and folders and just not where you want to be.
 
-**The Flowchart (Left):**
-- **Client Problem:** I was contracted to work on a large, complex Shiny app for a conservation nonprofit. It took me MONTHS to get comfortable in their repo - understanding which files did what, how the reactive dependencies flowed, where inputs and outputs were defined.
-- **Quick Script:** About halfway through, I realized: "I'm a Shiny developer. There has to be a better way to systematically analyze app structure." So I wrote a one-off script to catalog render functions, reactive functions, inputs, and file relationships.
-- **CRAN Package:** That script was so useful that I kept refining it. Then I thought - "Other developers face this same problem." With Claude's help, I generalized those functions, added documentation, built tests, and packaged it up as {shinyfa}.
+And so I thought, "Hey, I'm writing Shiny, and that's great, but also I can leverage some of my other skills in R. Why don't I apply that to the overall onboarding and getting to understand what I'm looking at?" And so that worked into a quick little script, a collection of functions where the output on the right-hand side is the file name, and the type, and the name. And having just this level of information in this format was a game changer. It really helped to connect up what I was doing, what changes I was making, how I needed to understand different parts of the code.
 
-**The Output Table (Right):** The result is a dataframe that gives you a complete map of your app's structure. Each row represents a reactive element: inputs, outputs, reactive expressions, and render functions. You can see which file they're in, what type they are, their name, and how they connect.
+And so then that led to the thought process: if it's helping me now, could it help somebody else? And so I turned it into a package which is published on CRAN, and I really hope all y'all can test drive it and let me know if it also helps improve your development when it comes to navigating large Shiny applications.
 
-**Why This Matters:** For that conservation nonprofit project, this would have been transformational during onboarding. Instead of manually searching through dozens of files asking "where is the species input used?", you get a structured dataset you can query: `file_analysis %>% filter(input_id == "species")` and instantly see everywhere it's referenced.
-
-**The Power:** You can answer questions like:
-- "Show me all render functions in the modules folder"
-- "Which files have reactive expressions?"
-- "What outputs don't have corresponding render functions?" (potential bugs!)
-- "Map the flow from this input to its output"
-
-**The Timeline:** The entire process from "useful script" to "published package" took weeks, not months. Without AI assistance, this would have stayed as a one-off script on my hard drive, or been a "someday" project I never got to.
-
-**The Impact:** This is what mental bandwidth buys you: the ability to take a client problem, generalize it, and contribute a tool back to the community - all without sacrificing your business. {shinyfa} solves a problem I experienced repeatedly - onboarding developers to complex Shiny apps. It would have saved me weeks during that client engagement.
+And so, yes, before AI, it's a nice "someday" project, but with AI, I built this and released it in weeks.
 :::
 
 ---
@@ -302,24 +273,15 @@ ggplot(order_diversity, aes(x = reorder(Order, n), y = n)) +
 :::
 
 ::: {.notes}
-**The Personal Story:** I started birding in 2025 - a new hobby outside of tech. I discovered the AviList Global Avian Checklist (unified global bird taxonomy) in Excel format. For R users working with bird data - especially integrating with eBird through {rebird} - having this taxonomy in R makes workflows cleaner.
+The next package that I developed recently this year is called AviListR, and it's not a super technical lift. Being really forthcoming about that. I have this new hobby this year: birding. It's fun, it's relaxing, being in nature, enjoying and being around birds.
 
-**The Flowchart (Left):**
-- **New Hobby:** Started birding, discovered the Excel taxonomy
-- **Wrap Excel:** Converted 11,131 species + Cornell Lab codes to R
-- **CRAN Package:** Published in less than a week with comprehensive docs
+And so I found this newly released taxonomy sheet in Excel. And it's great, right? Excel—we can all work with Excel for the most part. But I wanted to have this opportunity to think, "Well, can I make an R package?" That's silly—like, an R package with bird data. That is not a large technical lift, but maybe it could be more accessible for folks. And so it's a really large Excel sheet, I wrapped it up, and it has some really interesting aspects.
 
-**The Visualization (Right):** Shows bird diversity by taxonomic order. Passeriformes (perching birds/songbirds) dominates with 6,700+ species - over 60% of all bird species. This kind of exploratory analysis is what R birders want to do.
+I built this in a weekend. For me personally, I was never moving at this speed for a CRAN package. The two previous packages I published, ShinyLP and TTBBeer, were published in 2016. AviListR, which was published in June on CRAN this year, that is eight years and nine months between my first set of R packages and this new one.
 
-**The Technical Reality:** Total honesty - this wasn't groundbreaking. I took a published Excel sheet and wrapped it into an R package. The Excel conversion was straightforward, not a heavy lift.
+I feel this sense of hyper-productivity, excitement, and just having the aspect of integrating AI in development for packages and community-based tools has been really transformative. And I know there's a lot of things that were going on within the last eight years and nine months, but I really want to underscore what I've been able to do just this year in giving back to the community and thinking grander about how do I contribute open source code.
 
-**Where AI Made the Difference:** The real work was documentation. The getting-started vignette shows practical workflows: exploring species, finding specific groups (194 thrush species), comparing taxonomies, connecting to eBird observations. Claude helped structure vignettes and write clear examples.
-
-**The Timeline:** With AI, I focused on "what examples help birders?" vs. getting bogged down in documentation tedium. From idea to CRAN with comprehensive docs: less than a week.
-
-**The Bigger Message:** Lowering the barrier to contribution. You don't need technical complexity to add value. Sometimes it's "take this useful thing in the wrong format and make it accessible" - and with AI, doing that WELL (with good docs!) becomes feasible in days, not months.
-
-Finding common ground in open source: birding + R + accessibility = a contribution I'm genuinely proud of.
+And so, yes, it's not even a very crucial package in my opinion, but it is nice to have. It is fun. And it now has really lovely examples about how you integrate this data with some of the existing packages like rebird. And so this is my little passion project and my gift to the R community.
 :::
 
 ---
@@ -333,7 +295,11 @@ AI assistance doesn't just save time on what you were already doing. **It unlock
 - Community engagement and knowledge sharing, networking
 
 ::: {.notes}
-*Side note: ChatGPT is great for hex sticker design and branding ideas!*
+So really holding on to this: AI-assisted development is the creative multiplier. It doesn't save me time on what I was already doing. But it really unlocks what I wasn't able to do—what I wasn't able to complete, what I wasn't able to prioritize, simply because when you're running a solo consultancy and being really strategic about your time and protecting your mental health, very often sometimes you don't get to do the really fun things.
+
+And so now that I've been able to leverage it in my work processes, I've been able to automate all those biz dev and biz ops systems. I can write much better unit tests and documentation and package branding and hex stickers. Shout out to ChatGPT—I find it really wonderful to collaborate on making those really engaging hex stickers. And then just having more time for community engagement and knowledge sharing and networking.
+
+That for me is a really important aspect of the work I do and how I show up. And I'm so glad to have been leveraging AI-assisted development and Claude Code in my process. Because I feel like it's not just me benefiting, which is great right now. It is everybody. It is all of our learning paths. It is all of our creative endeavors. And to be able to provide this for my clients and also provide it for our community, which I love so much, has felt really, really meaningful.
 :::
 
 ::: {.notes}
@@ -349,23 +315,17 @@ AI assistance doesn't just save time on what you were already doing. **It unlock
 ![](images/professional-joy.png){width=120%; fig-align="center"}
 
 ::: {.notes}
-This is the core philosophy that drives everything in Part 2. I'm running a solo consultancy, and I could optimize for different things—maximum revenue, maximum number of clients, or rapid business growth. But that's not what I'm after.
+This is an aspect of how I think about work, whether I'm working for myself, for my consultancy, or doing other types of volunteer work or other types of work in the community.
 
-**The Venn Diagram:** Professional joy sits at the intersection of four overlapping areas:
+And so it really sits around the client work—working with values-aligned clients, working with non-profits and mission-driven organizations. These are organizations that are doing really important boots-on-the-ground, highly interpersonal work in this world. And I love being able to be in service to them.
 
-**Client Work (Blue):** Values-aligned clients—nonprofits, social impact organizations, NGOs. These are organizations doing important work in the world, often with limited resources. High personal interaction and deep relationships, not transactional projects. Quality over quantity—I'd rather work with 5 clients I'm deeply invested in than 20 clients where I'm just checking boxes.
+I also really love opportunities to grow technically, work on problems that I may not have the full answer for but I have excitement around, exploring new approaches. This work keeps things interesting and mentally engaging.
 
-**Technical Growth (Purple):** Challenging problems that expand my R expertise. Working on problems that challenge me technically—learning new packages, exploring new approaches, building expertise in data engineering, automation, and infrastructure. This keeps the work interesting and valuable.
+Another aspect is community professional development. I love going to networking events, I love going to conferences, and it's really important for me in that aspect.
 
-**Community (Pink):** Professional development through community engagement—speaking at conferences like this one, contributing open source packages ({shinyfa}, {avilistr}), participating in the R community, continuous learning. These activities don't directly generate revenue, but they're essential to professional satisfaction and long-term growth.
+And as well as intentional rest. All of this does not work unless I have a really good sense of when is work and when is family and friends time, because all of this is in service for that true goal.
 
-**Life Balance (Orange):** Not sacrificing home life for business growth. I'm a solo consultant, not a startup founder trying to build a unicorn. I have a life outside of work that matters—family, hobbies, health. Sustainable consulting means not burning out.
-
-**Professional Joy (Center):** Where all four overlap. This is the sweet spot where I'm doing meaningful client work, growing technically, contributing to community, and maintaining life balance.
-
-**The AI Advantage:** Here's where AI becomes transformative. It doesn't just save me time—it gives me the capacity to be *selective*. I can say YES to the projects that bring professional joy and NO to the ones that don't, because AI assistance means I'm not constantly capacity-constrained. I can take on challenging technical problems without sacrificing quality or work-life balance.
-
-This philosophy sets up everything that follows in Part 2. The technical skills and workflows I'm about to share aren't about doing more work—they're about doing the *right* work, with the *right* clients, in a way that's sustainable and joyful.
+And for me, when all of those things hit, that is professional joy. And that is what I optimize for in my consulting practice. And it really drives me in the decisions I make.
 :::
 
 ---
@@ -377,11 +337,7 @@ Before AI-assisted development, my filter for new projects was:
 > "Can I build this in a reasonable timeframe with my current skillset given my existing client workload?"
 
 ::: {.notes}
-**This often meant saying NO to:**
-
-- Projects requiring unfamiliar R packages 
-- Learning new techniques to support the project
-- Interesting client opportunities
+So my old filter before AI-assisted development: when coming to a potential new project or a prospect or a client, "Can I build this in a reasonable timeframe with my current skillset given my existing client workload?" That's what I told myself.
 :::
 ---
 
@@ -389,16 +345,11 @@ Before AI-assisted development, my filter for new projects was:
 
 With AI-assisted development, my new filter has become:
 
-> "I can certainly build it! 
+> "I can certainly build it!
 How can I thoughtfully spend time deeply understanding the desired outcome & client constraints?"
 
 ::: {.notes}
-**Now I can say YES to:**
-
-- Pipeline development and automation
-- Data engineering workflows
-- Complex hosting solutions
-- Technologies outside my comfort zone but within my skillset
+Now, with leveraging Claude and Claude Code and agentic development, my first thought is, "I can certainly build it. But how can I thoughtfully spend time deeply understanding the desired outcome, the client constraints, and the overall delivery?"
 :::
 ---
 
@@ -434,37 +385,19 @@ With Claude's help I **amplify my capacity** to take on bigger, more interesting
 :::
 
 ::: {.notes}
-This is the critical mental model shift and the practical techniques I use daily in client work.
+I see Claude really as my coding partner, and the mental model around it is: I'm the manager. I set direction. I make the architectural decisions. Claude is my senior—sometimes my junior developer, depending on the context that you give it—a partner in that endeavor. Implementing solutions, handling boilerplate code, starting out any of the scaffolding for packages or Shiny applications.
 
-**The Mental Model:**
+And really seeing Claude Code as my coding partner means that I am both the human in the process and on the loop. So in and on the loop—active technical leadership stays with me. I'm integrated at various different intersections in the entire process, and that is table stakes for me.
 
-**You are the manager:** You understand client requirements, make architectural decisions, choose the technology stack, and own the final deliverable.
+And so ways in which I help manage this partnership: I must be really specific with requirements and instructions for Claude. I always review the generated code. Claude has this wonderful way where you can, when you set up your context files, have it just writing code and committing to your GitHub repository and not being a part of that discussion and that conversation. That work pattern, for me, I always need to be in the mix for reviewing code.
 
-**Claude is your senior developer partner:** It handles implementation details, writes boilerplate, suggests approaches, and speeds up the coding process.
+And related to that, I always use really incremental commits. I love how Claude can write really detailed commit messages. I love being able to possibly unwind things back and forth, and so that's super important for me.
 
-**Human in/on the loop:** You review everything, test rigorously, and course-correct when Claude goes off track. Your technical judgment ensures quality.
+And feeding it documentation links has been really helpful to help keep Claude focused and giving it accurate information.
 
-**My Daily Tips & Tricks:**
+I'm also asking for multiple options. I find really using Claude, in addition to coding, as a brainstorming partner to get me started on a lot of the work that I do.
 
-**Be Specific with Requirements:** Vague instructions get vague results. "Add error handling" → "Add tryCatch with informative error messages for API failures." "Make it faster" → "Use data.table instead of dplyr for this 1M+ row operation."
-
-**Always Review Generated Code:** Check for security issues (hardcoded credentials, SQL injection risks), verify package dependencies actually exist, ensure code follows your style guide. Claude will confidently generate code that looks right but has subtle bugs or hallucinates package functions.
-
-**Use Incremental Commits:** Commit after each successful change. Makes it easy to roll back when Claude goes off track. Detailed commit messages help future you understand decisions.
-
-**Leverage Context & Tools:** I use MCP tools (like mcptools for R session integration) to give Claude better context about my running R environment. This dramatically improves code suggestions.
-
-**Feed Documentation Links:** When working with specific packages or APIs, I provide Claude with direct links to documentation. "Read this shinyfa documentation: https://dalyanalytics.github.io/shinyfa/" This prevents hallucinations and ensures accurate code generation.
-
-**Feed Other AI Prompts:** Sometimes I brainstorm with Claude first, take those ideas to another AI for a different perspective, then bring both back to Claude for synthesis. Cross-pollinating ideas leads to better solutions.
-
-**Ask for Multiple Options:** Instead of accepting Claude's first suggestion, I ask "Give me 3 different approaches to this problem." Then I often go with a hybrid solution combining the best parts of each.
-
-**Run Claude in Parallel:** For complex projects like my GitHub Actions data orchestration system, I have multiple Positron IDE windows open—one for the orchestration repo, one for the dashboard template, one for a client dashboard. I run Claude in parallel across these related repos, which lets me work on the full system architecture simultaneously while maintaining context in each repo.
-
-**Stay in Your Lane:** Don't let Claude convince you to rewrite everything in Python. Use AI to extend your R expertise, not replace it.
-
-This model lets you say YES to bigger projects while maintaining the quality and technical ownership that makes you valuable to clients. Claude is a tool and partner—you're still the expert leading the work.
+And then I love to run Claude sometimes, depending on the project, in parallel across related repos. This amplifies my impact to take on bigger and more interesting problems.
 :::
 
 ---
@@ -506,31 +439,13 @@ This model lets you say YES to bigger projects while maintaining the quality and
 :::
 
 ::: {.notes}
-This is a real example from my client work. They needed an enterprise-grade (but right-sized) data automation system to manage 50+ client dashboards, each with different refresh schedules and features.
+A client example that I really love: they needed to scale a data orchestration system for 50+ client dashboards. After understanding their requirements and technical capabilities, GitHub Actions made a lot of sense. I worked with Claude to build this system—APIs, webhooks, Railway for the VM—really learning as I went.
 
-**The Client Challenge (Left):**
-- **50+ clients:** Each with their own dashboard
-- **Different schedules:** Daily, weekly, monthly, quarterly refreshes
-- **Complex infrastructure:** Scheduled pipelines, testing workflows, deployment triggers
-- **Cross-repo coordination:** Repository dispatch events to trigger builds in separate repos
+The architecture: loading data into Supabase with row-level security rules for client isolation—I had a real hand on the wheel there for the data security and governance aspect. Then all those client dashboards written in Quarto, each pulling only their data.
 
-**The YAML (Right):** This is actual code from the system. Look at what's happening:
-- **Scheduled trigger:** `cron: '0 6 * * *'` runs daily at 6 AM UTC, processes all clients based on their individual refresh schedules
-- **Manual trigger:** `workflow_dispatch` allows testing on demand
-- **R integration:** Sets up R environment, installs packages, runs the orchestrator script
-- **Secrets management:** Properly uses GitHub secrets for cross-repo operations and database access
+The client needed a repeatable ETL process, secure data layers for persistence, and a shared component template system where they could feature toggle different dashboard aspects on and off. So each client gets their own dashboard, but they all originate from the same template with shared components that can be updated centrally.
 
-**The Key Insight:** I didn't need to memorize GitHub Actions syntax. I needed to understand the architecture—what needs to happen, when, and why. Claude Code handled translating that understanding into correct YAML.
-
-**My Approach:** I understood the architecture (what needed to happen and when), but I didn't want to spend weeks becoming a GitHub Actions expert.
-
-**Claude's Role:** Generated the YAML workflows, helped set up the orchestrator pattern, created the manual testing workflows, and built the configuration-driven scheduling system.
-
-**My Role:** Designed the overall architecture, specified requirements, tested everything, and ensured it worked for the business use case.
-
-**Result:** Production-ready system that scales to 50+ clients, all automated, all documented. I now understand GitHub Actions well enough to maintain and extend it, but I didn't have to become an expert to deliver value.
-
-This is "staying in your R lane while extending your reach." The core logic is R code (my expertise). The automation wrapper is GitHub Actions (Claude's expertise).
+I developed this system primarily with Claude Code—lots of back and forth, lots of learning on my part about writing better GitHub Actions and how to have Actions create PRs in other repositories. This is right-sized enterprise-grade infrastructure built in just a few weeks with Claude's help. This would not have been possible before.
 :::
 
 ---
@@ -550,19 +465,15 @@ Human decisions at the start, middle and end. AI execution sprinkled in the midd
 :::
 
 ::: {.notes}
-This is my actual workflow for every client project. Let me walk through what this looks like in practice:
+So my usual client project workflow is:
 
-**1. Understand Requirements (Human):** I talk to the client, understand their business problem, and translate that into technical requirements. This is where domain expertise matters—knowing what questions to ask, understanding their constraints.
+1. **Understanding the requirements** - defining the problem, the technical approach
+2. **Generating some of the implementation** - Claude writes the initial code
+3. **Review and course correcting** - reviewing every line, checking for issues
+4. **Iterating based on that feedback** - fixing problems, refining the solution
+5. **Final QA** - testing thoroughly and then shipping to the client
 
-**2. Generate Implementation (Claude Code):** I describe what I need to Claude. "Build a Shiny module that handles user authentication." "Create a GitHub Actions workflow for automated testing." Claude generates the initial implementation.
-
-**3. Review & Course-Correct (Human):** This is critical. I read every line of generated code. Does it match my mental model? Are there security issues? Does it follow R best practices? Does it fit the client's existing architecture?
-
-**4. Iterate Based on Feedback (Claude Code):** When I find issues (and I always do), I direct Claude to fix them. "This function should use dplyr instead of base R." "Add error handling for API failures."
-
-**5. Final QA & Delivery (Human):** I test everything thoroughly, write documentation, and deliver to the client. This is where my reputation is on the line—the final quality check is always human.
-
-The pattern ensures that strategic decisions and quality control stay with the human, while implementation speed comes from AI assistance.
+It's human decisions at the start, the middle, and end, and AI execution sprinkled in the middle.
 :::
 
 ---
@@ -584,21 +495,11 @@ The pattern ensures that strategic decisions and quality control stay with the h
 :::
 
 ::: {.notes}
-This is the key insight that ties together everything in Part 2. AI-assisted development hasn't made me lazy or dependent—it's made me MORE focused on what actually matters to my clients.
+So I am ruthlessly solutions-focused at this moment, thanks to Claude Code. It's made me be even more a better partner for my clients, I believe.
 
-**Solutions-Focused, Not Syntax-Focused:** Before AI assistance, a significant portion of my mental energy went to remembering syntax, googling package documentation, debugging configuration files, and wrestling with implementation details. Now, that cognitive load is dramatically reduced. I can focus on the client's actual problem and the best way to solve it.
+I'm not thinking about syntax. I get to think about their outcomes. I'm not thinking about debugging YAML for GitHub Actions. I get to solve business problems alongside the stakeholders. My mental energy goes to what matters—understanding client needs and delivering that value.
 
-**From Implementation to Architecture:** My thinking has shifted from "How do I write this function?" to "What's the right architectural approach for this client's needs?" From "What's the correct dplyr syntax?" to "How do we structure this data pipeline for maintainability and scalability?"
-
-**Client Outcomes Over Technical Details:** The technical details still matter—I'm not sloppy about code quality or best practices. But they don't dominate my thinking anymore. When I'm in a client meeting, I'm fully present thinking about their business problem, not mentally rehearsing how I'll implement the solution later.
-
-**More Value, Same Time:** This solutions-focus means I deliver more value to clients in the same amount of time. I can iterate faster on approaches, pivot when something isn't working, and explore creative solutions without getting bogged down in implementation details.
-
-**Professional Joy Connection:** This ties back to the "Optimizing for Professional Joy" slide. Being ruthlessly solutions-focused is WHY I find this work satisfying. I'm helping nonprofits and social impact organizations solve real problems, not just writing code. AI assistance lets me operate at the level where I'm most valuable—strategic thinking and client partnership, not syntax wrangling.
-
-**The Technical Skills Still Matter:** To be clear, I still need deep R expertise. But that expertise is now deployed strategically—reviewing Claude's code, making architectural decisions, ensuring quality—rather than being consumed by basic implementation. This is a elevation of how I use my skills, not a replacement of them.
-
-This is the promise of AI-assisted development for consultants: you become MORE valuable to clients because you can focus your expertise where it matters most.
+The technical details still matter. I'm still very entrenched in writing code nearly every day, but they don't consume my cognitive load anymore. I am not just a person on the computer. I get to communicate and talk and have these really important interpersonal relationships with my clients.
 :::
 
 
@@ -629,23 +530,9 @@ This is the promise of AI-assisted development for consultants: you become MORE 
 :::
 
 ::: {.notes}
-This is the fundamental shift in how I learn R now. It's not about replacing deep learning—it's about encountering more patterns, more errors, and more solutions in the same amount of time.
+I like to think of learning as highways. Traditional learning is a smaller, focused highway—a few hours, you see a few approaches. You're reading docs, checking Stack Overflow. It can be slow. Meaningfully slow sometimes.
 
-**Traditional Learning (2.5+ hours):** You learn one approach deeply, but slowly. You read documentation carefully, implement thoughtfully, debug methodically. It's thorough but time-consuming. You might learn one way to solve a problem.
-
-**AI-Assisted Learning (22 minutes):** You see multiple approaches quickly. Claude generates an implementation, you review it, test it, encounter errors, understand WHY it failed, and iterate. In the same 2.5 hours, you've gone through this cycle 6-7 times, seeing different packages, different patterns, different approaches. You've learned through volume.
-
-**The Learning Advantage:** The key insight is that you're not learning less—you're learning MORE through exposure to variety. When Claude makes a mistake with column names (avilist_2025 vs avilist_global), you learn how to inspect package data. When Claude hallucinates a function (make_long), you learn how to verify package capabilities. When Claude's approach doesn't work, you learn to pivot.
-
-**Building Intuition:** Intuition comes from pattern recognition, and pattern recognition requires exposure to lots of patterns. AI-assisted development accelerates this by letting you iterate faster, fail faster, and see more approaches in less time.
-
-**Practical Examples:** This volume approach works for everyday tasks too:
-- **Generating fake data:** "Claude, generate realistic university enrollment data" - what would take 20+ minutes of data.frame construction happens in 30 seconds. You learn patterns for realistic data generation.
-- **Project scaffolding:** "Claude, create a basic Shiny app structure with modules" - the "getting started" friction is eliminated. You can immediately start on the interesting parts.
-- **Documentation:** Claude drafts README files and vignettes that you review and refine.
-- **Test data:** Creating edge cases and test scenarios becomes trivial.
-
-This isn't about becoming dependent on AI—it's about using AI to accelerate the learning process by increasing your exposure to different R patterns and approaches.
+AI-assisted learning? That's seeing many approaches in a very short time. A lot more throughput through that highway system. But you have to be mindful—some things are going to go awry. You need to distill what's the core of what you need and what's just wrong.
 :::
 
 
@@ -669,17 +556,13 @@ This isn't about becoming dependent on AI—it's about using AI to accelerate th
 :::
 
 ::: {.notes}
-**The Package Confusion Problem: "Not Reading the Docs"**
+I'm going to share some mistakes that happened even building this talk with Claude Code.
 
-The {shinyfa} hallucination is documented in CLAUDE.md. Claude assumed from the package name it must be about Font Awesome icons and confidently generated completely wrong example code. **This is exactly what a human developer does when they install a package and start guessing without reading the vignette or examples.**
+Claude doesn't always read the docs—just like humans rushing through things. When I had Claude structure the initial slides, it completely hallucinated what the shinyfa package does. It assumed "FA" meant Font Awesome icons. It didn't even install the package—just guessed about vignettes and examples.
 
-But here's the key insight: **this happens with mature packages too.** Even with {ggplot2}, Claude will confuse function arguments, mix up geom parameters, or suggest deprecated approaches. It's not just "new packages are risky"—Claude can hallucinate about ANY package if it doesn't have current context.
+This happens even with established packages like ggplot2. Experience breeds assumptions, and you skip verification.
 
-**Why does this happen to humans?** You're really experienced. You've used hundreds of R packages. You're busy. You think "Hey, I'm good at this, this other thing should come really easy." So you circumvent the fundamentals—you skip the vignette, skim the examples, and start coding. Then you hit errors because you assumed instead of verified.
-
-**What this teaches you:** You MUST verify package behavior. Feed Claude documentation URLs: "Read the shinyfa docs at https://dalyanalytics.github.io/shinyfa/" Then Claude self-corrects. This forces you to know WHERE the good documentation lives and HOW to read it critically. You become better at evaluating package quality and understanding what's actually possible.
-
-**The skill you build:** Systematic verification. Don't assume—verify. This applies whether you're using AI or coding yourself.
+The lesson: feed Claude documentation URLs so it can self-correct. This actually makes you better at evaluating where good docs live.
 :::
 
 ---
@@ -703,23 +586,15 @@ But here's the key insight: **this happens with mature packages too.** Even with
 :::
 
 ::: {.notes}
-**Data Structure Assumptions: Why mcptools is Essential**
+Claude loves to infer from column names and data types. But sometimes it's just wrong.
 
-Claude LOVES to assume things about your data:
-- Assumes column names without checking (`order_name` vs `Order`)
-- Assumes dataset names (`avilist_global` vs `avilist_2025`)
-- Assumes data types (factor vs character, Date vs POSIXct)
-- Assumes relationships between columns instead of asking for lookup tables
+Building the AviListR slide, Claude called the dataset `avilist_global`—which doesn't exist. It's `avilist_2025`. It also assumed snake_case column names when they actually match the original Excel file's title case.
 
-**Why does this happen to humans?** You've worked with similar data before. You're experienced. You assume this new dataset follows the same patterns. You're busy, so you skip the basic inspection step. Then you hit "column not found" errors because you assumed instead of checked.
+Experience breeds assumptions. You skip verification. "Well, snake_case is commonplace, right?"
 
-**The mcptools solution:** When you use MCP tools like mcptools, Claude can actually READ your R session. It can see `names(your_data)`, check `str(your_data)`, understand what objects exist. This dramatically reduces hallucination because Claude has actual context instead of assumptions.
+The lesson: leverage MCP tools to give Claude actual access to your R session. If packages are loaded, if objects exist, let MCP integrate and read your environment.
 
-**What this teaches you:** How to properly inspect data structures. When Claude makes wrong assumptions, you learn to immediately check: `names(data)`, `str(data)`, `class(column)`, `unique(column)`. These debugging habits make you a better data scientist.
-
-**The deeper lesson:** Providing explicit context (a lookup table) is better than letting Claude (or any developer) infer relationships from content. Making assumptions explicit prevents errors.
-
-**The skill you build:** Rigorous data inspection and explicit context over implicit assumptions.
+This mistake teaches proper data inspection habits—skills we should all be using constantly as data practitioners.
 :::
 
 ---
@@ -742,21 +617,15 @@ Claude LOVES to assume things about your data:
 :::
 
 ::: {.notes}
-**Over-Abstraction: "Why Are You Doing It The Hard Way?"**
+This is my biggest gripe with Claude. It always reaches for the complex solution first. Always trying to be overly clever.
 
-Claude has a STRONG tendency to over-engineer solutions:
-- Tried 3 different Sankey packages with hallucinated functions when HTML/CSS was simpler
-- Creates nested helper functions when a single dplyr chain is clearer
-- Reaches for complex packages when base R works fine
-- Suggests class systems when a simple list would do
+Building this slide deck, Claude tried creating an intricate Sankey diagram and just started making up functions. Nested functions everywhere when a simple dplyr chain would work.
 
-**Why does this happen to humans?** You want to demonstrate expertise. You want to build "proper" systems with abstraction and reusability. You've learned best practices about DRY (Don't Repeat Yourself) and you over-apply them. Sometimes the simple solution feels too simple—like you're not being professional enough.
+I think it's pulling from examples where people are showing expertise, building proper systems—which sometimes leads to over-engineering. Missing the focus: simple is often better.
 
-**I now ask Claude directly:** "Why are you doing it the hard way? Show me the simplest solution."
+So I ask Claude a very direct question: "Why are you doing it this way?" Often, because I've spent so much time without AI, I do know the solution. I know the exact packages I want to use.
 
-**What this teaches you:** Simplicity is a skill. The ability to recognize when a solution is unnecessarily complex comes from seeing LOTS of complex solutions and learning to reject them. Each time Claude over-abstracts, you practice simplifying. Each time you ask for multiple options, you practice evaluating trade-offs.
-
-**The skill you build:** Choosing appropriate complexity. Not every problem needs a framework. Sometimes a simple dplyr chain beats a custom function. Sometimes HTML/CSS beats a complex R package. Simplicity when possible, complexity when necessary.
+I ask why, feed it different options, and select the simplest way—the way I would actually do it. Recognizing unnecessary complexity has been key to guiding this partnership.
 :::
 
 ---
@@ -780,16 +649,15 @@ Claude has a STRONG tendency to over-engineer solutions:
 :::
 
 ::: {.notes}
-**The Meta-Lesson: Building Better Prompts**
+Here's some tips for building better prompts from these mistakes:
 
-Each mistake category teaches you how to prompt better:
 - **Package confusion** → Feed documentation links upfront
-- **Data assumptions** → Use mcptools, provide `str(data)` output, give lookup tables
-- **Over-abstraction** → Ask for multiple approaches, request "simplest solution"
+- **Data assumptions** → Use MCP tools, give them lookup tables if columns are coded in other ways
+- **Over-abstraction** → Ask for multiple approaches, request sometimes the simplest solution to start
 
-**Learning at Scale:** The volume advantage means you encounter these mistake patterns FASTER than traditional development. Instead of one careful implementation per week, you see 10 attempts per day. Each failure refines your prompting skills AND your R intuition. You're not becoming dependent—you're becoming a better technical leader who knows how to redirect when things go wrong.
+Learning at scale: you're going to encounter these patterns so much more than traditional learning. And each failure, I think, helps refine your prompting skills and your R intuition so that you don't make those mistakes and so you can help Claude make those mistakes less.
 
-This is exactly what Part 3 is about: using AI-assisted development to accelerate learning through high-volume pattern recognition, not to avoid learning.
+And I think you become a better technical leader, and you know how to redirect when things go wrong and leverage what you're learning from Claude to bring to the real world as you're interacting with folks to create better software.
 :::
 
 ---
@@ -811,27 +679,11 @@ This is exactly what Part 3 is about: using AI-assisted development to accelerat
 :::
 
 ::: {.notes}
-**The Art of the Practice: Systematic Skill Development**
+I really like to think of this all as the skill development, and that can be phrased as the "art of the practice".
 
-The "art of the practice" refers to a systematic approach to skill development, whether in creative fields like visual arts or music, or in technical areas like R development and leadership. It goes beyond just the final product to encompass research, analysis, and consistent action to achieve mastery and personal growth. This involves understanding and applying strategies to improve skills, maintain motivation, and overcome challenges.
+It's not necessarily about the final product alone. It's the process of getting there. Understanding patterns, learning from mistakes, building that intuition up. High-volume iteration and failing fast and course-correcting. Deliberate practice and pattern recognition. And the personal satisfaction and growth from overcoming those challenges and maintaining motivation and staying disciplined.
 
-**Research & Analysis:** In Part 3, we've covered how to learn from Claude's mistakes—package confusion, data assumptions, over-abstraction. This is the research and analysis phase. You're not just fixing errors; you're understanding WHY they happen and what patterns they reveal about effective R development.
-
-**Consistent Action:** The volume advantage of AI-assisted development (10 attempts/day vs 1/week) is the consistent action. You're practicing constantly, iterating rapidly, building muscle memory for recognizing good code vs bad code, simple vs over-complex, verified vs assumed.
-
-**Achieving Mastery:** Mastery comes from pattern recognition, and pattern recognition requires exposure to lots of patterns. By encountering Claude's mistakes at scale, you're accelerating your path to mastery. You're learning what good documentation looks like, how to inspect data structures properly, when to choose simplicity over abstraction.
-
-**Personal Growth & Overcoming Challenges:** The discipline of the practice is staying engaged when Claude makes mistakes, not giving up when errors repeat, maintaining curiosity about WHY something failed rather than just fixing it. The temptation with AI is to become passive—just accept what it generates. The art of the practice is staying active, critical, and intentional.
-
-**Maintaining Motivation:** The professional joy we discussed in Part 1 (client work, technical growth, life balance, community) is what maintains motivation. The ruthless solutions-focus from Part 2 is what keeps you disciplined. The learning through volume from Part 3 is what builds your skills systematically.
-
-**The Key Insight:** AI-assisted development accelerates the practice by increasing volume and speed of iteration. But it doesn't replace the discipline of learning. You still need to:
-- Read the documentation (don't assume)
-- Inspect your data structures (don't infer)
-- Choose simplicity (don't over-engineer)
-- Stay curious about failures (don't just fix and move on)
-
-This is systematic skill development—using AI as a tool to practice more, fail faster, and learn deeper. The art is in how you engage with the process, not just the output you produce.
+I really think AI-assisted development accelerates this practice by increasing volume. But the discipline of learning is still your own.
 :::
 
 # Conclusion: Human In/On the Loop
@@ -847,24 +699,17 @@ Before your next AI-assisted project, write down:
 
 
 ::: {.notes}
-The relationship with Claude is both IN the loop and ON the loop. Integrated and Supervisory. In the weeds and yet at the 10,000 foot view.
+So in conclusion, I really want everybody to hopefully take away this thought pattern of learning for yourself, and then also writing down your values when it comes to interacting with AI in your work, for fun. And before your next AI-assisted project, please go through this exercise. Write it down:
 
-Before you start working with AI tools like Claude Code, take time to establish your personal values and boundaries. This isn't about restricting AI use—it's about using it intentionally.
-
-**What I will always do myself:** For me, this includes final code review, client communication, architectural decisions, and anything security-sensitive. These are areas where my expertise and judgment are irreplaceable.
-
-**What AI can help me with:** Boilerplate code, documentation, unfamiliar packages, repetitive transformations, initial implementations. These are areas where AI accelerates my work without compromising quality.
-
-**What I need to understand deeply:** The business logic, the data architecture, the deployment pipeline, how everything connects. Even if AI writes the code, I need to understand it well enough to maintain and extend it.
-
-**What I'm comfortable delegating:** The implementation details, the syntax lookup, the initial scaffolding. These are tasks that AI handles well and that don't require my deep expertise.
-
-This exercise creates guardrails that help you work with AI effectively without losing technical leadership or creating maintenance nightmares.
+- What will I always do myself?
+- What AI can help me with?
+- What I need to understand deeply?
+- And what I'm comfortable delegating?
 :::
 
 ---
 
-## Final Thoughts 
+## Final Thoughts
 
 > "When AI frees up your mental bandwidth, you don't get lazy—you get strategic."
 
@@ -877,6 +722,14 @@ This exercise creates guardrails that help you work with AI effectively without 
 - **Stay strategic about solutions.**
 
 - **Stay joyful in the work.**
+:::
+
+::: {.notes}
+So some final thoughts. I believe when AI frees up your mental bandwidth, you don't get lazy. You get strategic.
+
+Always building with intention. Staying curious about those failures. Staying strategic about solutions. And staying joyful in the work, because if we're not all having fun doing this, I don't think any of this is worth it.
+
+So please always remember: have fun, have joy. Take that intentional rest. Be really mindful about what you're building, who you're building it for, and ensure that you're not causing any more harm through your actions and the software that you're making.
 :::
 
 ---
