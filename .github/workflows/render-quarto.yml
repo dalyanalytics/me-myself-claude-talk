@@ -34,7 +34,7 @@ jobs:
 
       - name: Install R dependencies
         run: |
-          install.packages(c('rmarkdown', 'knitr', 'dplyr', 'ggplot2'))
+          install.packages(c('rmarkdown', 'knitr', 'dplyr', 'ggplot2', 'avilistr'))
         shell: Rscript {0}
 
       - name: Render Quarto presentation

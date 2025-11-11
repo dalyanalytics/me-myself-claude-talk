@@ -1,0 +1,2255 @@
+1
+00:00:00,011 --> 00:00:02,014
+Hi everyone,
+
+2
+00:00:02,305 --> 00:00:05,449
+I'm so excited to be here with you all, presenting my talk,
+
+3
+00:00:05,450 --> 00:00:08,211
+uhm, titled Me, Myself, and Claude.
+
+4
+00:00:08,212 --> 00:00:13,036
+How I leverage AI-assisted development to scale my R-based data
+
+5
+00:00:13,037 --> 00:00:16,256
+science consultancy. I'm Jasmin.
+
+6
+00:00:16,257 --> 00:00:18,465
+But a little bit more about who I am.
+
+7
+00:00:18,920 --> 00:00:22,560
+I'm an R developer and data scientist since about 2014.
+
+8
+00:00:23,516 --> 00:00:25,828
+I'm the maintainer of four R packages,
+
+9
+00:00:26,048 --> 00:00:28,803
+ShinyLP, ttbBeer,
+
+10
+00:00:29,258 --> 00:00:31,575
+AviListR, and ShinyFat,
+
+11
+00:00:31,807 --> 00:00:34,186
+and we'll go over the last two, uh,
+
+12
+00:00:34,197 --> 00:00:36,350
+in the upcoming slides as well.
+
+13
+00:00:37,876 --> 00:00:40,371
+I'm the Principal Consultant at Daily Analytics.
+
+14
+00:00:40,372 --> 00:00:42,999
+Focused on delivering solutions with data science,
+
+15
+00:00:43,000 --> 00:00:47,280
+analytics, AI. Focused on non-profit and mission-driven orgs.
+
+16
+00:00:47,281 --> 00:00:52,665
+Uhm. Advantage both the technical and the writing aspect of
+
+17
+00:00:52,794 --> 00:00:56,456
+the consultancy, as well as the sales and marketing aspect.
+
+18
+00:00:56,457 --> 00:01:00,471
+And just to also level set everybody,
+
+19
+00:01:00,472 --> 00:01:06,303
+uhm, I am also the mom of two young kids with really good resources.
+
+20
+00:01:06,304 --> 00:01:09,476
+Uhm, I'm an active volunteer in my community.
+
+21
+00:01:09,477 --> 00:01:14,141
+So, uh, leveraging AIS's development in my practice has been a
+
+22
+00:01:14,142 --> 00:01:18,406
+real game changer and I'm so excited to preview some of my thoughts and
+
+23
+00:01:18,407 --> 00:01:21,989
+concepts and how I like- Let's Umm,
+
+24
+00:01:22,000 --> 00:01:25,258
+aisis development and specifically cloud and cloud code.
+
+25
+00:01:27,282 --> 00:01:31,516
+So I came upon- on this post and this image on LinkedIn and it
+
+26
+00:01:31,517 --> 00:01:34,897
+was a really great description of a lot of thoughts I think that have
+
+27
+00:01:34,898 --> 00:01:37,269
+been flying around in my head. Umm,
+
+28
+00:01:37,280 --> 00:01:40,799
+really around moving beyond vibe coding.
+
+29
+00:01:40,800 --> 00:01:44,701
+Umm, vibe coding is this funny little term that's popped up.
+
+30
+00:01:44,702 --> 00:01:49,254
+Uhm, but it's really important that we understand that having
+
+31
+00:01:49,255 --> 00:01:52,736
+the proper language helps us to orient the conversation.
+
+32
+00:01:52,737 --> 00:01:55,663
+Around the work that we're actually doing,
+
+33
+00:01:55,664 --> 00:02:00,771
+besides some of the fun silly stuff or the mistakes that we're highlighting.
+
+34
+00:02:00,772 --> 00:02:03,135
+Web coding often implies reckless,
+
+35
+00:02:03,312 --> 00:02:06,390
+hopeless, hope-based development rattler.
+
+36
+00:02:06,391 --> 00:02:08,811
+Umm, vibe engineering is intense.
+
+37
+00:02:08,812 --> 00:02:11,402
+Intentional can be a countable, uhm,
+
+38
+00:02:11,412 --> 00:02:14,046
+AI system development. Umm,
+
+39
+00:02:14,057 --> 00:02:16,552
+and what I like to phrase, uh,
+
+40
+00:02:16,553 --> 00:02:20,007
+about How I'm doing is using a lot more words and not just using,
+
+41
+00:02:20,008 --> 00:02:22,106
+uhh, the small little phrases.
+
+42
+00:02:22,227 --> 00:02:24,251
+I'm using a new, agentic tool,
+
+43
+00:02:24,262 --> 00:02:26,794
+I'm adding a new agentic tool to my toolbox.
+
+44
+00:02:26,795 --> 00:02:30,089
+And it's an honest acknowledgement about exploration phase of,
+
+45
+00:02:30,090 --> 00:02:32,227
+like, this hyperb- growth mode and learning,
+
+46
+00:02:32,228 --> 00:02:37,020
+uhm, and it really helps reframe and understand and not devalue the
+
+47
+00:02:37,021 --> 00:02:40,171
+work that I do and the work that I've done. Before AI,
+
+48
+00:02:40,172 --> 00:02:42,368
+um, has come into place. Um,
+
+49
+00:02:42,378 --> 00:02:45,022
+and so I really like, um, for us to,
+
+50
+00:02:45,023 --> 00:02:47,731
+as we're going forward and think as- you're just seeing the rest of the
+
+51
+00:02:47,732 --> 00:02:51,868
+sides, like, this is all, umm,
+
+52
+00:02:51,879 --> 00:02:55,003
+a new tool in our toolbox, a new way of thinking.
+
+53
+00:02:55,004 --> 00:02:58,251
+Umm, it's not reckless, it's not hope-based.
+
+54
+00:02:58,388 --> 00:03:03,033
+There's a lot of deep intention in what I'm building.
+
+55
+00:03:03,034 --> 00:03:06,498
+For my clients. So,
+
+56
+00:03:06,723 --> 00:03:10,854
+part one, strategic thinking unlocked for greater community contributions.
+
+57
+00:03:10,855 --> 00:03:12,957
+questions. So,
+
+58
+00:03:12,958 --> 00:03:16,045
+the mental bandwidth shift of where I was at,
+
+59
+00:03:16,167 --> 00:03:20,808
+probably around this time last year before I was- using AI and my
+
+60
+00:03:20,809 --> 00:03:23,506
+code development and my practice. Umm,
+
+61
+00:03:23,517 --> 00:03:26,214
+as the principal consultant and developer,
+
+62
+00:03:26,215 --> 00:03:29,712
+I spent in- enormous amount of time writing code.
+
+63
+00:03:29,713 --> 00:03:32,044
+Umm, totally what I signed up for,
+
+64
+00:03:32,253 --> 00:03:34,436
+brings me a lot of joy. Umm,
+
+65
+00:03:34,446 --> 00:03:39,045
+but really- We doesn't allow me to spend the really meaningful time
+
+66
+00:03:39,093 --> 00:03:41,687
+doing business development, networking,
+
+67
+00:03:41,688 --> 00:03:45,328
+uhh, the community. The aspect and the real,
+
+68
+00:03:45,329 --> 00:03:47,812
+sometimes the real joyful aspects of this work.
+
+69
+00:03:48,804 --> 00:03:51,273
+And what I found, looking back from- All right.
+
+70
+00:03:51,274 --> 00:03:55,015
+So, thank Thank you. All right. Last year to now, with AI, integrated into
+
+71
+00:03:55,144 --> 00:03:59,051
+my development process, I get to steal a little bit of that time back.
+
+72
+00:03:58,764 --> 00:04:03,306
+back. And partition it across more emphasis on business development
+
+73
+00:04:03,307 --> 00:04:06,372
+and business operations, which is really important for scaling and growth.
+
+74
+00:04:06,373 --> 00:04:11,053
+Um And as well as getting back into the community and our stats
+
+75
+00:04:11,054 --> 00:04:15,131
+community, which really brings me a lot of joy and really helps connect up
+
+76
+00:04:15,132 --> 00:04:17,173
+the wall. Why? Of what I do, uhm,
+
+77
+00:04:17,174 --> 00:04:21,247
+and giving back. And so, it's been a really interesting shift about,
+
+78
+00:04:21,248 --> 00:04:24,275
+uhm, having the same amount of time and- limited at that,
+
+79
+00:04:24,276 --> 00:04:27,218
+um, and where it goes towards and what I can now do,
+
+80
+00:04:27,335 --> 00:04:30,273
+now that I leverage, AI-assisted code development.
+
+81
+00:04:30,274 --> 00:04:33,088
+So,
+
+82
+00:04:33,089 --> 00:04:37,145
+what that really buys you, to kind of flesh it out,
+
+83
+00:04:37,146 --> 00:04:39,694
+uh, better be- is ops. Uhm,
+
+84
+00:04:39,705 --> 00:04:42,480
+I get to spend a lot of time improving my systems,
+
+85
+00:04:42,911 --> 00:04:45,132
+automating things, standardizing things,
+
+86
+00:04:45,133 --> 00:04:48,182
+uhh, coming f- from being a,
+
+87
+00:04:48,183 --> 00:04:50,549
+um, a developer to now being a business owner.
+
+88
+00:04:50,550 --> 00:04:54,388
+Uhm, efficiency is key where I spend my time.
+
+89
+00:04:54,389 --> 00:04:57,928
+It is really important, um, and it's important to have systems that match up,
+
+90
+00:04:57,929 --> 00:04:58,498
+uhm, the way I think and the way I want to operate this business.
+
+91
+00:04:58,499 --> 00:05:03,359
+And it really, it's a sustainable,
+
+92
+00:05:03,619 --> 00:05:05,978
+thoughtful way that doesn't also lead to burnout.
+
+93
+00:05:05,979 --> 00:05:08,871
+Uh, having a lot of understand,
+
+94
+00:05:08,950 --> 00:05:11,273
+time to understand, cash flow. Pricing strategy,
+
+95
+00:05:11,274 --> 00:05:13,539
+profitability, packaging, uhm,
+
+96
+00:05:13,549 --> 00:05:16,951
+the services up that I do, it really opened up a lot more time
+
+97
+00:05:16,952 --> 00:05:19,147
+to think about. Uh,
+
+98
+00:05:19,158 --> 00:05:21,173
+these aspects, uh,
+
+99
+00:05:21,184 --> 00:05:25,188
+relationship building, uh, I've been able to go to so many more in-person events,
+
+100
+00:05:25,189 --> 00:05:30,056
+virtual events, like this one. On creating content and posts and community engagement,
+
+101
+00:05:30,057 --> 00:05:33,383
+um, and it's been so wonderful to get back out there,
+
+102
+00:05:33,384 --> 00:05:36,827
+um, and meet more people. And hear about what they're doing and the ways
+
+103
+00:05:36,828 --> 00:05:40,350
+in which they're solving their problems. So,
+
+104
+00:05:40,374 --> 00:05:44,232
+the creative space, uh, really the w- room to think about what could be
+
+105
+00:05:44,233 --> 00:05:46,753
+built and not just what must be built.
+
+106
+00:05:47,054 --> 00:05:49,100
+It's a really fun time I'm finding,
+
+107
+00:05:49,101 --> 00:05:52,699
+uhm, to be- We'll you in the not just super heads down in what
+
+108
+00:05:52,700 --> 00:05:54,725
+I'm doing, uhm, but really think about,
+
+109
+00:05:54,726 --> 00:05:56,799
+well, if I had more time, if I had,
+
+110
+00:05:56,800 --> 00:05:59,669
+uh, you know, a couple more hours,
+
+111
+00:06:00,005 --> 00:06:03,138
+what could I build? Umm, that could be interesting,
+
+112
+00:06:03,139 --> 00:06:06,006
+that could be fun, that could be silly, that could change,
+
+113
+00:06:06,007 --> 00:06:08,906
+have somebody else- umm, goes about their work,
+
+114
+00:06:08,907 --> 00:06:11,803
+umm, and so that's been really exciting to have that creative space back.
+
+115
+00:06:13,100 --> 00:06:16,136
+So, uh, going to- you o-go overview,
+
+116
+00:06:16,137 --> 00:06:18,684
+uhh, a package that I wrote, uhh,
+
+117
+00:06:18,695 --> 00:06:21,329
+called Shanei Fa, uhh, and I was released,
+
+118
+00:06:21,330 --> 00:06:23,685
+uhh, a little earlier. 3 3 4 last, uhh,
+
+119
+00:06:23,696 --> 00:06:26,842
+the shear. Umm, and so really starting at the client problem.
+
+120
+00:06:26,843 --> 00:06:28,996
+Umm, so I had a client,
+
+121
+00:06:28,997 --> 00:06:33,005
+and it took me a very, very long time to onboard,
+
+122
+00:06:33,006 --> 00:06:35,202
+umm, to their application. Umm,
+
+123
+00:06:35,212 --> 00:06:37,590
+grateful for their patience and their guidance. Umm,
+
+124
+00:06:37,601 --> 00:06:40,036
+but it was massive. ... Stream massive, shiny-up.
+
+125
+00:06:40,551 --> 00:06:44,777
+Lots of different files, interconnected functions uh,
+
+126
+00:06:44,788 --> 00:06:46,883
+the structure of it.
+
+127
+00:06:46,884 --> 00:06:51,174
+Challenging it almost. Sometimes not fun to work on it.
+
+128
+00:06:51,763 --> 00:06:55,701
+Sometimes you get a, you know, a shot to your confidence when you're kind
+
+129
+00:06:55,702 --> 00:06:59,226
+of fighting file systems and folders and,
+
+130
+00:06:59,227 --> 00:07:01,390
+uh, just not where you want to be.
+
+131
+00:07:01,391 --> 00:07:04,079
+Um, and so I thought Hey, like,
+
+132
+00:07:04,246 --> 00:07:07,271
+I'm writing shiny and great, but also I can leverage some of my other
+
+133
+00:07:07,272 --> 00:07:11,915
+skills in R. Why don't I apply that to the overall on boarding and
+
+134
+00:07:11,916 --> 00:07:14,115
+getting to understand what I'm looking at.
+
+135
+00:07:14,683 --> 00:07:17,433
+And so that worked into a quick little script,
+
+136
+00:07:17,434 --> 00:07:20,637
+kind of, what-off functions Umm,
+
+137
+00:07:20,648 --> 00:07:24,673
+where the output, right, on the right-hand side is the file name,
+
+138
+00:07:24,674 --> 00:07:29,338
+and the type, and the name, and having just this level of information
+
+139
+00:07:29,339 --> 00:07:32,121
+in this format, umm,
+
+140
+00:07:32,132 --> 00:07:34,435
+was game changer, umm,
+
+141
+00:07:34,446 --> 00:07:37,627
+really helped. Thank you. To connect up what I was doing,
+
+142
+00:07:37,961 --> 00:07:42,086
+what changes I was making, how I needed to understand different parts of the
+
+143
+00:07:42,087 --> 00:07:46,629
+code. Umm, and so then that led to the thought process of the
+
+144
+00:07:46,630 --> 00:07:49,670
+outs that I've had before, if it's helping me now,
+
+145
+00:07:49,782 --> 00:07:53,400
+could it help somebody else? And so I turned it into a package,
+
+146
+00:07:53,401 --> 00:07:56,977
+which is published on CRAN, um, and I really hope all y'all can test
+
+147
+00:07:56,978 --> 00:07:59,243
+drive it and let me know if it also helps.
+
+148
+00:07:59,244 --> 00:08:04,095
+And prove your development aspect when it comes to navigating large training applications.
+
+149
+00:08:05,609 --> 00:08:08,156
+And so, yes, before AI, It's a nice,
+
+150
+00:08:08,340 --> 00:08:10,363
+some day project, but with AI,
+
+151
+00:08:10,441 --> 00:08:12,699
+I built this and released it in weeks.
+
+152
+00:08:12,328 --> 00:08:16,139
+weeks. The next package,
+
+153
+00:08:16,140 --> 00:08:18,517
+uh, that I developed recently this year,
+
+154
+00:08:18,518 --> 00:08:20,735
+um, it's called Avi Listar, uh,
+
+155
+00:08:20,745 --> 00:08:23,006
+and not super technical lifts,
+
+156
+00:08:23,007 --> 00:08:25,458
+uh. Uh, being really forthcoming about that.
+
+157
+00:08:25,459 --> 00:08:27,799
+Um, I have this new hobby this year,
+
+158
+00:08:27,800 --> 00:08:30,795
+birding. Uh, it's fun, it's relaxing,
+
+159
+00:08:30,796 --> 00:08:34,601
+being in nature. If you're enjoying and being around birds.
+
+160
+00:08:35,296 --> 00:08:39,134
+And so, I found this newly released taxonomy.
+
+161
+00:08:39,135 --> 00:08:42,615
+me. Uh, sheet in Excel. Uhm,
+
+162
+00:08:42,626 --> 00:08:45,820
+and it's great, right? Excel, we can all work with Excel for the most
+
+163
+00:08:45,821 --> 00:08:49,322
+part. Uhm, but I want to- to have this opportunity to think,
+
+164
+00:08:49,323 --> 00:08:52,079
+well, can I make an R package?
+
+165
+00:08:52,612 --> 00:08:55,518
+That's silly. Like, an R package with burn it.
+
+166
+00:08:55,519 --> 00:08:57,933
+Umm, that is not a,
+
+167
+00:08:57,934 --> 00:09:01,276
+you know, a large technical lift, but maybe it could be more accessible for
+
+168
+00:09:01,277 --> 00:09:03,558
+folks. Umm, and so it's a really large,
+
+169
+00:09:03,559 --> 00:09:05,904
+Excel sheet, um, wrapped it up,
+
+170
+00:09:05,905 --> 00:09:10,147
+um, and has always really interesting aspects,
+
+171
+00:09:10,148 --> 00:09:14,167
+uh, about this, I built this in a weekend,
+
+172
+00:09:14,168 --> 00:09:17,601
+uh, for me personally,
+
+173
+00:09:17,602 --> 00:09:19,638
+uh, I,
+
+174
+00:09:17,921 --> 00:09:22,485
+I was never moving at this speed,
+
+175
+00:09:22,486 --> 00:09:24,986
+uhm, for a contact setting.
+
+176
+00:09:25,187 --> 00:09:27,246
+The two previous packages I published,
+
+177
+00:09:27,373 --> 00:09:29,494
+Shane, A. L. P. and T. T. B. Beer,
+
+178
+00:09:29,796 --> 00:09:32,430
+were published in 2016.
+
+179
+00:09:32,431 --> 00:09:35,718
+Avi Lister, uh, which was published in June on Cray,
+
+180
+00:09:35,719 --> 00:09:41,128
+This year, that is eight years and nine months between
+
+181
+00:09:41,568 --> 00:09:43,763
+my first set of our packages. Could you hear this?
+
+182
+00:09:43,764 --> 00:09:45,922
+And this new set. Umm,
+
+183
+00:09:45,933 --> 00:09:48,894
+I feel this sense of hyper-productivity,
+
+184
+00:09:49,157 --> 00:09:51,798
+excitements, umm, and just- Just have a good day.
+
+185
+00:09:51,799 --> 00:09:56,628
+Having the aspect of integrating AI in this development
+
+186
+00:09:56,629 --> 00:10:01,608
+for packages and community-based tools to be- really transformative,
+
+187
+00:10:01,609 --> 00:10:04,204
+um, and I know there's a lot of aspects of things that were going
+
+188
+00:10:04,205 --> 00:10:07,883
+on within the last eight years and nine months but I really want to-
+
+189
+00:10:07,884 --> 00:10:10,469
+to underscore what I've been able to do,
+
+190
+00:10:10,470 --> 00:10:12,495
+um, just this year,
+
+191
+00:10:12,496 --> 00:10:15,710
+um, in giving back to the community and thinking grander.
+
+192
+00:10:15,711 --> 00:10:20,082
+you're up. about, um, how do I contribute open source code?
+
+193
+00:10:20,083 --> 00:10:22,810
+And so, yes. Right.
+
+194
+00:10:23,026 --> 00:10:25,397
+It's not even a. Very crucial package,
+
+195
+00:10:25,398 --> 00:10:27,652
+in my opinion. But it is nice to have.
+
+196
+00:10:27,653 --> 00:10:31,998
+It is fun. Um, and it has now really lovely,
+
+197
+00:10:31,999 --> 00:10:36,721
+And a lot of really great examples about
+
+198
+00:10:36,722 --> 00:10:39,142
+how you integrate this data with some of the existing,
+
+199
+00:10:39,143 --> 00:10:41,850
+uhh, packages. Like, re-bird, umm,
+
+200
+00:10:41,861 --> 00:10:45,383
+and so this is my little, umm, my little passion project and my gift
+
+201
+00:10:45,537 --> 00:10:48,083
+to the art community. community.
+
+202
+00:10:48,084 --> 00:10:51,264
+So, uh, really holding on,
+
+203
+00:10:51,343 --> 00:10:54,785
+like, AI system development is the creative multiplier,
+
+204
+00:10:54,786 --> 00:10:58,682
+umm. 3 4 and it doesn't save me time on what I was already
+
+205
+00:10:58,683 --> 00:11:03,385
+doing. It, it doesn't away. But it really unlocks what
+
+206
+00:11:03,386 --> 00:11:05,885
+I wasn't able to do. Uh,
+
+207
+00:11:05,896 --> 00:11:08,753
+what I wasn't able to complete, what I wasn't able to prioritize,
+
+208
+00:11:08,754 --> 00:11:11,259
+uh, simply because when you are having,
+
+209
+00:11:11,260 --> 00:11:13,691
+uh, Bye. I'm running a solo consultancy,
+
+210
+00:11:13,692 --> 00:11:17,785
+um, and being really strategic about your time and protecting your mental health.
+
+211
+00:11:17,786 --> 00:11:21,986
+Um, very often, sometimes you don't get to do- the really fun things.
+
+212
+00:11:21,987 --> 00:11:25,585
+Um, and so now that I've been able to leverage it in my work
+
+213
+00:11:25,586 --> 00:11:29,821
+processes, able to automate all those- biz dev and biz op systems,
+
+214
+00:11:30,114 --> 00:11:34,329
+it was right much better unit tests and documentation and package branding and hex
+
+215
+00:11:34,330 --> 00:11:38,536
+stickers. Shout out to Chet t makes- I find it really wonderful,
+
+216
+00:11:38,537 --> 00:11:42,353
+uhm, to collaborate on making those really engaging hex stickers.
+
+217
+00:11:42,354 --> 00:11:44,358
+Umm, and then just having more time.
+
+218
+00:11:44,359 --> 00:11:47,279
+And then for community engagement and knowledge sharing and networking.
+
+219
+00:11:47,280 --> 00:11:51,790
+Uh, that for me is a really important aspect of the work
+
+220
+00:11:51,791 --> 00:11:55,511
+I do. And how I show up. And I'm so glad to have been,
+
+221
+00:11:55,512 --> 00:12:00,112
+um, leveraging AISIS development and cloud code in my process.
+
+222
+00:12:00,113 --> 00:12:04,164
+process. Because I feel like it's not just me,
+
+223
+00:12:04,591 --> 00:12:06,755
+which is great right now. It is everybody.
+
+224
+00:12:06,756 --> 00:12:10,314
+It is all of our learning path. It is all of our creative endeavor
+
+225
+00:12:10,320 --> 00:12:13,502
+and to be able to, one, provide this for my clients,
+
+226
+00:12:13,572 --> 00:12:16,528
+then also provide it for our community, which I love so much.
+
+227
+00:12:16,529 --> 00:12:19,253
+Umm, has felt really, really meaningful.
+
+228
+00:12:21,151 --> 00:12:24,563
+Alright, saying yes to bigger and funnier problems.
+
+229
+00:12:24,564 --> 00:12:27,351
+So, uh,
+
+230
+00:12:27,373 --> 00:12:29,783
+this is a aspect of,
+
+231
+00:12:29,784 --> 00:12:32,187
+um, how I think about work.
+
+232
+00:12:32,188 --> 00:12:36,324
+work. Um, whether I am working for myself,
+
+233
+00:12:36,325 --> 00:12:38,729
+for me, my consultancy, or I am,
+
+234
+00:12:38,730 --> 00:12:42,429
+um, you know, doing- other types of volunteer work,
+
+235
+00:12:42,430 --> 00:12:45,014
+um, or other types of work in the community.
+
+236
+00:12:45,794 --> 00:12:49,371
+And so, it really sits around the client work- uh,
+
+237
+00:12:49,381 --> 00:12:51,482
+working with values-aligned clients,
+
+238
+00:12:51,483 --> 00:12:54,873
+um, while working with non-profits and misin-driven organizations.
+
+239
+00:12:54,874 --> 00:12:59,761
+Um, these are- that are doing really important boots-on-the-ground,
+
+240
+00:13:00,286 --> 00:13:02,554
+highly interpersonal work in this world.
+
+241
+00:13:02,845 --> 00:13:05,293
+And I love being able to be in service- to them.
+
+242
+00:13:05,875 --> 00:13:08,554
+I also really love, um,
+
+243
+00:13:08,564 --> 00:13:11,230
+opportunities to grow technically, um,
+
+244
+00:13:11,241 --> 00:13:14,459
+work on problems that I may not- have the full answer for,
+
+245
+00:13:14,463 --> 00:13:16,892
+but I have an excitement around it. Umm,
+
+246
+00:13:16,903 --> 00:13:20,395
+exploring new approaches. Umm, and this work keeps things interesting.
+
+247
+00:13:20,396 --> 00:13:22,448
+Nexting. Umm, and,
+
+248
+00:13:22,449 --> 00:13:24,634
+uh, mentally engaging. Umm,
+
+249
+00:13:24,644 --> 00:13:26,926
+another aspect is community,
+
+250
+00:13:26,927 --> 00:13:30,957
+uh, professional development. I love- going to networking events,
+
+251
+00:13:30,958 --> 00:13:34,156
+umm, I love going to conferences,
+
+252
+00:13:34,157 --> 00:13:36,267
+umm, and it's really important for me.
+
+253
+00:13:36,268 --> 00:13:40,607
+Um in that aspect. And as well as intentional rest,
+
+254
+00:13:40,608 --> 00:13:44,963
+umm, all of this does not work unless that- That's it.
+
+255
+00:13:44,964 --> 00:13:49,479
+I have a really good sense of when is work
+
+256
+00:13:49,585 --> 00:13:52,118
+and when is family and friends.
+
+257
+00:13:52,119 --> 00:13:56,580
+friends. time because all of this is in service for that true goal.
+
+258
+00:13:56,869 --> 00:13:59,875
+And for me, when all of those things hit,
+
+259
+00:13:59,876 --> 00:14:02,834
+uh, that is. I'm not going for me professional joy.
+
+260
+00:14:02,835 --> 00:14:05,921
+And that is what I optimize for in my consulting practice.
+
+261
+00:14:05,922 --> 00:14:09,088
+Um, and it really drives me.
+
+262
+00:14:09,089 --> 00:14:12,339
+. Umm, in the decisions I make, and the folks that I interact with.
+
+263
+00:14:14,091 --> 00:14:18,786
+So, my old filter before ASIS development was coming to a potential
+
+264
+00:14:18,787 --> 00:14:22,177
+new project or a prospect or a client, can I build this in a
+
+265
+00:14:22,178 --> 00:14:25,163
+reasonable time frame with my current skill sets?
+
+266
+00:14:25,164 --> 00:14:27,459
+Giving my existing client workload.
+
+267
+00:14:27,815 --> 00:14:30,946
+That's- that's what I told myself. Now,
+
+268
+00:14:31,333 --> 00:14:35,488
+with leveraging cloud and cloud code- and agentic development,
+
+269
+00:14:36,324 --> 00:14:38,900
+my first thought is, I can certainly build it.
+
+270
+00:14:39,203 --> 00:14:41,243
+But, how can I thoughtfully- Please.
+
+271
+00:14:41,244 --> 00:14:44,707
+I spend time deeply understanding the desired outcome,
+
+272
+00:14:45,029 --> 00:14:48,435
+the client restraints, and the overall delivery.
+
+273
+00:14:48,436 --> 00:14:50,560
+Uhm. So,
+
+274
+00:14:50,561 --> 00:14:54,924
+I just clawed really as my coding partner,
+
+275
+00:14:54,925 --> 00:14:57,323
+and sort of the mental model around it, is.
+
+276
+00:14:57,324 --> 00:14:59,887
+With that, I'm the manager. I set direction.
+
+277
+00:14:59,888 --> 00:15:02,532
+I make the architectural decisions. Uh,
+
+278
+00:15:02,543 --> 00:15:05,352
+clawed is my senior. Sometimes my junior developer,
+
+279
+00:15:05,353 --> 00:15:07,757
+Depending on the context that you give it, um,
+
+280
+00:15:07,768 --> 00:15:11,382
+a partner in that endeavor. Implementing solutions,
+
+281
+00:15:11,383 --> 00:15:13,398
+handling boilerplate code, uh,
+
+282
+00:15:13,399 --> 00:15:15,658
+starting out any of the,
+
+283
+00:15:15,659 --> 00:15:19,198
+um, scaffolding for packages or shiny applications.
+
+284
+00:15:19,199 --> 00:15:21,227
+Um, and. Alright.
+
+285
+00:15:21,228 --> 00:15:25,612
+Alright, now, couple of really seeing cloud code as my coding partner means that
+
+286
+00:15:25,613 --> 00:15:29,472
+I am both, like, the human in the process and on- on.
+
+287
+00:15:29,473 --> 00:15:32,512
+So, in and on the loop,
+
+288
+00:15:32,777 --> 00:15:34,837
+active technical leadership stays with me.
+
+289
+00:15:34,985 --> 00:15:39,597
+I'm both integrated at various different- intersections in the entire process.
+
+290
+00:15:39,981 --> 00:15:42,199
+And that is a,
+
+291
+00:15:42,200 --> 00:15:46,725
+uh, table stakes for me. And so- So ways in which I
+
+292
+00:15:46,726 --> 00:15:49,279
+help manage this partnership, uh,
+
+293
+00:15:49,290 --> 00:15:53,598
+must be really specific with requirements and roles for Claude.
+
+294
+00:15:53,599 --> 00:15:56,199
+Uhm, I always review the generated code.
+
+295
+00:15:56,200 --> 00:15:58,855
+Uh, Claude has this wonderful way of you can,
+
+296
+00:15:59,078 --> 00:16:01,435
+you can, when you set up your context files,
+
+297
+00:16:01,436 --> 00:16:03,674
+you can. Have it just, uh,
+
+298
+00:16:03,685 --> 00:16:08,286
+writing code and committing to your GitHub repository and not being a part
+
+299
+00:16:08,287 --> 00:16:10,755
+of that discussion. And that conversation,
+
+300
+00:16:10,756 --> 00:16:13,196
+that work pattern form, um,
+
+301
+00:16:13,207 --> 00:16:17,718
+for me, I always need to be in the next for that reviewing code.
+
+302
+00:16:17,719 --> 00:16:21,642
+Um, and to say that, I always use really incremental commits.
+
+303
+00:16:21,643 --> 00:16:24,009
+Um, I love how Claude can,
+
+304
+00:16:24,010 --> 00:16:27,203
+uh, write really detailed- Inhale. Commit messages.
+
+305
+00:16:27,204 --> 00:16:30,428
+I love being able to possibly unwind things back and forth,
+
+306
+00:16:30,429 --> 00:16:34,880
+and so that's super important for me. And feeding it- documentation links have been
+
+307
+00:16:34,881 --> 00:16:37,178
+really helpful to help, uh,
+
+308
+00:16:37,189 --> 00:16:40,957
+keep Claude focused and giving it accurate information.
+
+309
+00:16:40,958 --> 00:16:43,970
+and you next time. I'm also asking for multiple options.
+
+310
+00:16:43,971 --> 00:16:47,095
+I find really using Claude, in addition to coding,
+
+311
+00:16:47,096 --> 00:16:49,302
+as a brainstorming partner, uh,
+
+312
+00:16:49,313 --> 00:16:51,616
+to get me started. On a lot of,
+
+313
+00:16:51,617 --> 00:16:54,569
+uh, the work that I do. And then,
+
+314
+00:16:54,570 --> 00:16:57,416
+I love to run Claude, sometimes, depending on the project.
+
+315
+00:16:57,417 --> 00:16:57,918
+I can,
+
+316
+00:17:05,963 --> 00:17:09,061
+Amplify my impact to take on bigger and more interesting problems.
+
+317
+00:17:10,148 --> 00:17:12,260
+So, a client example that I really love,
+
+318
+00:17:12,261 --> 00:17:17,090
+um, is I- needed to set up a data orchestration repo,
+
+319
+00:17:17,091 --> 00:17:21,632
+uhm, with a lot of understanding about the client's requirements.
+
+320
+00:17:21,633 --> 00:17:23,744
+They're technical. I call skill capabilities.
+
+321
+00:17:23,745 --> 00:17:27,063
+Um. GitHub actions made a lot of sense,
+
+322
+00:17:27,686 --> 00:17:30,078
+and so working in API.
+
+323
+00:17:30,079 --> 00:17:32,967
+Nice and webhooks, and mixing in real way,
+
+324
+00:17:32,968 --> 00:17:35,654
+uh, for a VM, um,
+
+325
+00:17:35,665 --> 00:17:37,899
+learning more about how to structure this Yeah,
+
+326
+00:17:37,900 --> 00:17:40,372
+I'm. Um, but learning,
+
+327
+00:17:40,619 --> 00:17:42,831
+learning from clog, right? Uh,
+
+328
+00:17:42,841 --> 00:17:45,630
+loading the data in the seaweed base, having a real hand on the wheel,
+
+329
+00:17:45,631 --> 00:17:49,005
+I would say. In terms of the road level,
+
+330
+00:17:49,006 --> 00:17:54,208
+um, and client isolation aspect for the data security and governance aspect.
+
+331
+00:17:54,209 --> 00:17:58,786
+Umm, and then having all of those client dashboards be written in quarto,
+
+332
+00:17:58,833 --> 00:18:02,243
+and this client really needed to be able to scale a repeatable,
+
+333
+00:18:02,244 --> 00:18:04,562
+ehm, ETL process,
+
+334
+00:18:04,563 --> 00:18:06,865
+uh, secure data layers,
+
+335
+00:18:06,866 --> 00:18:08,966
+um, in a database,
+
+336
+00:18:08,967 --> 00:18:13,903
+um, for persistency. See? And having the dashboards have the ability,
+
+337
+00:18:13,904 --> 00:18:16,324
+um, to scale and pull each throw data.
+
+338
+00:18:16,325 --> 00:18:21,533
+Uh, well, also having a sh- shared components and template system where
+
+339
+00:18:21,534 --> 00:18:25,403
+client could feature toggle on and off different aspects of the dashboard.
+
+340
+00:18:25,404 --> 00:18:29,429
+forward. And so this is a really interesting system I was able to develop,
+
+341
+00:18:29,430 --> 00:18:32,329
+uh, primarily with Claude Code,
+
+342
+00:18:32,330 --> 00:18:34,398
+um, a lot of back and forth.
+
+343
+00:18:34,399 --> 00:18:39,057
+Uh, it's a lot of understanding about what the requirements were for this project.
+
+344
+00:18:39,058 --> 00:18:41,819
+Um, and a lot of learning on my part,
+
+345
+00:18:41,820 --> 00:18:45,018
+um, about- how to write better GitHub actions and how to,
+
+346
+00:18:45,019 --> 00:18:50,120
+um, have, uh, GitHub actions do PRs in other repositories.
+
+347
+00:18:50,121 --> 00:18:52,237
+stories. And have a whole lot of process going,
+
+348
+00:18:52,238 --> 00:18:56,268
+uhh, so this is a really, really fun example,
+
+349
+00:18:56,269 --> 00:18:58,523
+a and really about.
+
+350
+00:18:58,524 --> 00:19:01,738
+Building right-sized enterprise-grade infrastructure,
+
+351
+00:19:01,739 --> 00:19:03,993
+um, in just a few weeks with CloudKit's help.
+
+352
+00:19:03,994 --> 00:19:06,558
+And this would not have been possible before.
+
+353
+00:19:06,559 --> 00:19:11,313
+So, my usual client project workflow is understanding the requirements,
+
+354
+00:19:11,740 --> 00:19:16,229
+defining the problem, the technical approach. generating some of the implementation,
+
+355
+00:19:16,230 --> 00:19:18,506
+cloud writes the initial code, uh,
+
+356
+00:19:18,517 --> 00:19:21,481
+review and course correcting, uh, reviewing every line,
+
+357
+00:19:21,482 --> 00:19:24,925
+checking for issues. Umm, and iterating based on that feedback,
+
+358
+00:19:24,926 --> 00:19:27,666
+fixing problems, refining the solution, uh,
+
+359
+00:19:27,676 --> 00:19:30,342
+and that also then the final QA.
+
+360
+00:19:30,343 --> 00:19:33,146
+I'm sorry. I deliver a testing thoroughly and then shipping to the client.
+
+361
+00:19:33,147 --> 00:19:35,546
+Um, it's used human decisions at the start,
+
+362
+00:19:35,547 --> 00:19:39,022
+the middle and end, and AI executions sprinkled in the- middle.
+
+363
+00:19:39,885 --> 00:19:43,511
+So I am ruthlessly solutions focused at this moment,
+
+364
+00:19:43,607 --> 00:19:45,665
+thanks to Cloudcode. Um,
+
+365
+00:19:45,676 --> 00:19:49,045
+it's made me- be even more a better partner,
+
+366
+00:19:49,046 --> 00:19:51,187
+umm, for my clients, I believe.
+
+367
+00:19:51,478 --> 00:19:54,734
+I'm not thinking about STACs, I get to think about their outcomes.
+
+368
+00:19:54,735 --> 00:19:57,789
+I'm not thinking about debugging YAML for GitHub Actions.
+
+369
+00:19:57,790 --> 00:20:00,572
+I get to solve business problems alongside,
+
+370
+00:20:00,573 --> 00:20:02,774
+um, the stakeholders.
+
+371
+00:20:02,775 --> 00:20:05,690
+My mental energy goes to what matters,
+
+372
+00:20:05,691 --> 00:20:09,140
+uh, and understanding client needs and delivering that value.
+
+373
+00:20:09,141 --> 00:20:12,168
+Thank Thank you. I love still matter.
+
+374
+00:20:12,169 --> 00:20:16,322
+I'm still very entrenched in writing code nearly every day.
+
+375
+00:20:16,323 --> 00:20:19,648
+Uh, but they don't consume my cognitive l- load anymore.
+
+376
+00:20:19,649 --> 00:20:23,109
+Um, I am not just a person on the computer.
+
+377
+00:20:23,110 --> 00:20:27,400
+I get to communicate and talk and have these really important And uh,
+
+378
+00:20:27,422 --> 00:20:29,548
+interpersonal relationships with my clients.
+
+379
+00:20:31,192 --> 00:20:34,865
+So, uh, building up your intuition in R.
+
+380
+00:20:34,866 --> 00:20:39,498
+Or, Or, through volume. So I like to think of all of the
+
+381
+00:20:39,499 --> 00:20:41,540
+learning that I've been doing, umm,
+
+382
+00:20:41,550 --> 00:20:43,555
+as, ah, high ways, right?
+
+383
+00:20:43,556 --> 00:20:47,530
+Traditional learning, umm, a smaller focused highway,
+
+384
+00:20:47,812 --> 00:20:50,534
+a few hours, you get to see a few different I appreciate it as
+
+385
+00:20:50,535 --> 00:20:52,619
+you ring the deck. Recommendation, you're learning,
+
+386
+00:20:52,620 --> 00:20:54,655
+you're checking stack overflow. Umm,
+
+387
+00:20:54,666 --> 00:20:56,846
+it can be really, kind of, slow.
+
+388
+00:20:57,071 --> 00:21:01,704
+Meaningfully slow, sometimes, but, I like to think of AI-assisted
+
+389
+00:21:01,705 --> 00:21:06,144
+learning when it comes to involving it in agentic development,
+
+390
+00:21:06,551 --> 00:21:11,167
+is, seeing many approaches in very
+
+391
+00:21:11,168 --> 00:21:15,038
+short amount of time. Umm, and being really mindful of a lot more- More.
+
+392
+00:21:15,134 --> 00:21:17,968
+Through put, uh, through that highway system,
+
+393
+00:21:17,973 --> 00:21:20,993
+you have to be mindful some things are gonna go awry,
+
+394
+00:21:20,994 --> 00:21:23,169
+and you need to be able to distill.
+
+395
+00:21:23,170 --> 00:21:28,096
+Uh, what is the core aspect of what you're directly needing,
+
+396
+00:21:28,339 --> 00:21:30,803
+and, uh, what is just wrong,
+
+397
+00:21:30,804 --> 00:21:33,923
+loosening. And so,
+
+398
+00:21:33,924 --> 00:21:38,444
+I'm gonna go
+
+399
+00:21:38,445 --> 00:21:40,464
+over. Umm,
+
+400
+00:21:40,475 --> 00:21:43,210
+one package mistake. a couple,
+
+401
+00:21:43,211 --> 00:21:45,513
+a couple of mistakes that happen even in the development.
+
+402
+00:21:45,514 --> 00:21:48,184
+I'll be right back of this talk, which I used, um,
+
+403
+00:21:48,195 --> 00:21:50,797
+Cloud Code to help me build out all of these slides.
+
+404
+00:21:50,798 --> 00:21:53,756
+Um, Cloud just doesn't read the docs sometime.
+
+405
+00:21:53,757 --> 00:21:56,400
+and I'm like, just like you as a human,
+
+406
+00:21:56,401 --> 00:21:59,711
+like if you're rushing and you're not reading, you're going to make mistakes because
+
+407
+00:21:59,712 --> 00:22:01,886
+you haven't read about how to do it right.
+
+408
+00:22:01,887 --> 00:22:05,714
+Um, and so I had Claude,
+
+409
+00:22:05,725 --> 00:22:08,611
+do a little bit of structure around the- any first slides.
+
+410
+00:22:09,098 --> 00:22:14,388
+And it just pretended that this package meant something around using font-awesome
+
+411
+00:22:14,389 --> 00:22:16,590
+icons, right? Thank you. Or see, like,
+
+412
+00:22:16,591 --> 00:22:19,233
+how it potentially got there, like, the F.A.
+
+413
+00:22:19,492 --> 00:22:21,757
+from, um, font-awesome,
+
+414
+00:22:21,758 --> 00:22:24,988
+like, sure. Um, and- then the real error,
+
+415
+00:22:24,989 --> 00:22:27,355
+like, it didn't even install the package,
+
+416
+00:22:27,356 --> 00:22:29,535
+and, like, a guest, uhm,
+
+417
+00:22:29,546 --> 00:22:31,753
+about the vignettes and examples, and you would think,
+
+418
+00:22:31,754 --> 00:22:34,526
+uh, having access to, uhm,
+
+419
+00:22:34,536 --> 00:22:36,744
+the package, locally, because I built it,
+
+420
+00:22:36,745 --> 00:22:39,783
+on my machine, would help give it some different context.
+
+421
+00:22:39,784 --> 00:22:41,798
+But it enabled the,
+
+422
+00:22:41,799 --> 00:22:44,400
+uhm, the LLM to, uh,
+
+423
+00:22:44,410 --> 00:22:47,417
+learn, but it really hadn't.
+
+424
+00:22:47,418 --> 00:22:52,109
+Um, so even- sometimes packages really establish packages with way more examples out
+
+425
+00:22:52,110 --> 00:22:54,626
+there, uhm, for, uh,
+
+426
+00:22:54,636 --> 00:22:57,116
+LLM to pull from. you uh, g-plot too.
+
+427
+00:22:57,117 --> 00:23:00,043
+Sometimes it just confuses a lot of functions as well.
+
+428
+00:23:00,044 --> 00:23:02,362
+Um, and why this happens,
+
+429
+00:23:02,363 --> 00:23:05,785
+right? You can be experienced. is and busy and assume some things come easy
+
+430
+00:23:05,786 --> 00:23:08,147
+and so you circumvent the system of learning.
+
+431
+00:23:08,148 --> 00:23:11,847
+Um, and so sometimes this forces you to actually Actually,
+
+432
+00:23:11,848 --> 00:23:15,717
+we, the document to actually feed claw the documentation URL so it can help
+
+433
+00:23:15,718 --> 00:23:17,797
+self correct for that. Um,
+
+434
+00:23:17,807 --> 00:23:19,983
+and I think this make sure you better at evaluating.
+
+435
+00:23:19,984 --> 00:23:23,338
+And knowing where good docs live.
+
+436
+00:23:24,731 --> 00:23:28,897
+So, uh, mistake number two, uh, that happened right when I- I was building
+
+437
+00:23:28,898 --> 00:23:32,299
+the slides for this talk. Um, data structure assumptions.
+
+438
+00:23:32,300 --> 00:23:35,220
+Um, Claude likes to assume and fur,
+
+439
+00:23:35,221 --> 00:23:38,814
+um, from- column names and some state of types if they're not at all,
+
+440
+00:23:38,815 --> 00:23:41,863
+um, matched up or cleaned well and the relationship.
+
+441
+00:23:41,864 --> 00:23:44,103
+Um, but sometimes that is just wrong.
+
+442
+00:23:44,104 --> 00:23:48,976
+Umm, I was building the slide for Obulistar and
+
+443
+00:23:48,977 --> 00:23:51,279
+it wanted to say that, uh,
+
+444
+00:23:51,290 --> 00:23:53,774
+for that. to drag the bar chart, uh,
+
+445
+00:23:53,795 --> 00:23:56,227
+the data set was called AviList Global, um,
+
+446
+00:23:56,248 --> 00:23:59,522
+which doesn't exist. It's AviList 2025.
+
+447
+00:23:59,523 --> 00:24:01,633
+Um, and. It assumed also,
+
+448
+00:24:01,634 --> 00:24:06,271
+uh, some examples from the column names that were lower case or snake
+
+449
+00:24:06,272 --> 00:24:11,027
+case when actually the column. one. More so matches the,
+
+450
+00:24:11,028 --> 00:24:13,213
+umm, the original Excel file.
+
+451
+00:24:14,440 --> 00:24:18,971
+And so, umm. Mm. This kind of example where it infers
+
+452
+00:24:18,972 --> 00:24:23,599
+the connection instead of, like, asking for maybe a look-up table or having access
+
+453
+00:24:23,600 --> 00:24:25,753
+to actual art. Umm,
+
+454
+00:24:25,764 --> 00:24:30,815
+and this happens because, like, experience oftentimes breeds assumption and use verification,
+
+455
+00:24:31,076 --> 00:24:34,785
+and you just assume, like, wha all, this is sometimes common place,
+
+456
+00:24:34,786 --> 00:24:37,121
+right, to your snake place versus, title case.
+
+457
+00:24:37,576 --> 00:24:39,609
+And so lesson is, like, Thank you very much. Often, like,
+
+458
+00:24:39,610 --> 00:24:41,704
+please, like, very, please leverage,
+
+459
+00:24:41,705 --> 00:24:46,295
+like, MCP tools, um, to give quad actual access to our session
+
+460
+00:24:46,296 --> 00:24:49,275
+in the context. Um, if those packages are loaded,
+
+461
+00:24:49,276 --> 00:24:53,071
+if those, uh, those objects are stored there,
+
+462
+00:24:53,072 --> 00:24:55,092
+um, and,
+
+463
+00:24:55,093 --> 00:24:59,531
+Let uh, NCP tools like integrate and breed the environment that you're in.
+
+464
+00:25:00,165 --> 00:25:02,239
+And this mistake, I think, from a human aspect,
+
+465
+00:25:02,468 --> 00:25:05,067
+teaches you, about proper data inspection habits.
+
+466
+00:25:05,068 --> 00:25:07,696
+Um, skills which you should be using constantly,
+
+467
+00:25:07,697 --> 00:25:10,671
+I think, in our world as data practitioners.
+
+468
+00:25:10,672 --> 00:25:15,475
+Cheers. Umm, but often, like, Claude is making these very similar mistakes.
+
+469
+00:25:15,476 --> 00:25:17,799
+Umm, and it's really interesting to see it shown.
+
+470
+00:25:17,800 --> 00:25:20,582
+Uhh, mistake- 3 over abstraction.
+
+471
+00:25:20,583 --> 00:25:23,301
+This is probably my biggest gripe with Claude.
+
+472
+00:25:23,302 --> 00:25:26,698
+Umm, it always reaches for the complex solution first.
+
+473
+00:25:26,699 --> 00:25:30,554
+It's always- Always. It's trying to be overly clever. And this example that was-
+
+474
+00:25:30,646 --> 00:25:34,756
+I had when building this slide deck is it tried to do this really-
+
+475
+00:25:34,610 --> 00:25:36,822
+Really. Integrate, integrate,
+
+476
+00:25:36,823 --> 00:25:39,861
+uh, intricate, uh, sinky diagram,
+
+477
+00:25:39,862 --> 00:25:42,612
+um, and it just started making up functions.
+
+478
+00:25:42,613 --> 00:25:45,929
+Um, It just, it created some nested functions,
+
+479
+00:25:46,120 --> 00:25:49,149
+when like, a simple, like, dplyard chain would work.
+
+480
+00:25:49,150 --> 00:25:51,367
+Um, and- We're up.
+
+481
+00:25:51,368 --> 00:25:55,973
+Often, you- I think it's sometimes the examples that it's pulling from
+
+482
+00:25:55,974 --> 00:25:58,447
+to make its decision about, um,
+
+483
+00:25:58,458 --> 00:26:00,852
+what it's providing you- . . . . and in like, sometimes people are
+
+484
+00:26:00,853 --> 00:26:03,965
+trying to show their expertise. They're trying to build the proper systems.
+
+485
+00:26:03,966 --> 00:26:06,839
+They're trying to, sometimes, that leads to over-engineering.
+
+486
+00:26:06,840 --> 00:26:10,027
+Um. And when really you're kind of missing out on the focus of like,
+
+487
+00:26:10,028 --> 00:26:12,096
+um, simple is often better.
+
+488
+00:26:12,097 --> 00:26:16,009
+Um, and then I like to ask Claude a very deep personal,
+
+489
+00:26:16,010 --> 00:26:18,275
+uhm, interaction with me like, why?
+
+490
+00:26:18,276 --> 00:26:22,775
+Doing it this way, uhm, very often because I've spent so much time without
+
+491
+00:26:22,776 --> 00:26:25,020
+AI. I do know the solution,
+
+492
+00:26:25,021 --> 00:26:28,224
+I do know the path forward, I do know the exact packages that I
+
+493
+00:26:28,225 --> 00:26:30,441
+want not called to use and leverage,
+
+494
+00:26:31,253 --> 00:26:33,497
+and I asked it why it's doing it, and I feed it,
+
+495
+00:26:33,498 --> 00:26:35,683
+um, some different options, um,
+
+496
+00:26:35,693 --> 00:26:38,498
+and I try and select the way that is simplest,
+
+497
+00:26:38,499 --> 00:26:43,429
+the way that I would actually And so recognizing
+
+498
+00:26:43,430 --> 00:26:47,364
+on my sorry complexity has been really helpful to guiding.
+
+499
+00:26:47,365 --> 00:26:50,579
+I did. In the partnership with cloud code in my,
+
+500
+00:26:50,580 --> 00:26:53,287
+uh, telemetry. And so,
+
+501
+00:26:53,288 --> 00:26:55,324
+um, right. Here's some tips for.
+
+502
+00:26:55,325 --> 00:26:57,595
+your skills. Building better prompts from these mistakes,
+
+503
+00:26:57,596 --> 00:27:00,538
+uh, feed documentation links upfront,
+
+504
+00:27:00,539 --> 00:27:03,732
+uh, data assumptions, use MCP tools.
+
+505
+00:27:03,733 --> 00:27:05,849
+Give them, look at, look up tables,
+
+506
+00:27:05,850 --> 00:27:08,685
+um, if columns are coded in other ways,
+
+507
+00:27:08,686 --> 00:27:10,855
+um, over extraction,
+
+508
+00:27:10,865 --> 00:27:15,051
+ask for- We're going to multiple approaches, request sometimes the simplest solution to start.
+
+509
+00:27:15,052 --> 00:27:17,205
+Uh, learning at scale, like,
+
+510
+00:27:17,206 --> 00:27:20,105
+you're going to encounter these patterns so much more- or,
+
+511
+00:27:20,106 --> 00:27:23,453
+uhm, rather than the traditional learning.
+
+512
+00:27:23,454 --> 00:27:27,852
+Um, and each failure, I think, helps refine your prompting skills and your R-intuitive-
+
+513
+00:27:27,853 --> 00:27:30,321
+so that you don't make those mistakes,
+
+514
+00:27:30,322 --> 00:27:33,151
+and so you can help clone, make those mistakes less.
+
+515
+00:27:34,208 --> 00:27:38,462
+And I think it makes you not- on. I think you become a better
+
+516
+00:27:38,463 --> 00:27:42,154
+technical leader, and you know how to redirect when things go wrong,
+
+517
+00:27:42,671 --> 00:27:46,918
+and leverage what you're- learning from Claude to bring to the real world as
+
+518
+00:27:46,919 --> 00:27:49,429
+you're interacting with folks, uhm,
+
+519
+00:27:49,440 --> 00:27:51,481
+to create better software.
+
+520
+00:27:51,482 --> 00:27:55,006
+for. So, I really like to think of this all as,
+
+521
+00:27:55,007 --> 00:27:57,298
+like, the, the skill development,
+
+522
+00:27:57,299 --> 00:27:59,636
+um, and so the art of the practice is See ya.
+
+523
+00:28:04,727 --> 00:28:06,788
+It's not necessarily about the final product alone. It's the process.
+
+524
+00:28:06,789 --> 00:28:09,006
+Awesome. It's just about getting there,
+
+525
+00:28:09,007 --> 00:28:11,363
+uh, understanding patterns,
+
+526
+00:28:11,672 --> 00:28:14,445
+learning from mistakes, building that intuition up.
+
+527
+00:28:14,446 --> 00:28:19,184
+Umm, high-value iteration and failing fast
+
+528
+00:28:19,185 --> 00:28:23,838
+in course correcting, and deliberate practice and pattern recognition.
+
+529
+00:28:23,839 --> 00:28:28,813
+mission. And the personal satisfaction and growth
+
+530
+00:28:28,814 --> 00:28:31,814
+from overcoming those challenges.
+
+531
+00:28:31,815 --> 00:28:35,607
+Jeez. And maintaining motivation and staying disciplined.
+
+532
+00:28:36,115 --> 00:28:41,187
+I really think ASIS development accelerates this practice by increasing But the
+
+533
+00:28:41,188 --> 00:28:43,568
+discipline of learning is still your own.
+
+534
+00:28:45,236 --> 00:28:48,188
+So, in conclusion, um. Yum.
+
+535
+00:28:48,189 --> 00:28:51,557
+I really want everybody to really hopefully take away,
+
+536
+00:28:51,558 --> 00:28:56,137
+um, this thought pattern of learning for your
+
+537
+00:28:56,138 --> 00:29:00,671
+s- self, and then also writing down your values when it comes to
+
+538
+00:29:00,912 --> 00:29:03,561
+interacting with AI, uhm, in your work,
+
+539
+00:29:03,812 --> 00:29:06,048
+in your- for fun, uhm,
+
+540
+00:29:06,059 --> 00:29:08,613
+and before your next AS is to project,
+
+541
+00:29:08,614 --> 00:29:10,969
+like, please go through this exercise, write it down.
+
+542
+00:29:11,471 --> 00:29:13,732
+What will I all- What I do myself.
+
+543
+00:29:14,914 --> 00:29:17,038
+What AI can help me with.
+
+544
+00:29:18,059 --> 00:29:20,348
+What I need to understand deeply.
+
+545
+00:29:20,349 --> 00:29:23,417
+And what I'm comfortable delegating.
+
+546
+00:29:25,116 --> 00:29:27,353
+So, some final thoughts. Uhm,
+
+547
+00:29:27,364 --> 00:29:30,720
+I believe. Uh. Ha! When AI frees up your mental bandwidth,
+
+548
+00:29:30,833 --> 00:29:32,852
+you don't get lazy. You get strategic.
+
+549
+00:29:34,565 --> 00:29:38,407
+Always building with intention. Thank you. Staying curious about those failures.
+
+550
+00:29:39,183 --> 00:29:41,329
+Staying strategic about solutions.
+
+551
+00:29:41,955 --> 00:29:45,891
+And staying joyful in the work because if we're- not all having fun doing
+
+552
+00:29:45,892 --> 00:29:48,456
+this, I don't think any of this is worth it.
+
+553
+00:29:48,457 --> 00:29:50,755
+So please always remember, have fun,
+
+554
+00:29:51,008 --> 00:29:54,071
+have joy. Umm. Take that intentional rest,
+
+555
+00:29:54,282 --> 00:29:57,381
+be really mindful about what you're building, who you're building it for,
+
+556
+00:29:57,382 --> 00:29:59,791
+uhm, and ensure that you're not causing any more harm,
+
+557
+00:29:59,792 --> 00:30:02,488
+uh. Through your actions and,
+
+558
+00:30:02,489 --> 00:30:06,972
+uh, your software that you're making. Thank you so much.
+
+559
+00:30:07,431 --> 00:30:12,288
+I've had such a- I'm happy to take questions
+
+560
+00:30:12,289 --> 00:30:16,638
+after. You can reach me if I'm in most places at- at Jeff.
+
+561
+00:30:16,639 --> 00:30:19,139
+Uh, Stu Moss, you can, uh, visit my website,
+
+562
+00:30:19,140 --> 00:30:21,170
+dailynalix.com. Um,
+
+563
+00:30:21,181 --> 00:30:23,244
+and yes, thank you so much. Bye.
+
+564
+00:30:22,866 --> 00:30:23,244
+Bye.
