@@ -40,9 +40,10 @@ This is a **perfect example** of the "Human in the Loop" principle from the talk
 4. **The Human in the Loop** - AI values, maintaining technical leadership
 
 ### Key Examples
-- **SHINYFA Package**: Open source contribution for Shiny file analysis
-- **Economic Development Dashboard**: Cloudflare Workers reverse proxy solution
-- **Quarto Over JavaScript**: Staying in your lane example
+- **{shinyfa} Package**: Open source CRAN package for analyzing large Shiny app structure - catalogs render functions, reactive functions, inputs, and file relationships
+- **{avilistr} Package**: Bird taxonomy data package built in a weekend - 8 years 9 months between previous packages (2016) and this one (2025)
+- **GitHub Actions Data Orchestration**: 50+ client dashboard system with Supabase, row-level security, Quarto dashboards, and shared component templates
+- **Highway Metaphor**: Traditional learning (small highway, few approaches) vs AI-assisted learning (big highway, many approaches in short time)
 
 ## Technical Requirements
 - Quarto with Reveal.js engine
