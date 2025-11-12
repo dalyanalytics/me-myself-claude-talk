@@ -57,5 +57,9 @@ rsconnect/
 # But DO track images directory
 !images/
 
+# Exception: Allow docs folder for GitHub Pages
+!docs/**/*.html
+!docs/*_files/
+
 # System files
 .DS_Store
